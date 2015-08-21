@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/schema-xsd/alpinebits.wsdl" uri="src/conf/xml-resources/web-services/FreeRoomsService/wsdl/alpinebits.wsdl"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/schema-xsd/Ota_CommonTypes.xsd" uri="src/conf/xml-resources/web-services/FreeRoomsService/wsdl/Ota_CommonTypes.xsd"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/schema-xsd/alpinebits.xsd" uri="src/conf/xml-resources/web-services/FreeRoomsService/wsdl/alpinebits.xsd"/>
+</catalog>
