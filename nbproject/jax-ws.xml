@@ -97,6 +97,9 @@
         </wsimport-option>
       </wsimport-options>
     </service>
+    <service name="HouseKeepingService">
+      <implementation-class>com.mmone.asa.housekeeping.HouseKeepingService</implementation-class>
+    </service>
   </services>
   <clients/>
   <jsr109>true</jsr109>
