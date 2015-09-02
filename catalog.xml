@@ -6,4 +6,8 @@
     <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/resources/alpinebits-2014-04.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits-2014-04.wsdl"/>
     <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/resources/house-keeping.wsdl" uri="src/conf/xml-resources/web-services/HouseKeepingService/wsdl/house-keeping.wsdl"/>
     <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/resources/hk-old.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/hk-old.wsdl"/>
+    <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/resources/alpinebits-2014-04-divided.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits-2014-04-divided.wsdl"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits.wsdl"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/Ota_CommonTypes.xsd" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/Ota_CommonTypes.xsd"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.xsd" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits.xsd"/>
 </catalog>
