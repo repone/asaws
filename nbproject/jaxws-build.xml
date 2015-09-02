@@ -62,25 +62,6 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/https/webservices_asa_one_com/asaconnectservice/_1"/>
         <delete dir="${build.generated.dir}/jax-wsCache/service/GuestRequestsService"/>
     </target>
-    <target name="wsimport-service-InventoryService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/service/InventoryService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/InventoryService" destdir="${build.generated.dir}/jax-wsCache/service/InventoryService" wsdl="${basedir}/${conf-dir}xml-resources/web-services/InventoryService/wsdl/alpinebits.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-services/InventoryService/wsdl/alpinebits.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/service/InventoryService"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/service/InventoryService">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-        <copy todir="${build.web.dir}/WEB-INF/wsdl/InventoryService">
-            <fileset dir="${basedir}/${conf-dir}xml-resources/web-services/InventoryService/wsdl/"/>
-        </copy>
-    </target>
-    <target name="wsimport-service-clean-InventoryService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/https/webservices_asa_one_com/asaconnectservice/_1"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/service/InventoryService"/>
-    </target>
     <target name="wsimport-service-FreeRoomsService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/service/FreeRoomsService"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/FreeRoomsService" destdir="${build.generated.dir}/jax-wsCache/service/FreeRoomsService" wsdl="${basedir}/${conf-dir}xml-resources/web-services/FreeRoomsService/wsdl/alpinebits.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
@@ -100,5 +81,24 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/https/webservices_asa_one_com/asaconnectservice/_1"/>
         <delete dir="${build.generated.dir}/jax-wsCache/service/FreeRoomsService"/>
     </target>
-    <target name="wsimport-service-generate" depends="wsimport-service-GuestRequestsService, wsimport-service-InventoryService, wsimport-service-FreeRoomsService, wsimport-init"/>
+    <target name="wsimport-service-NewWebServiceFromWSDL" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL" destdir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL" wsdl="${basedir}/${conf-dir}xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy todir="${build.web.dir}/WEB-INF/wsdl/NewWebServiceFromWSDL">
+            <fileset dir="${basedir}/${conf-dir}xml-resources/web-services/NewWebServiceFromWSDL/wsdl/"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-clean-NewWebServiceFromWSDL" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/https/webservices_asa_one_com/asaconnectservice/_1"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/service/NewWebServiceFromWSDL"/>
+    </target>
+    <target name="wsimport-service-generate" depends="wsimport-init, wsimport-service-GuestRequestsService, wsimport-service-FreeRoomsService, wsimport-service-NewWebServiceFromWSDL"/>
 </project>
