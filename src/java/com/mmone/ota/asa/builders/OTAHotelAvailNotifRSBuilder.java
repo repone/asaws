@@ -148,7 +148,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
 
     @Override
     public void markSuccess() {
-        this.getResponse().setSuccess(new Boolean(true));
+        this.getResponse().setSuccess("");
     }
     
 }
