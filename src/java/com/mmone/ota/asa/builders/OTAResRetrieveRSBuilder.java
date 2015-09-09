@@ -108,6 +108,8 @@ public class OTAResRetrieveRSBuilder extends AbstractResponseBuilder{
         /*14*/ MPT_ROOM_ONLY
     };
     
+  
+            
     private OTAResRetrieveRSBuilder( ){
         super(null,null,null);
     }
@@ -131,10 +133,11 @@ public class OTAResRetrieveRSBuilder extends AbstractResponseBuilder{
         return response;
     }
     @Override
+    
     public void buildResponse() {
         java.util.Date dateStart=null;
         List<Map<String, Object>>reservations=null;
-        
+        this.getResponse().setVersion("1.000");
         try {
             dateStart= this.getFilterDateStart();        
         } catch (DateStartNotSetException ex) {   
@@ -188,7 +191,7 @@ public class OTAResRetrieveRSBuilder extends AbstractResponseBuilder{
     public void markSuccess() {
         this
             .getResponse()
-            .setSuccess( new String());
+            .setSuccess( "" );
     } 
     public static void main(String[] args) {
          

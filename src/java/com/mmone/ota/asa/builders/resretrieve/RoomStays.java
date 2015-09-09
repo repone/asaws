@@ -24,6 +24,7 @@ public class RoomStays {
             roomStay.setRatePlans(RatePlans.init(reservationDetail));   
             roomStay.setTimeSpan(TimeSpan.init(reservation));
             roomStay.setTotal(Total.init(reservation, reservationDetail));
+            roomStay.setGuestCounts( GuestCounts.init(reservation, reservationDetail)    );
             
             return roomStay;
     }

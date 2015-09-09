@@ -20,7 +20,8 @@ public class RatePlans {
             
             String mCode = "rate";
             try { mCode = (String)reservationDetail.get("mr_code");    } catch (Exception e) {   }
-            ratePlan.setRatePlanCode(mCode);
+            ratePlan.setRatePlanCode(mCode); 
+            ratePlan.setMealsIncluded( MealsIncluded.init(reservationDetail)); 
             return ratePlan;
     }
     public static OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays.RoomStay.RatePlans 

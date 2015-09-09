@@ -15,6 +15,13 @@ import static com.mmone.ota.asa.builders.OTAResRetrieveRSBuilder.RESERVATION_STA
 import static com.mmone.ota.asa.builders.OTAResRetrieveRSBuilder.RESERVATION_STATUS_TO_RES_CODE;
 import static com.mmone.ota.asa.builders.OTAResRetrieveRSBuilder.RES_STATUS_CANCELLED;
 import com.mmone.ota.asa.builders.source.ReservationsSource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 
 /**
  *
@@ -48,4 +55,19 @@ public class HotelReservation {
             }
         return hotelReservation; 
     }
+        
+    public static void main(String[] args) {
+        try {
+            XMLGregorianCalendar today =   Facilities.dateToXMLGregorianCalendarFormatted(new Date());
+            
+            System.out.println(today);
+             
+            
+        } catch (Exception ex) {
+            Logger.getLogger(HotelReservation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+        
+    }
+    
 }

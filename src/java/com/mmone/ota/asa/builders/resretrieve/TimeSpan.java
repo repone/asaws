@@ -19,8 +19,8 @@ public class TimeSpan {
         init( Map<String, Object> reservation){  
        OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays.RoomStay.TimeSpan timeSpan =
                new OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays.RoomStay.TimeSpan ();
-               timeSpan.setStart(  Facilities.dateToXMLGregorianCalendar( (Date) reservation.get("reservation_checkin_date") ));
-               timeSpan.setEnd(    Facilities.dateToXMLGregorianCalendar( (Date) reservation.get("reservation_checkout_date") ) );
+               timeSpan.setStart(  Facilities.dateToXMLGregorianCalendarFormatted((Date) reservation.get("reservation_checkin_date") ));
+               timeSpan.setEnd(    Facilities.dateToXMLGregorianCalendarFormatted((Date) reservation.get("reservation_checkout_date") ) );
        return timeSpan;
     } 
 }

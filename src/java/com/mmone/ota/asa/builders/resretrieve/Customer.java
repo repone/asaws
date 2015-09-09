@@ -19,14 +19,28 @@ public class Customer {
         Telephone(Map<String, Object> reservation){ 
             OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Telephone t = 
                     new OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Telephone();
-            try { t.setPhoneNumber(     (String) reservation.get("reservation_phone")       );  } catch (Exception e) {  }
-            try { t.setPhoneTechType(   "1"  );  } catch (Exception e) {  }
+            
+            String phone = (String) reservation.get("reservation_phone") ;
+            
+            try { 
+                if(phone!=null && !phone.equals("") && !phone.equals("-")){
+                    t.setPhoneNumber(     (String) reservation.get("reservation_phone")       );  
+                    t.setPhoneTechType(   "1"  );  
+                }else{
+                    return null;
+                }    
+            } catch (Exception e) {  
+                return null;
+            }
+            
             return t;
         }
     private static OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Address.CountryName 
         CountryName(String code){  
         OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Address.CountryName cn = 
                 new OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Address.CountryName();
+                
+                if(code!=null) code=code.toUpperCase();
                 cn.setCode(code);
                 return cn;
     }
@@ -34,10 +48,13 @@ public class Customer {
         Address(Map<String, Object> reservation){  
             OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Address address=
                     new OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.Address();
+            String postalCode =(String) reservation.get("reservation_zipcode")  ;
+            if(postalCode==null || postalCode.equals("")) 
+                postalCode="--";
             
             try { address.setCityName(      (String) reservation.get("reservation_city")       );  } catch (Exception e) { }
             try { address.setCountryName(   CountryName((String) reservation.get("reservation_country") )  );  } catch (Exception e) { }
-            try { address.setPostalCode(  (String) reservation.get("reservation_zipcode")       );  } catch (Exception e) { }
+            try { address.setPostalCode(   postalCode    );  } catch (Exception e) { }
             try { address.setAddressLine((String) reservation.get("reservation_address")       );  } catch (Exception e) { }
              
             return address;
@@ -74,7 +91,8 @@ public class Customer {
             customer.setLanguage(language);
             customer.getTelephone().add(Telephone(reservation));
             customer.setPersonName(PersonName(reservation));
-            return customer;
-        
+            return customer;        
         }
+    
+        
 }

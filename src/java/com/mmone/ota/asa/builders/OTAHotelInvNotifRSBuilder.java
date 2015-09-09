@@ -49,6 +49,7 @@ public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
     
     @Override
     public void buildResponse() {
+        this.getResponse().setVersion("1.000");
         try {
             List<OTAHotelInvNotifRQ.SellableProducts.SellableProduct> sellableProducts =  this.getRequest().getSellableProducts().getSellableProduct() ;
             RoomsSource roomsSource;

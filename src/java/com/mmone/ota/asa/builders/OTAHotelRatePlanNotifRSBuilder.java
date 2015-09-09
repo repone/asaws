@@ -35,6 +35,7 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
 
     @Override
     public void buildResponse() {
+        this.getResponse().setVersion("1.000");
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

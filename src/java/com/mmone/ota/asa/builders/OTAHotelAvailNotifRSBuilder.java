@@ -49,6 +49,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
 
     @Override
     public void buildResponse() {
+        this.getResponse().setVersion("1.000");
         String recType=null;
         try {
             recType = getRequest().getUniqueID().getType();

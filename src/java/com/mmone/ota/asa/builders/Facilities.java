@@ -11,6 +11,8 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang.time.DateUtils;
 import com.mmone.ota.asa.builders.source.ReservationsSource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -23,6 +25,22 @@ public class Facilities {
         return new java.sql.Date(dt.getTime());
     }
     
+    public static XMLGregorianCalendar dateToXMLGregorianCalendarFormatted(Date sqlDate,String format){
+        XMLGregorianCalendar xmlgcDate=null;  
+        try{ 
+            DateFormat dateFormat=new SimpleDateFormat(format);
+            DatatypeFactory df = DatatypeFactory.newInstance();
+            
+            String strDate=dateFormat.format(sqlDate); 
+            xmlgcDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(strDate);  
+        } catch (Exception ex1) {   }
+        return xmlgcDate;    
+    }
+    public static XMLGregorianCalendar dateToXMLGregorianCalendarFormatted(Date sqlDate){
+        XMLGregorianCalendar xmlgcDate=null;
+        String format="yyyy-MM-dd";
+        return dateToXMLGregorianCalendarFormatted(sqlDate, format);    
+    }
     public static XMLGregorianCalendar dateToXMLGregorianCalendar(Date sqlDate){
         XMLGregorianCalendar xmlgcDate=null;  
         try{

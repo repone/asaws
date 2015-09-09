@@ -43,7 +43,7 @@ public class OTANotifReportRSBuilder extends AbstractResponseBuilder{
   
     @Override
     public void buildResponse() {
-        
+        this.getResponse().setVersion("1.00"); 
         List<OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation>  hotelReservations=
             this.getRequest()
             .getNotifDetails()
@@ -92,6 +92,6 @@ public class OTANotifReportRSBuilder extends AbstractResponseBuilder{
 
     @Override
     public void markSuccess() {
-        this.getResponse().setSuccess(new Boolean(true));
+        this.getResponse().setSuccess(new String(""));
     }
 }
