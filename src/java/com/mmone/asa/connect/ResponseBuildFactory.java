@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mmone.asa.ports;
+package com.mmone.asa.connect;
 
 import com.mmone.ota.asa.builders.OTAHotelRatePlanNotifRSBuilder;
 import com.mmone.ota.asa.builders.ResponseBuilder;

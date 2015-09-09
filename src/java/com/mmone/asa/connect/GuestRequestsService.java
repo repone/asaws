@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mmone.asa.ports;
+package com.mmone.asa.connect;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
-import javax.jws.HandlerChain;
 import javax.jws.WebService;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -21,8 +21,8 @@ import org.opentravel.ota._2003._05.OTAResRetrieveRS;
  * @author mauro.larese
  */
 @WebService(serviceName = "GuestRequestsService", portName = "GuestRequestsPort", endpointInterface = "https.webservices_asa_one_com.asaconnectservice._1.GuestRequestsPort", targetNamespace = "https://webservices.Asa-one.com/AsaConnectService/1.0", wsdlLocation = "WEB-INF/wsdl/GuestRequestsService/alpinebits.wsdl")
-@HandlerChain(file = "GuestRequestsService_handler.xml")
 public class GuestRequestsService {
+
     @Resource
     private WebServiceContext wsc;
     private InitialContext getContext()  {
@@ -31,7 +31,7 @@ public class GuestRequestsService {
             return new InitialContext();
         } catch (NamingException ex) {
            
-            Logger.getLogger(GuestRequestsService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GuestRequestsService.class.getName()).log(Level.SEVERE.SEVERE, null, ex);
              return null;
         }
     }
