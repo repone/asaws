@@ -19,6 +19,8 @@ import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS;
 import com.mmone.ota.asa.builders.exceptions.PriorityInventoryException;
 import com.mmone.ota.asa.builders.exceptions.RoomIdNotFoundException;
 import com.mmone.ota.asa.builders.source.ReservationsSource;
+import com.sun.xml.ws.api.message.HeaderList;
+import com.sun.xml.ws.developer.JAXWSProperties;
 
 /**
  *
@@ -27,9 +29,9 @@ import com.mmone.ota.asa.builders.source.ReservationsSource;
 public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
     private static final String AVAIL_COMPLETE_SET = "CompleteSet";
     private static final String AVAIL_UPDATE = "Update"; 
-    
+      
     public OTAHotelAvailNotifRSBuilder(Object request,WebServiceContext webServiceContext,InitialContext initialContext){
-        super(request, webServiceContext, initialContext); 
+        super(request, webServiceContext, initialContext);  
     }
      
     @Override
@@ -47,14 +49,15 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
         return response;
     }
 
+     
     @Override
-    public void buildResponse() {
+    public void buildResponse() { 
         this.getResponse().setVersion("1.000");
         String recType=null;
         try {
             recType = getRequest().getUniqueID().getType();
         } catch (Exception e) {  }
-        
+            
         if(recType==null) recType=AVAIL_UPDATE;
         Integer iHotelCode = new Integer(  getHotelCode() );
         int priorityInventory=0;
@@ -114,6 +117,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
             
         }
     }
+    
     
 
     @Override

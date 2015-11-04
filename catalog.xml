@@ -10,4 +10,7 @@
     <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits.wsdl"/>
     <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/Ota_CommonTypes.xsd" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/Ota_CommonTypes.xsd"/>
     <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.xsd" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/alpinebits.xsd"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/wsdl-rateplan/alpinebits.wsdl" uri="src/conf/xml-resources/web-services/FreeRoomsService/wsdl/alpinebits.wsdl"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/wsdl-rateplan/Ota_CommonTypes.xsd" uri="src/conf/xml-resources/web-services/FreeRoomsService/wsdl/Ota_CommonTypes.xsd"/>
+    <system systemId="file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/wsdl-rateplan/alpinebits.xsd" uri="src/conf/xml-resources/web-services/FreeRoomsService/wsdl/alpinebits.xsd"/>
 </catalog>

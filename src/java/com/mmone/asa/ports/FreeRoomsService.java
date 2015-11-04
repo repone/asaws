@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mmone.asa.ports;
+package com.mmone.asa.ports;  
+import com.sun.xml.internal.ws.api.message.Header;
+import com.sun.xml.ws.api.message.HeaderList;
+import com.sun.xml.ws.developer.JAXWSProperties;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.xml.namespace.QName;
 import javax.xml.ws.WebServiceContext;
 import org.opentravel.ota._2003._05.OTAHotelAvailNotifRS;
 import org.opentravel.ota._2003._05.OTAHotelAvailNotifRQ;
@@ -33,6 +38,7 @@ public class FreeRoomsService {
         }
     }
     public  OTAHotelAvailNotifRS otaHotelAvailNotif( OTAHotelAvailNotifRQ hotelAvailNotifRQMsg) {
+        
         return (OTAHotelAvailNotifRS) 
                new ResponseBuildFactory(hotelAvailNotifRQMsg,wsc,getContext())
                .getBuilder().build();

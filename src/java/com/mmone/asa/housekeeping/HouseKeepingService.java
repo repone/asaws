@@ -17,7 +17,7 @@ import javax.jws.WebParam;
 public class HouseKeepingService {
 
     @WebMethod(operationName = "getVersion")
-    public String getVersion() {
+    public String getVersion() { 
         return "OK:2014-04";
     }
     

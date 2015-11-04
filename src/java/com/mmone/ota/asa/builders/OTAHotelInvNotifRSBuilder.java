@@ -6,6 +6,8 @@
 package com.mmone.ota.asa.builders;
 
 import com.mmone.ota.asa.builders.source.RoomsSource;
+import com.sun.xml.ws.api.message.HeaderList;
+import com.sun.xml.ws.developer.JAXWSProperties;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.util.List;
@@ -25,6 +27,7 @@ import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS;
 public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
     public OTAHotelInvNotifRSBuilder(OTAHotelInvNotifRQ request ,WebServiceContext webServiceContext,InitialContext initialContext){
         super(request, webServiceContext, initialContext);
+ 
     }
      
     @Override
