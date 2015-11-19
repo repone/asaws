@@ -53,17 +53,16 @@ public class OTANotifReportRSBuilder extends AbstractResponseBuilder{
         
         for (OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation hotelReservation : hotelReservations) {
             String confirmationNumber = hotelReservation.getUniqueID().getID();
-            
+            markReservationAsDownloaded(confirmationNumber);
         }
     }
     private void markReservationAsDownloaded(String confirmationNumber ){
         Integer reservationId = null;
             
             try {
-                reservationId = this.getServiceSource().getReservationIdByNumber(
-                        confirmationNumber ); 
+                reservationId = new Integer(confirmationNumber);
                 
-            } catch (ReservationNotFoundException ex) { 
+            } catch (Exception ex) { 
                 Logger.getLogger(OTANotifReportRSBuilder.class.getName()).log(Level.SEVERE, null, ex);
             }
             
