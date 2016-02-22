@@ -59,14 +59,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
         } catch (Exception e) {  }
             
         if(recType==null) recType=AVAIL_UPDATE;
-        Integer iHotelCode = new Integer(  getHotelCode() );
-        int priorityInventory=0;
-        try {
-            priorityInventory = getServiceSource().getPriorityInventory(iHotelCode);
-        } catch (PriorityInventoryException ex) {
-            addError(EWT_UNKNOWN, ERR_SYSTEM_ERROR, ex.getMessage());
-            return;
-        }
+        Integer iHotelCode = new Integer(  getHotelCode() ); 
         List<OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage> availabilities = this.getRequest().getAvailStatusMessages().getAvailStatusMessage();
         for (OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage availability : availabilities) {
             BigInteger bookingLimit = null ;
@@ -104,15 +97,14 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
                 continue;
             }
             
-            if(period == 0) continue;
+             
             
-            getServiceSource().doSave(
-                    period,
+            getServiceSource().doSave( 
                     iHotelCode,
                     startDt,
+                    endDt,
                     roomId,
-                    bookingLimit.intValue(),
-                    priorityInventory
+                    bookingLimit.intValue() 
             );
             
         }

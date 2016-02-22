@@ -25,16 +25,6 @@
 		</xs:schema>
 	</wsdl:types>
 
-	<!-- HotelRatePlan -->
-
-	<wsdl:message name="HotelRatePlanNotifRQ">
-		<wsdl:part element="ota:OTA_HotelRatePlanNotifRQ" name="HotelRatePlanNotifRQ_msg"/>
-	</wsdl:message>
-	<wsdl:message name="HotelRatePlanNotifRS">
-		<wsdl:part element="ota:OTA_HotelRatePlanNotifRS" name="HotelRatePlanNotifRS_msg"/>
-	</wsdl:message>
-	
-	
 	<!-- Reservations -->
 
 	<wsdl:message name="ReadRQ">
@@ -51,7 +41,6 @@
 		<wsdl:part element="ota:OTA_NotifReportRS" name="NotifReportRS_msg"/>
 	</wsdl:message>
 
-	
 	<!-- HotelAvailNotif -->
 
 	<wsdl:message name="HotelAvailNotifRQ">
@@ -72,20 +61,6 @@
 	
 
 	<!-- Port -->
-	
-	<wsdl:portType name="RatePlansPort">
-		 
-		<wsdl:operation name="OTA_HotelRatePlanNotif">
-			<wsdl:input message="tns:HotelRatePlanNotifRQ"/>
-			<wsdl:output message="tns:HotelRatePlanNotifRS"/>
-		</wsdl:operation> 
-		
-		 
-		
-	</wsdl:portType>
-	
-	
-	
 	<wsdl:portType name="FreeRoomsPort">
 		 
 		<wsdl:operation name="OTA_HotelAvailNotif">
@@ -117,27 +92,6 @@
 	</wsdl:portType>
 	
 	<!-- Implementation binding -->
-	<wsdl:binding name="RatePlansBinding" type="tns:RatePlansPort">
-		
-		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-			 
-			<wsdl:operation name="OTA_HotelRatePlanNotif">
-				<soap:operation soapAction="urn:OTA_HotelRatePlanNotif"/>
-				<wsdl:input>
-					<soap:body use="literal"/>
-					
-				</wsdl:input>
-				<wsdl:output>
-					<soap:body use="literal"/>
-					
-				</wsdl:output>
-			</wsdl:operation>
-			 			
-	</wsdl:binding>
-	
-	
-	
-	
 	<wsdl:binding name="FreeRoomsBinding" type="tns:FreeRoomsPort">
 		
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -155,7 +109,6 @@
 			</wsdl:operation>
 			 			
 	</wsdl:binding>
-	
 	<wsdl:binding name="InventoryBinding" type="tns:InventoryPort">
 		
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/> 
@@ -197,13 +150,6 @@
 				</wsdl:output>
 			</wsdl:operation>			 			
 	</wsdl:binding>
-	
-	<wsdl:service name="RatePlansService">
-		<wsdl:documentation>Interfaccia OTA2009A RatePlans</wsdl:documentation>
-		<wsdl:port name="RatePlansPort" binding="tns:RatePlansBinding">
-			<soap:address location="https://webservices.Asa-one.com:8181/Asaconnect/RatePlans"/>
-		</wsdl:port>
-	</wsdl:service>
 	
 	<wsdl:service name="GuestRequestsService">
 		<wsdl:documentation>Interfaccia OTA2009A GuestRequests</wsdl:documentation>

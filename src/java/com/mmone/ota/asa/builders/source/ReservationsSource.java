@@ -33,6 +33,7 @@ import com.mmone.ota.asa.builders.ResponseBuilder;
 import com.mmone.ota.asa.builders.exceptions.PriorityInventoryException;
 import com.mmone.ota.asa.builders.exceptions.ReservationNotFoundException;
 import com.mmone.ota.asa.builders.exceptions.RoomIdNotFoundException;
+import java.util.Iterator;
  
 public  class  ReservationsSource { 
     private QueryRunner run=null; 
@@ -311,6 +312,20 @@ public  class  ReservationsSource {
         
         return priorityInventoryId;
     }
+    
+    public void doSave(Integer hotelCode,java.util.Date startDt, java.util.Date endDt, Integer roomId ,int bookingLimit){
+         
+        try { 
+            int iBookingLimit = new Integer(bookingLimit);
+        
+            
+            int xrpcresult = modifyAllotment(startDt,endDt, AVAIL_ACTION_SET,iBookingLimit,0,roomId,hotelCode); 
+            
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, "xrpcresult="+xrpcresult );    
+        } catch (Exception e) { 
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, e);
+        }  
+    }
     public void doSave(int period,Integer hotelCode,java.util.Date startDt,  Integer roomId ,int bookingLimit,int priorityInventoryId) { 
         Connection conn = null; 
  
@@ -330,11 +345,10 @@ public  class  ReservationsSource {
      
             StringBuffer track = new StringBuffer();
             
-            track.append("\n<br>for (int i = 0; i <= period; i++) ");
+            
             for (int i = 0; i <= period; i++) {
                 java.util.Date curDate = DateUtils.addDays(startDt, i);
-                String sCurDate = DateFormatUtils.format(curDate, "dd-MM-yyyy");
-
+                
                 int sumOfCMAllot = 0;
                 try {
                     sumOfCMAllot = new Integer(run.query(sqlInvent, new ScalarHandler("sum_of_allot"), roomId, curDate, INVENTORY_CM).toString());
@@ -720,6 +734,84 @@ public  class  ReservationsSource {
     }
 
     private int modifyAllotment(
+            java.util.Date dateStart,
+            java.util.Date dateEnd,
+            String action,
+            int availability,
+            int reservation,
+            Integer invCode,
+            Integer hotelCode){
+        
+        Vector parameters=new Vector();   
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        parameters.add(new Integer(hotelCode)); //1
+        parameters.add(new Integer(invCode)); //2
+        //todo gestire con inventario unico -1
+        int rate = 1; ///fisso nr da verificare per iu
+        parameters.add(new Integer(rate)); //3 offerta
+        parameters.add(new Integer(availability)); //4 disponibilità
+        parameters.add(new Integer(reservation)); //5 prenotazione
+        parameters.add(action); //6  Azione : set,increase,decrease
+        parameters.add(df.format(dateStart).toString());  //7
+        parameters.add(df.format(dateEnd).toString());  //8
+        Vector result = new Vector();
+        int ret = XRPC_SET_ALLOTMENT_RESULT_ERROR;
+        
+        String logData = 
+                        "hotelCode="+hotelCode
+                    +   " - invCode="+invCode
+                    +   " - offerta="+-1
+                    +   " - availability="+availability
+                    +   " - reservation="+reservation
+                    +   " - action="+action
+                    +   " - dateStart="+df.format(dateStart).toString()
+                    +   " - dateEnd="+df.format(dateEnd).toString()
+                    
+                    
+            ;        
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, logData);
+            
+        try { 
+            result = (Vector) client.execute("backend.modifyAllotment", parameters); 
+            
+            
+            
+        } catch (Exception e) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "", e);
+            // addError(ResponseBuilder.EWT_UNKNOWN, ResponseBuilder.ERR_SYSTEM_ERROR, "Error on updating  allotment (modifyAllotment)");
+            return ret ;
+        }
+        
+        try{
+            Map hret = (Map)result.get(0); 
+            ret = new Integer(  (String)hret.get("unique_allotment_service_response") );  
+            
+        }catch(Exception e){
+                        
+
+        }
+        try { 
+            Map hret = (Map)result.get(0); 
+            ret = new Integer(  (String)hret.get("unique_allotment_service_response") );  
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Xrpc done " );
+             
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, "ret value " + ret );     
+        } catch (NullPointerException e) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "", e);    
+            return XRPC_SET_ALLOTMENT_RESULT_NO_VIRTUAL_ROOM ;
+        } catch (ClassCastException e) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "", e);
+            return XRPC_SET_ALLOTMENT_RESULT_NO_VIRTUAL_ROOM ;    
+        } catch (Exception e) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "", e);
+            return XRPC_SET_ALLOTMENT_RESULT_NO_VIRTUAL_ROOM ;
+        }
+        
+        return ret;
+    }
+    
+    private int modifyAllotment(
             java.util.Date curDate,
             String action,
             int availability,
@@ -768,6 +860,7 @@ public  class  ReservationsSource {
         
         return ret;
     }
+    
     private void fillInsertResetAllotment(PreparedStatement ps, String rplan, java.util.Date curDate,Integer hotelCode,Integer invCode) throws SQLException {
         int j = 1;
 
