@@ -7,6 +7,7 @@ package com.mmone.asa.ports;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
+import javax.jws.HandlerChain;
 import javax.jws.WebService;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -19,6 +20,7 @@ import org.opentravel.ota._2003._05.OTAHotelAvailNotifRQ;
  * @author mauro.larese
  */
 @WebService(serviceName = "FreeRoomsService", portName = "FreeRoomsPort", endpointInterface = "https.webservices_asa_one_com.asaconnectservice._1.FreeRoomsPort", targetNamespace = "https://webservices.Asa-one.com/AsaConnectService/1.0", wsdlLocation = "WEB-INF/wsdl/FreeRoomsService/alpinebits.wsdl")
+@HandlerChain(file = "FreeRoomsService_handler.xml")
 public class FreeRoomsService {
     @Resource
     private WebServiceContext wsc;

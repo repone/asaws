@@ -317,8 +317,7 @@ public  class  ReservationsSource {
          
         try { 
             int iBookingLimit = new Integer(bookingLimit);
-        
-            
+         
             int xrpcresult = modifyAllotment(startDt,endDt, AVAIL_ACTION_SET,iBookingLimit,0,roomId,hotelCode); 
             
             Logger.getLogger(this.getClass().getName()).log(Level.INFO, "xrpcresult="+xrpcresult );    
@@ -761,7 +760,7 @@ public  class  ReservationsSource {
         String logData = 
                         "hotelCode="+hotelCode
                     +   " - invCode="+invCode
-                    +   " - offerta="+-1
+                    +   " - offerta="+rate
                     +   " - availability="+availability
                     +   " - reservation="+reservation
                     +   " - action="+action

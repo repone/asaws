@@ -21,7 +21,6 @@ import org.opentravel.ota._2003._05.OTAResRetrieveRS;
  * @author mauro.larese
  */
 @WebService(serviceName = "GuestRequestsService", portName = "GuestRequestsPort", endpointInterface = "https.webservices_asa_one_com.asaconnectservice._1.GuestRequestsPort", targetNamespace = "https://webservices.Asa-one.com/AsaConnectService/1.0", wsdlLocation = "WEB-INF/wsdl/GuestRequestsService/alpinebits.wsdl")
-@HandlerChain(file = "GuestRequestsService_handler.xml")
 public class GuestRequestsService {
     @Resource
     private WebServiceContext wsc;

@@ -2,8 +2,8 @@
 <handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
   <handler-chain>
     <handler>
-      <handler-name>com.mmone.asa.ports.PropertyValidator</handler-name>
-      <handler-class>com.mmone.asa.ports.PropertyValidator</handler-class>
+      <handler-name>com.mmone.asa.ports.CallValidator</handler-name>
+      <handler-class>com.mmone.asa.ports.CallValidator</handler-class>
     </handler>
   </handler-chain>
 </handler-chains>

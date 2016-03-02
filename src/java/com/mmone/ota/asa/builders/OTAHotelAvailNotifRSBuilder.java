@@ -21,6 +21,10 @@ import com.mmone.ota.asa.builders.exceptions.RoomIdNotFoundException;
 import com.mmone.ota.asa.builders.source.ReservationsSource;
 import com.sun.xml.ws.api.message.HeaderList;
 import com.sun.xml.ws.developer.JAXWSProperties;
+import java.util.Calendar;
+import java.util.Hashtable;
+import java.util.Map;
+import org.apache.commons.lang.time.DateUtils;
 
 /**
  *
@@ -54,13 +58,79 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
     public void buildResponse() { 
         this.getResponse().setVersion("1.000");
         String recType=null;
+        String instance = null;
+        boolean hasInstance = false;
         try {
             recType = getRequest().getUniqueID().getType();
         } catch (Exception e) {  }
             
         if(recType==null) recType=AVAIL_UPDATE;
         Integer iHotelCode = new Integer(  getHotelCode() ); 
+        
         List<OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage> availabilities = this.getRequest().getAvailStatusMessages().getAvailStatusMessage();
+        OTAHotelAvailNotifRQ.UniqueID ud = this.getRequest().getUniqueID();
+        
+        if(ud!=null){
+            hasInstance = true;
+            instance = ud.getInstance();
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, "instance="+instance );
+        }else{
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, "no instance" );
+        }
+        
+        Map<String,Object> roomList = new Hashtable<String,Object>();
+        
+        if(hasInstance && instance.equals("CompleteSet")){
+            BigInteger bookingLimit = new BigInteger("0") ;
+             
+            Date csStartDt= DateUtils.round(  new Date(),Calendar.HOUR );
+            Date csEndDt=  DateUtils.addYears(csStartDt, 1)  ;
+              
+            
+            for (OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage availability : availabilities) { 
+                String roomCode = null;
+                Integer roomId = null;
+                try { roomCode = availability.getStatusApplicationControl().getInvTypeCode(); } catch (Exception e) {  continue; }    
+                try { roomId = getServiceSource().getRoomIdByCode(roomCode, getHotelCode() ); } catch (RoomIdNotFoundException ex) {  continue; }                 
+                 
+                //Logger.getLogger(this.getClass().getName()).log(Level.INFO, "roomCode="+roomCode );
+                
+                if(!roomList.containsKey(roomCode)){
+                    Map record = new Hashtable(4);
+                        record.put("roomCode",roomCode);
+                        record.put("roomId",roomId);
+                        record.put("hotelCode",iHotelCode);
+                        record.put("bookingLimit",bookingLimit);
+                        record.put("startDt",csStartDt);
+                        record.put("endDt",csEndDt);
+                    
+                    roomList.put(roomCode, record);
+                    
+                    Logger.getLogger( this.getClass().getName()).log(
+                        Level.INFO, 
+                        "[blanking availability] roomCode="+roomCode 
+                        +" - dateStart="+csStartDt.toString()
+                        +" - dateEnd="+csEndDt.toString()
+                    );
+             
+                    getServiceSource().doSave( 
+                            iHotelCode,
+                            csStartDt,
+                            csEndDt,
+                            roomId,
+                            bookingLimit.intValue() 
+                    );
+                }
+                
+                
+            }
+        }
+        
+        
+        
+        //if(true) return;
+        
+        
         for (OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage availability : availabilities) {
             BigInteger bookingLimit = null ;
             XMLGregorianCalendar dtFrom = null;
