@@ -49,6 +49,7 @@ public class ResponseBuildFactory {
     public ResponseBuildFactory(OTAHotelInvNotifRQ request,WebServiceContext webServiceContext,InitialContext initialContext) {
        this.builder = new OTAHotelInvNotifRSBuilder (request, webServiceContext,initialContext);
     }
+    
 
     public static void main(String[] args) {    
          

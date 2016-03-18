@@ -5,6 +5,7 @@
  */
 package com.mmone.ota.asa.builders;
 
+import java.util.List;
 import javax.naming.InitialContext;
 import javax.xml.ws.WebServiceContext;
 import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRQ;
@@ -36,21 +37,28 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
     @Override
     public void buildResponse() {
         this.getResponse().setVersion("1.000");
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<OTAHotelRatePlanNotifRQ.RatePlans.RatePlan> ratePlanList = 
+                getRequest().getRatePlans().getRatePlan();
+         
+        
+        for (OTAHotelRatePlanNotifRQ.RatePlans.RatePlan ratePlan : ratePlanList) {
+            
+        }
+        
     }
 
     @Override
     public void fillErrors() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void fillWarnings() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void markSuccess() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 } 

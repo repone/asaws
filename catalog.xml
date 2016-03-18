@@ -16,4 +16,7 @@
     <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/xsd-rinnovato/alpinebits.wsdl" uri="src/conf/xml-resources/web-services/InventoryService/wsdl/alpinebits.wsdl"/>
     <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/xsd-rinnovato/Ota_CommonTypes.xsd" uri="src/conf/xml-resources/web-services/InventoryService/wsdl/Ota_CommonTypes.xsd"/>
     <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/xsd-rinnovato/alpinebits.xsd" uri="src/conf/xml-resources/web-services/InventoryService/wsdl/alpinebits.xsd"/>
+    <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/wsdl-rateplan/alpinebits.wsdl" uri="src/conf/xml-resources/web-services/RateplanService/wsdl/alpinebits.wsdl"/>
+    <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/wsdl-rateplan/Ota_CommonTypes.xsd" uri="src/conf/xml-resources/web-services/RateplanService/wsdl/Ota_CommonTypes.xsd"/>
+    <system systemId="file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/wsdl-rateplan/alpinebits.xsd" uri="src/conf/xml-resources/web-services/RateplanService/wsdl/alpinebits.xsd"/>
 </catalog>

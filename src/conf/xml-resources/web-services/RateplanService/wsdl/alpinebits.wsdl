@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="https://webservices.Asa-one.com/AsaConnectService/1.0"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ota="http://www.opentravel.org/OTA/2003/05"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="https://webservices.Asa-one.com/AsaConnectService/1.0"
+	xmlns:wsa="http://www.w3.org/2005/08/addressing"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service"
+	xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+	xmlns:sc="http://schemas.sun.com/2006/03/wss/server"
+	xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy">
+
+	<!-- Asatract service description -->
+
+	<wsdl:types>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05" schemaLocation="Ota_CommonTypes.xsd"/> 
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05" schemaLocation="alpinebits.xsd"/> 
+		</xs:schema>
+	</wsdl:types>
+
+	<!-- HotelRatePlan -->
+
+	<wsdl:message name="HotelRatePlanNotifRQ">
+		<wsdl:part element="ota:OTA_HotelRatePlanNotifRQ" name="HotelRatePlanNotifRQ_msg"/>
+	</wsdl:message>
+	<wsdl:message name="HotelRatePlanNotifRS">
+		<wsdl:part element="ota:OTA_HotelRatePlanNotifRS" name="HotelRatePlanNotifRS_msg"/>
+	</wsdl:message>
+	
+	
+	<!-- Reservations -->
+
+	<wsdl:message name="ReadRQ">
+		<wsdl:part element="ota:OTA_ReadRQ" name="ReadRQ_msg"/>
+	</wsdl:message>
+	<wsdl:message name="ResRetrieveRS">
+		<wsdl:part element="ota:OTA_ResRetrieveRS" name="ResRetrieveRS_msg"/>
+	</wsdl:message>
+
+	<wsdl:message name="NotifReportRQ">
+		<wsdl:part element="ota:OTA_NotifReportRQ" name="NotifReportRQ_msg"/>
+	</wsdl:message>
+	<wsdl:message name="NotifReportRS">
+		<wsdl:part element="ota:OTA_NotifReportRS" name="NotifReportRS_msg"/>
+	</wsdl:message>
+
+	
+	<!-- HotelAvailNotif -->
+
+	<wsdl:message name="HotelAvailNotifRQ">
+		<wsdl:part element="ota:OTA_HotelAvailNotifRQ" name="HotelAvailNotifRQ_msg"/>
+	</wsdl:message>
+	<wsdl:message name="HotelAvailNotifRS">
+		<wsdl:part element="ota:OTA_HotelAvailNotifRS" name="HotelAvailNotifRS_msg"/>
+	</wsdl:message>
+
+	<!-- HotelInvNotif -->
+
+	<wsdl:message name="HotelInvNotifRQ">
+		<wsdl:part element="ota:OTA_HotelInvNotifRQ" name="HotelInvNotifRQ_msg"/>
+	</wsdl:message>
+	<wsdl:message name="HotelInvNotifRS">
+		<wsdl:part element="ota:OTA_HotelInvNotifRS" name="HotelInvNotifRS_msg"/>
+	</wsdl:message>
+	
+
+	<!-- Port -->
+	
+	<wsdl:portType name="RatePlansPort">
+		 
+		<wsdl:operation name="OTA_HotelRatePlanNotif">
+			<wsdl:input message="tns:HotelRatePlanNotifRQ"/>
+			<wsdl:output message="tns:HotelRatePlanNotifRS"/>
+		</wsdl:operation> 
+		
+		 
+		
+	</wsdl:portType>
+	
+	
+	
+	<wsdl:portType name="FreeRoomsPort">
+		 
+		<wsdl:operation name="OTA_HotelAvailNotif">
+			<wsdl:input message="tns:HotelAvailNotifRQ"/>
+			<wsdl:output message="tns:HotelAvailNotifRS"/>
+		</wsdl:operation> 
+		
+		 
+		
+	</wsdl:portType>
+	<wsdl:portType name="InventoryPort">
+		  
+		<wsdl:operation name="OTA_HotelInvNotif">
+			<wsdl:input message="tns:HotelInvNotifRQ"/>
+			<wsdl:output message="tns:HotelInvNotifRS"/>
+		</wsdl:operation> 
+		
+	</wsdl:portType>
+	<wsdl:portType name="GuestRequestsPort">
+		<wsdl:operation name="OTA_Read">
+			<wsdl:input message="tns:ReadRQ"/>
+			<wsdl:output message="tns:ResRetrieveRS"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="OTA_NotifReport">
+			<wsdl:input message="tns:NotifReportRQ"/>
+			<wsdl:output message="tns:NotifReportRS"/>
+		</wsdl:operation> 
+	</wsdl:portType>
+	
+	<!-- Implementation binding -->
+	<wsdl:binding name="RatePlansBinding" type="tns:RatePlansPort">
+		
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+			 
+			<wsdl:operation name="OTA_HotelRatePlanNotif">
+				<soap:operation soapAction="urn:OTA_HotelRatePlanNotif"/>
+				<wsdl:input>
+					<soap:body use="literal"/>
+					
+				</wsdl:input>
+				<wsdl:output>
+					<soap:body use="literal"/>
+					
+				</wsdl:output>
+			</wsdl:operation>
+			 			
+	</wsdl:binding>
+	
+	
+	
+	
+	<wsdl:binding name="FreeRoomsBinding" type="tns:FreeRoomsPort">
+		
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+			 
+			<wsdl:operation name="OTA_HotelAvailNotif">
+				<soap:operation soapAction="urn:OTA_HotelAvailNotif"/>
+				<wsdl:input>
+					<soap:body use="literal"/>
+					
+				</wsdl:input>
+				<wsdl:output>
+					<soap:body use="literal"/>
+					
+				</wsdl:output>
+			</wsdl:operation>
+			 			
+	</wsdl:binding>
+	
+	<wsdl:binding name="InventoryBinding" type="tns:InventoryPort">
+		
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/> 
+			<wsdl:operation name="OTA_HotelInvNotif">
+				<soap:operation soapAction="urn:OTA_HotelInvNotif"/>
+				<wsdl:input>
+					<soap:body use="literal"/>
+					
+				</wsdl:input>
+				<wsdl:output>
+					<soap:body use="literal"/>
+					
+				</wsdl:output>
+			</wsdl:operation>			
+	</wsdl:binding>
+	<wsdl:binding name="GuestRequestsBinding" type="tns:GuestRequestsPort">
+		
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+			<wsdl:operation name="OTA_Read">
+				<soap:operation soapAction="urn:OTA_Read"/>
+				<wsdl:input>
+					<soap:body use="literal"/>
+					
+				</wsdl:input>
+				<wsdl:output>
+					<soap:body use="literal"/>
+					
+				</wsdl:output>
+			</wsdl:operation>
+			<wsdl:operation name="OTA_NotifReport">
+				<soap:operation soapAction="urn:OTA_NotifReport"/>
+				<wsdl:input>
+					<soap:body use="literal"/>
+					
+				</wsdl:input>
+				<wsdl:output>
+					<soap:body use="literal"/>
+					
+				</wsdl:output>
+			</wsdl:operation>			 			
+	</wsdl:binding>
+	
+	<wsdl:service name="RatePlansService">
+		<wsdl:documentation>Interfaccia OTA2009A RatePlans</wsdl:documentation>
+		<wsdl:port name="RatePlansPort" binding="tns:RatePlansBinding">
+			<soap:address location="https://webservices.Asa-one.com:8181/Asaconnect/RatePlans"/>
+		</wsdl:port>
+	</wsdl:service>
+	
+	<wsdl:service name="GuestRequestsService">
+		<wsdl:documentation>Interfaccia OTA2009A GuestRequests</wsdl:documentation>
+		<wsdl:port name="GuestRequestsPort" binding="tns:GuestRequestsBinding">
+			<soap:address location="https://webservices.Asa-one.com:8181/Asaconnect/GuestRequests"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="FreeRoomsService">
+		<wsdl:documentation>Interfaccia OTA2009A Asa</wsdl:documentation>
+		<wsdl:port name="FreeRoomsPort" binding="tns:FreeRoomsBinding">
+			<soap:address location="https://webservices.Asa-one.com:8181/Asaconnect/FreeRoomsService"/>
+		</wsdl:port> 
+	</wsdl:service>
+	<wsdl:service name="InventoryService">
+		<wsdl:documentation>Interfaccia OTA2009A Asa</wsdl:documentation>
+		<wsdl:port name="InventoryPort" binding="tns:InventoryBinding">
+			<soap:address location="https://webservices.Asa-one.com:8181/Asaconnect/InventoryService"/>
+		</wsdl:port>
+		 
+	</wsdl:service>
+	 
+</wsdl:definitions>
