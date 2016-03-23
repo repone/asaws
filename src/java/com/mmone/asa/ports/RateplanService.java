@@ -5,6 +5,8 @@
  */
 package com.mmone.asa.ports;
 
+import com.mmone.abs.helpers.exceptions.BuildErrorException;
+import com.mmone.ota.asa.builders.EmptyResponseFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -35,9 +37,14 @@ public class RateplanService {
     }
     public org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS otaHotelRatePlanNotif(org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRQ hotelRatePlanNotifRQMsg) {
         
-        return (OTAHotelRatePlanNotifRS) 
-               new ResponseBuildFactory(hotelRatePlanNotifRQMsg,wsc,getContext())
-               .getBuilder().build();
+        try {
+            return (OTAHotelRatePlanNotifRS)
+                    new ResponseBuildFactory(hotelRatePlanNotifRQMsg,wsc,getContext())
+                            .getBuilder().build();
+        } catch (BuildErrorException ex) {
+            Logger.getLogger(RateplanService.class.getName()).log(Level.SEVERE, null, ex);
+            return EmptyResponseFactory.newRatePlanNotifRS(ErrorResultType.buildingError);
+        }
          
     }
     

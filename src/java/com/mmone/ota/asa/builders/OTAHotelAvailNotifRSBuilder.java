@@ -16,11 +16,7 @@ import javax.xml.ws.WebServiceContext;
 import org.opentravel.ota._2003._05.OTAHotelAvailNotifRQ; 
 import org.opentravel.ota._2003._05.OTAHotelAvailNotifRS; 
 import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS;
-import com.mmone.ota.asa.builders.exceptions.PriorityInventoryException;
 import com.mmone.ota.asa.builders.exceptions.RoomIdNotFoundException;
-import com.mmone.ota.asa.builders.source.ReservationsSource;
-import com.sun.xml.ws.api.message.HeaderList;
-import com.sun.xml.ws.developer.JAXWSProperties;
 import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.Map;
@@ -33,7 +29,7 @@ import org.apache.commons.lang.time.DateUtils;
 public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
     private static final String AVAIL_COMPLETE_SET = "CompleteSet";
     private static final String AVAIL_UPDATE = "Update"; 
-      
+    
     public OTAHotelAvailNotifRSBuilder(Object request,WebServiceContext webServiceContext,InitialContext initialContext){
         super(request, webServiceContext, initialContext);  
     }
@@ -47,7 +43,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
         return this.getRequest().getAvailStatusMessages().getHotelCode();
     }
 
-    private OTAHotelAvailNotifRS response =new OTAHotelAvailNotifRS();
+    private OTAHotelAvailNotifRS response = EmptyResponseFactory.newAvailNotifRS();
     @Override
     public OTAHotelAvailNotifRS getResponse() {
         return response;
@@ -55,8 +51,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
 
      
     @Override
-    public void buildResponse() { 
-        this.getResponse().setVersion("1.000");
+    public void buildResponse() {  
         String recType=null;
         String instance = null;
         boolean hasInstance = false;

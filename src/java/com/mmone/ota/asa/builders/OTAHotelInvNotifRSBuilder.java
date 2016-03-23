@@ -38,7 +38,7 @@ public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
     public String getHotelCodeFromRequest() {
         return getRequest().getSellableProducts().getHotelCode();
     } 
-    private OTAHotelInvNotifRS response =new OTAHotelInvNotifRS();
+    private OTAHotelInvNotifRS response =EmptyResponseFactory.newInvNotifRS();
     @Override
     public OTAHotelInvNotifRS getResponse() {
         return response;
@@ -51,8 +51,7 @@ public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
     }
     
     @Override
-    public void buildResponse() {
-        this.getResponse().setVersion("1.000");
+    public void buildResponse() { 
         try {
             List<OTAHotelInvNotifRQ.SellableProducts.SellableProduct> sellableProducts =  this.getRequest().getSellableProducts().getSellableProduct() ;
             RoomsSource roomsSource;

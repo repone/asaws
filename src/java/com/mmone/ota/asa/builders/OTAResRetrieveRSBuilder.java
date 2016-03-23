@@ -126,7 +126,7 @@ public class OTAResRetrieveRSBuilder extends AbstractResponseBuilder{
     public String getHotelCodeFromRequest() {
         return this.getRequest().getReadRequests().getHotelReadRequest().getHotelCode();
     }
-    private OTAResRetrieveRS response =new OTAResRetrieveRS(); 
+    private OTAResRetrieveRS response = EmptyResponseFactory.newResRetrieveRS(); 
     
     @Override
     public OTAResRetrieveRS getResponse() {
@@ -136,8 +136,9 @@ public class OTAResRetrieveRSBuilder extends AbstractResponseBuilder{
     
     public void buildResponse() {
         java.util.Date dateStart=null;
-        List<Map<String, Object>>reservations=null;
-        this.getResponse().setVersion("1.000");
+        List<Map<String, Object>>reservations=null; 
+        
+        logger.info("[asaws] OTAResRetrieveRSBuilder.buildResponse");
         try {
             dateStart= this.getFilterDateStart();        
         } catch (DateStartNotSetException ex) {   

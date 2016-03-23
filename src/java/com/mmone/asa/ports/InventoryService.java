@@ -5,6 +5,8 @@
  */
 package com.mmone.asa.ports;
 
+import com.mmone.abs.helpers.exceptions.BuildErrorException;
+import com.mmone.ota.asa.builders.EmptyResponseFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -35,9 +37,14 @@ public class InventoryService {
         }
     }
     public OTAHotelInvNotifRS otaHotelInvNotif( OTAHotelInvNotifRQ hotelInvNotifRQMsg) {
-        return (OTAHotelInvNotifRS) 
-               new ResponseBuildFactory(hotelInvNotifRQMsg,wsc,getContext())
-               .getBuilder().build();
+        try {
+            return (OTAHotelInvNotifRS)
+                    new ResponseBuildFactory(hotelInvNotifRQMsg,wsc,getContext())
+                            .getBuilder().build();
+        } catch (BuildErrorException ex) {
+            Logger.getLogger(InventoryService.class.getName()).log(Level.SEVERE, null, ex);
+            return EmptyResponseFactory.newInvNotifRS(ErrorResultType.buildingError);
+        }
     }
     
 }

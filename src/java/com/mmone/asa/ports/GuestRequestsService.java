@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package com.mmone.asa.ports;
+import com.mmone.abs.helpers.exceptions.BuildErrorException;
+import com.mmone.ota.asa.builders.EmptyResponseFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -35,15 +37,25 @@ public class GuestRequestsService {
         }
     }
     public  OTAResRetrieveRS otaRead(org.opentravel.ota._2003._05.OTAReadRQ readRQMsg) {
-       return (OTAResRetrieveRS) 
-               new ResponseBuildFactory(readRQMsg,wsc,getContext())
-               .getBuilder().build();
+        try {
+            return (OTAResRetrieveRS)
+                    new ResponseBuildFactory(readRQMsg,wsc,getContext())
+                            .getBuilder().build();
+        } catch (BuildErrorException ex) {
+            Logger.getLogger(GuestRequestsService.class.getName()).log(Level.SEVERE, null, ex);
+            return EmptyResponseFactory.newResRetrieveRS(ErrorResultType.buildingError);
+        }
     }
 
     public OTANotifReportRS otaNotifReport( OTANotifReportRQ notifReportRQMsg) {
-        return (OTANotifReportRS) 
-               new ResponseBuildFactory(notifReportRQMsg,wsc,getContext())
-               .getBuilder().build();
+        try {
+            return (OTANotifReportRS)
+                    new ResponseBuildFactory(notifReportRQMsg,wsc,getContext())
+                            .getBuilder().build();
+        } catch (BuildErrorException ex) {
+            Logger.getLogger(GuestRequestsService.class.getName()).log(Level.SEVERE, null, ex);
+            return EmptyResponseFactory.newNotifReportRS(ErrorResultType.buildingError);
+        }
     }
     
 }

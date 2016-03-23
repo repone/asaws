@@ -9,7 +9,7 @@ package com.mmone.ota.asa.builders;
  *
  * @author mauro.larese
  */
-public interface ResponseBuilder { 
+public interface ResponseBuilder extends Builder{ 
     public static final String CONNECTION_NEEDED = "Booking permission needed";
     public static final String TARGET_PRODUCTION = "Production"; 
     public static final String TARGET_TEST = "Test";
@@ -44,6 +44,5 @@ public interface ResponseBuilder {
     public static final String EWT_PROTOCOL_VIOLATION = "7";
     public static final String EWT_REQUIRED_FIELD_MISSING = "10";
     public static final String HOTEL_CODE_NOT_REQUIRED = "_HOTEL_NOT_SPECIFIED_";
-    
-    java.lang.Object build( ); 
+     
 }

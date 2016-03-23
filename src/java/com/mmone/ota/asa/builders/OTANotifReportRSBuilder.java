@@ -35,15 +35,14 @@ public class OTANotifReportRSBuilder extends AbstractResponseBuilder{
     public String getHotelCodeFromRequest() {
         return HOTEL_CODE_NOT_REQUIRED; 
     }
-    private OTANotifReportRS response =new OTANotifReportRS();
+    private OTANotifReportRS response =EmptyResponseFactory.newNotifReportRS();
     @Override
     public OTANotifReportRS getResponse() {
         return response;
     }
   
     @Override
-    public void buildResponse() {
-        this.getResponse().setVersion("1.00"); 
+    public void buildResponse() {  
         List<OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation>  hotelReservations=
             this.getRequest()
             .getNotifDetails()

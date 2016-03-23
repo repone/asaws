@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package com.mmone.asa.ports;   
+import com.mmone.abs.helpers.exceptions.BuildErrorException;
+import com.mmone.ota.asa.builders.EmptyResponseFactory;
+import com.mmone.ota.asa.builders.OTAHotelAvailNotifRSBuilder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -34,11 +37,15 @@ public class FreeRoomsService {
              return null;
         }
     }
-    public  OTAHotelAvailNotifRS otaHotelAvailNotif( OTAHotelAvailNotifRQ hotelAvailNotifRQMsg) {
-        
-        return (OTAHotelAvailNotifRS) 
-               new ResponseBuildFactory(hotelAvailNotifRQMsg,wsc,getContext())
-               .getBuilder().build();
+    public  OTAHotelAvailNotifRS otaHotelAvailNotif( OTAHotelAvailNotifRQ hotelAvailNotifRQMsg) { 
+        try {
+            return (OTAHotelAvailNotifRS)
+                    new ResponseBuildFactory(hotelAvailNotifRQMsg,wsc,getContext())
+                            .getBuilder().build();
+        } catch (BuildErrorException ex) {
+            Logger.getLogger(FreeRoomsService.class.getName()).log(Level.SEVERE, null, ex);
+            return  EmptyResponseFactory.newAvailNotifRS(  ErrorResultType.buildingError );
+        }
     }
     
 }

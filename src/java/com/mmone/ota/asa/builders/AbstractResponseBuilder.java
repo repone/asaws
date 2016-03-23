@@ -5,6 +5,8 @@
  */
 package com.mmone.ota.asa.builders;
 
+import com.mmone.abs.api.rates.Debuggable;
+import com.mmone.abs.helpers.ElaborationResults;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,30 +26,36 @@ import org.apache.xmlrpc.XmlRpcClient;
 import com.mmone.ota.asa.builders.exceptions.HotelCodeException;
 import com.mmone.ota.asa.builders.exceptions.UserNotAuthorized;
 import com.mmone.ota.asa.builders.source.ReservationsSource;
+import org.opentravel.ota._2003._05.OTAHotelAvailNotifRS;
 
 /**
  *
  * @author mauro.larese
  */
-public abstract class AbstractResponseBuilder implements ResponseBuilder {
+public abstract class AbstractResponseBuilder  extends Debuggable implements ResponseBuilder  {
     private ReservationsSource serviceSource=null;
     private Object request;
     private ArrayList<ErrorType>errors=new ArrayList<ErrorType>();
     private ArrayList<WarningType>warning=new ArrayList<WarningType>();
     private QueryRunner runner=null;
     private String user;
-    private boolean debug=false;
+     
+    public ElaborationResults getElaborationResults() {
+        return elaborationResults;
+    }
 
-    public boolean isDebug() {
-        return debug;
+    public void setElaborationResults(ElaborationResults elaborationResults) {
+        this.elaborationResults = elaborationResults;
     }
-    public void _pd(String text){
-        if(this.isDebug())
-            System.out.println(text);
+
+    public InitialContext getInitialContext() {
+        return initialContext;
     }
-    public void setDebug(boolean debug) {
-        this.debug = debug;
+
+    public void setInitialContext(InitialContext initialContext) {
+        this.initialContext = initialContext;
     }
+    private ElaborationResults elaborationResults= new ElaborationResults(); 
     XmlRpcClient rpcClient = null;
     
     public java.sql.Date xmlGregorianCalendarToSqlDate(XMLGregorianCalendar date){ 
@@ -126,6 +134,9 @@ public abstract class AbstractResponseBuilder implements ResponseBuilder {
 
     public String getHotelCode() {
         return hotelCode;
+    }
+    public int getHotelId() {
+        return new Integer(hotelCode);
     }
     
     public abstract String getHotelCodeFromRequest() throws HotelCodeException;
