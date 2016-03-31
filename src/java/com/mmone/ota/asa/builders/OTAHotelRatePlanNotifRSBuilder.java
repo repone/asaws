@@ -5,37 +5,31 @@
  */
 package com.mmone.ota.asa.builders;
 
-import com.mmone.ota.asa.builders.extractors.OtaRatePlaneNotifLengthOfStayExtractor;
-import com.mmone.ota.asa.builders.extractors.OtaDowArrivalRestrictionsExtractor;
-import com.mmone.ota.asa.builders.extractors.OtaDowDepartureRestrictionsExtractor;
 import com.mmone.abs.api.rates.AbsBookingRule; 
 import com.mmone.abs.api.rates.AbsContextRecord;
 import com.mmone.abs.api.rates.AbsRate;
 import com.mmone.abs.api.rates.BuildingResources;
-import com.mmone.abs.api.rates.DowExtractor;
-import com.mmone.abs.api.rates.RatePlanHelper;
+import com.mmone.abs.api.rates.RatePlanCrud;
 import com.mmone.abs.helpers.DayRules;
 import com.mmone.abs.helpers.ElaborationResultError;
 import com.mmone.abs.helpers.ElaborationResultWarning;
-import com.mmone.abs.helpers.ElaborationResults;
 import com.mmone.abs.helpers.ErrConsts;
 import com.mmone.abs.helpers.ErrTypeConsts;
 import com.mmone.abs.helpers.exceptions.BuildErrorException;
 import com.mmone.abs.helpers.exceptions.RateNotFoundException;
 import com.mmone.abs.helpers.exceptions.RoomIdNotFoundException;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.xml.ws.WebServiceContext;
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.xmlrpc.XmlRpcClient;
 import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRQ;
 import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS;
-import org.opentravel.ota._2003._05.OTAResRetrieveRS;
 /**
  *
  * @author mauro.larese
@@ -52,6 +46,8 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
                 .setRunner(getRunner())
                 .setRpcClient(getRpcClient())
                 .setHotelCode(getHotelId())
+                .setAbsContext(absContextRecord)
+                .setElaborationResults(getElaborationResults())
             ;
         }
         return buildingResources;
@@ -106,7 +102,7 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
             logger.info("[saveBookingRulesByRoomList] roomCode="+roomCode );
             int roomId;
             try {
-                roomId = RatePlanHelper.getRoomId(this.getRunner(), roomCode, structureId);
+                roomId = RatePlanCrud.getRoomId(this.getRunner(), roomCode, structureId);
             } catch (RoomIdNotFoundException ex) {
                 logger.info("[buildResponse] room not found " + roomCode);
                 continue;
@@ -115,25 +111,65 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
         }
     }
     
-    public void insertPricelist(OTAHotelRatePlanNotifRQ.RatePlans.RatePlan ratePlan) throws MalformedURLException, NamingException, BuildErrorException{     
+    public void insertPricelist(OTAHotelRatePlanNotifRQ.RatePlans.RatePlan ratePlan) throws MalformedURLException, NamingException, BuildErrorException
+    {     
         List<OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Rates.Rate> rateList =
                 ratePlan.getRates().getRate();
         
+        int counter = 0;    
+        SimpleDateFormat sdf = new SimpleDateFormat(); // creo l'oggetto 
+        sdf.applyPattern("yyyy-MM-dd"); 
+        
+        Map<String,AbsRate> rates=new HashMap<String, AbsRate>();
+        
+        
+        for (OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Rates.Rate rate : rateList) { 
+            counter++;
+            String key =    rate.getInvTypeCode() +"#"+ 
+                            sdf.format( xmlGregorianCalendarToSqlDate(rate.getStart())) +"#"+ 
+                            sdf.format( xmlGregorianCalendarToSqlDate(rate.getEnd())  );
+            
+            AbsRate tmpRate;
+            if(rates.containsKey(key)){
+                tmpRate=rates.get(key);
+                tmpRate._pd("insertPricelist using key="+key);
+            }else{
+                tmpRate = new RateBuilder(isDebug()).build();
+                rates.put(key, tmpRate);
+                tmpRate._pd("insertPricelist new key="+key);
+            }
+             
+            new RateBuilder(tmpRate,rate,ratePlan, getBuildingResources(), isDebug()).build();
+        };
+            
+        for (Map.Entry<String, AbsRate> entrySet : rates.entrySet()) { 
+            RatePlanCrud.insertPricelists(
+                getBuildingResources(),
+                absContextRecord, 
+                dayRules, 
+                entrySet.getValue()
+            );
+        }  
+ 
+            
+            /*
+            counter = 0;     
             for (OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Rates.Rate rate : rateList) { 
-                RatePlanHelper.insertPricelists(
+                counter++;
+                logger.info("insertPricelist rate n. "+counter );
+                RatePlanCrud.insertPricelists(
                     getBuildingResources(),
                     absContextRecord, 
                     dayRules, 
                     new RateBuilder(rate,ratePlan, getBuildingResources(), isDebug()).build()
             );
-        }
-        
-        
-                
+        }*/
+                 
     }
+    
     @Override
     public void buildResponse() {
-        //this.setDebug(true); 
+        this.setDebug(true); 
         
         List<OTAHotelRatePlanNotifRQ.RatePlans.RatePlan> ratePlanList = 
                 getRequest().getRatePlans().getRatePlan();
@@ -165,16 +201,8 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
         for (OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.BookingRules.BookingRule bkrule : bkrulesList) {
             try {
                 AbsBookingRule rule = prepareBookingRule(bkrule);
-                if(isDebug()){
-                    _pd(
-                         " getMinStay="+rule.getMinStay()
-                        +" getMaxStay="+rule.getMaxStay()
-                        +" getStartDate="+rule.getStartDate()
-                        +" getEndDate="+rule.getEndDate()
-                    );
-                }
                 
-                RatePlanHelper.setRestrictions(
+                RatePlanCrud.setRestrictions(
                    this.getRunner(),
                    this.getElaborationResults(), 
                    listId,
@@ -192,6 +220,7 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
     public void newAction(OTAHotelRatePlanNotifRQ.RatePlans.RatePlan ratePlan){ }
      
     public void overlayAction(OTAHotelRatePlanNotifRQ.RatePlans.RatePlan ratePlan){ 
+        logger.info(" overlayAction start" ); 
         String rateCode = ratePlan.getRatePlanCode();
         int structureId = getHotelId();
         int rateId=-1;
@@ -210,7 +239,7 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
             rateId=1;
         }else{    
             try {
-                rateId=RatePlanHelper.getRateId(this.getRunner(), rateCode, structureId);   
+                rateId=RatePlanCrud.getRateId(getBuildingResources(), rateCode, structureId);   
             } catch (RateNotFoundException ex) { 
                 logger.info("[buildResponse] rate not found " + rateCode);
                 getElaborationResults().addError(
@@ -219,17 +248,33 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
                     ErrTypeConsts.EWT_REQUIRED_FIELD_MISSING);
              
                 return;
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(OTAHotelRatePlanNotifRSBuilder.class.getName()).log(Level.SEVERE, null, ex);
+                getElaborationResults().addError(
+                    ErrConsts.ERR_SYSTEM_ERROR, 
+                    "rate not found " + rateCode, 
+                    ErrTypeConsts.EWT_UNKNOWN);
+                return;
+                
+            } catch (NamingException ex) {
+                Logger.getLogger(OTAHotelRatePlanNotifRSBuilder.class.getName()).log(Level.SEVERE, null, ex);
+                getElaborationResults().addError(
+                    ErrConsts.ERR_SYSTEM_ERROR, 
+                    "rate not found " + rateCode, 
+                    ErrTypeConsts.EWT_UNKNOWN);
+                return;
             }
         }
 
         try {
             insertPricelist(ratePlan);
-            saveBookingRulesByRoomList(     
-                ratePlan.getBookingRules().getBookingRule(),
-                roomCodes,
-                rateId,
-                structureId
-            );
+            if(ratePlan.getBookingRules()!=null)
+                saveBookingRulesByRoomList(     
+                    ratePlan.getBookingRules().getBookingRule(),
+                    roomCodes,
+                    rateId,
+                    structureId
+                );
 
         } catch (MalformedURLException ex) {
             Logger.getLogger(OTAHotelRatePlanNotifRSBuilder.class.getName()).log(Level.SEVERE, null, ex);
@@ -238,6 +283,7 @@ public class OTAHotelRatePlanNotifRSBuilder extends AbstractResponseBuilder{
         } catch (BuildErrorException ex) {
             Logger.getLogger(OTAHotelRatePlanNotifRSBuilder.class.getName()).log(Level.SEVERE, null, ex);
         }
+        logger.info(" overlayAction end" ); 
     }
     public void removeAction(OTAHotelRatePlanNotifRQ.RatePlans.RatePlan ratePlan){ }
     

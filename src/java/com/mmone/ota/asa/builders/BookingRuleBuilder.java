@@ -36,7 +36,7 @@ public class BookingRuleBuilder extends Debuggable implements Builder<AbsBooking
     
     public AbsBookingRule prepareBookingRule(){
         AbsBookingRule rule = new AbsBookingRule();
-        
+        rule.setDebug(isDebug());
         rule.setStartDate( Facilities.xmlGregorianCalendarToSqlDate(otaBkRule.getStart()) ) ;
         rule.setEndDate(Facilities.xmlGregorianCalendarToSqlDate(otaBkRule.getEnd()) ) ; 
         
@@ -70,7 +70,9 @@ public class BookingRuleBuilder extends Debuggable implements Builder<AbsBooking
         }
         
         rule.setDow( arDowExt ,deDowExt );
-         
+         ;
+        rule._pd( );
+                
         return rule;
     }
 
