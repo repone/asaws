@@ -19,520 +19,520 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Classe Java per anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="Errors">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="Error" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;attribute name="Type" use="required">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                 &lt;enumeration value="13"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="Code" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;sequence>
- *           &lt;element name="Success" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *           &lt;element name="ReservationsList">
- *             &lt;complexType>
- *               &lt;complexContent>
- *                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                   &lt;sequence>
- *                     &lt;element name="HotelReservation" maxOccurs="unbounded" minOccurs="0">
- *                       &lt;complexType>
- *                         &lt;complexContent>
- *                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                             &lt;sequence>
- *                               &lt;element name="UniqueID">
- *                                 &lt;complexType>
- *                                   &lt;complexContent>
- *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                       &lt;attribute name="Type" use="required">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="14"/>
- *                                             &lt;enumeration value="15"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/attribute>
- *                                       &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                     &lt;/restriction>
- *                                   &lt;/complexContent>
- *                                 &lt;/complexType>
- *                               &lt;/element>
- *                               &lt;element name="RoomStays" minOccurs="0">
- *                                 &lt;complexType>
- *                                   &lt;complexContent>
- *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                       &lt;sequence>
- *                                         &lt;element name="RoomStay" maxOccurs="unbounded">
- *                                           &lt;complexType>
- *                                             &lt;complexContent>
- *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                 &lt;sequence>
- *                                                   &lt;element name="RoomTypes" minOccurs="0">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;element name="RoomType">
- *                                                               &lt;complexType>
- *                                                                 &lt;complexContent>
- *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                     &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                                                   &lt;/restriction>
- *                                                                 &lt;/complexContent>
- *                                                               &lt;/complexType>
- *                                                             &lt;/element>
- *                                                           &lt;/sequence>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                   &lt;element name="RatePlans" minOccurs="0">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;element name="RatePlan">
- *                                                               &lt;complexType>
- *                                                                 &lt;complexContent>
- *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                     &lt;sequence>
- *                                                                       &lt;element name="MealsIncluded" minOccurs="0">
- *                                                                         &lt;complexType>
- *                                                                           &lt;complexContent>
- *                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                               &lt;attribute name="MealPlanIndicator" use="required">
- *                                                                                 &lt;simpleType>
- *                                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                     &lt;enumeration value="1"/>
- *                                                                                     &lt;enumeration value="true"/>
- *                                                                                   &lt;/restriction>
- *                                                                                 &lt;/simpleType>
- *                                                                               &lt;/attribute>
- *                                                                               &lt;attribute name="MealPlanCodes" use="required">
- *                                                                                 &lt;simpleType>
- *                                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                     &lt;enumeration value="1"/>
- *                                                                                     &lt;enumeration value="3"/>
- *                                                                                     &lt;enumeration value="10"/>
- *                                                                                     &lt;enumeration value="12"/>
- *                                                                                     &lt;enumeration value="14"/>
- *                                                                                   &lt;/restriction>
- *                                                                                 &lt;/simpleType>
- *                                                                               &lt;/attribute>
- *                                                                             &lt;/restriction>
- *                                                                           &lt;/complexContent>
- *                                                                         &lt;/complexType>
- *                                                                       &lt;/element>
- *                                                                     &lt;/sequence>
- *                                                                     &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                                                   &lt;/restriction>
- *                                                                 &lt;/complexContent>
- *                                                               &lt;/complexType>
- *                                                             &lt;/element>
- *                                                           &lt;/sequence>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                   &lt;element name="GuestCounts" minOccurs="0">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;element name="GuestCount" maxOccurs="unbounded">
- *                                                               &lt;complexType>
- *                                                                 &lt;complexContent>
- *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                     &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
- *                                                                     &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
- *                                                                   &lt;/restriction>
- *                                                                 &lt;/complexContent>
- *                                                               &lt;/complexType>
- *                                                             &lt;/element>
- *                                                           &lt;/sequence>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                   &lt;element name="TimeSpan">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;element name="StartDateWindow" minOccurs="0">
- *                                                               &lt;complexType>
- *                                                                 &lt;complexContent>
- *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                     &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                                                     &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                                                   &lt;/restriction>
- *                                                                 &lt;/complexContent>
- *                                                               &lt;/complexType>
- *                                                             &lt;/element>
- *                                                           &lt;/sequence>
- *                                                           &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                                           &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                                           &lt;attribute name="Duration">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                 &lt;pattern value="P[0-9]+N"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/attribute>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                   &lt;element name="Total" minOccurs="0">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" />
- *                                                           &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                 &lt;/sequence>
- *                                               &lt;/restriction>
- *                                             &lt;/complexContent>
- *                                           &lt;/complexType>
- *                                         &lt;/element>
- *                                       &lt;/sequence>
- *                                     &lt;/restriction>
- *                                   &lt;/complexContent>
- *                                 &lt;/complexType>
- *                               &lt;/element>
- *                               &lt;element name="ResGuests" minOccurs="0">
- *                                 &lt;complexType>
- *                                   &lt;complexContent>
- *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                       &lt;sequence>
- *                                         &lt;element name="ResGuest">
- *                                           &lt;complexType>
- *                                             &lt;complexContent>
- *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                 &lt;sequence>
- *                                                   &lt;element name="Profiles">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;element name="ProfileInfo">
- *                                                               &lt;complexType>
- *                                                                 &lt;complexContent>
- *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                     &lt;sequence>
- *                                                                       &lt;element name="Profile">
- *                                                                         &lt;complexType>
- *                                                                           &lt;complexContent>
- *                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                               &lt;sequence>
- *                                                                                 &lt;element name="Customer">
- *                                                                                   &lt;complexType>
- *                                                                                     &lt;complexContent>
- *                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                                         &lt;sequence>
- *                                                                                           &lt;element name="PersonName">
- *                                                                                             &lt;complexType>
- *                                                                                               &lt;complexContent>
- *                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                                                   &lt;sequence>
- *                                                                                                     &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
- *                                                                                                     &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
- *                                                                                                     &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
- *                                                                                                     &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
- *                                                                                                   &lt;/sequence>
- *                                                                                                 &lt;/restriction>
- *                                                                                               &lt;/complexContent>
- *                                                                                             &lt;/complexType>
- *                                                                                           &lt;/element>
- *                                                                                           &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
- *                                                                                             &lt;complexType>
- *                                                                                               &lt;complexContent>
- *                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                                                   &lt;attribute name="PhoneTechType" use="required">
- *                                                                                                     &lt;simpleType>
- *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                                         &lt;pattern value="(1|3|5)"/>
- *                                                                                                       &lt;/restriction>
- *                                                                                                     &lt;/simpleType>
- *                                                                                                   &lt;/attribute>
- *                                                                                                   &lt;attribute name="PhoneNumber" use="required">
- *                                                                                                     &lt;simpleType>
- *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                                         &lt;pattern value="\+?[0-9]+"/>
- *                                                                                                       &lt;/restriction>
- *                                                                                                     &lt;/simpleType>
- *                                                                                                   &lt;/attribute>
- *                                                                                                 &lt;/restriction>
- *                                                                                               &lt;/complexContent>
- *                                                                                             &lt;/complexType>
- *                                                                                           &lt;/element>
- *                                                                                           &lt;element name="Email" minOccurs="0">
- *                                                                                             &lt;complexType>
- *                                                                                               &lt;simpleContent>
- *                                                                                                 &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
- *                                                                                                   &lt;attribute name="Remark">
- *                                                                                                     &lt;simpleType>
- *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                                         &lt;pattern value="newsletter:(no|yes)"/>
- *                                                                                                       &lt;/restriction>
- *                                                                                                     &lt;/simpleType>
- *                                                                                                   &lt;/attribute>
- *                                                                                                 &lt;/extension>
- *                                                                                               &lt;/simpleContent>
- *                                                                                             &lt;/complexType>
- *                                                                                           &lt;/element>
- *                                                                                           &lt;element name="Address" minOccurs="0">
- *                                                                                             &lt;complexType>
- *                                                                                               &lt;complexContent>
- *                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                                                   &lt;sequence>
- *                                                                                                     &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
- *                                                                                                     &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
- *                                                                                                     &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
- *                                                                                                     &lt;element name="CountryName">
- *                                                                                                       &lt;complexType>
- *                                                                                                         &lt;complexContent>
- *                                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                                                             &lt;attribute name="Code" use="required">
- *                                                                                                               &lt;simpleType>
- *                                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                                                   &lt;pattern value="[A-Z][A-Z]"/>
- *                                                                                                                 &lt;/restriction>
- *                                                                                                               &lt;/simpleType>
- *                                                                                                             &lt;/attribute>
- *                                                                                                           &lt;/restriction>
- *                                                                                                         &lt;/complexContent>
- *                                                                                                       &lt;/complexType>
- *                                                                                                     &lt;/element>
- *                                                                                                   &lt;/sequence>
- *                                                                                                   &lt;attribute name="Remark">
- *                                                                                                     &lt;simpleType>
- *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                                         &lt;pattern value="catalog:(no|yes)"/>
- *                                                                                                       &lt;/restriction>
- *                                                                                                     &lt;/simpleType>
- *                                                                                                   &lt;/attribute>
- *                                                                                                 &lt;/restriction>
- *                                                                                               &lt;/complexContent>
- *                                                                                             &lt;/complexType>
- *                                                                                           &lt;/element>
- *                                                                                         &lt;/sequence>
- *                                                                                         &lt;attribute name="Gender" use="required">
- *                                                                                           &lt;simpleType>
- *                                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                                               &lt;pattern value="(Unknown|Male|Female)"/>
- *                                                                                             &lt;/restriction>
- *                                                                                           &lt;/simpleType>
- *                                                                                         &lt;/attribute>
- *                                                                                         &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                                                                         &lt;attribute name="Language" use="required">
- *                                                                                           &lt;simpleType>
- *                                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
- *                                                                                               &lt;pattern value="[a-z][a-z]"/>
- *                                                                                             &lt;/restriction>
- *                                                                                           &lt;/simpleType>
- *                                                                                         &lt;/attribute>
- *                                                                                       &lt;/restriction>
- *                                                                                     &lt;/complexContent>
- *                                                                                   &lt;/complexType>
- *                                                                                 &lt;/element>
- *                                                                               &lt;/sequence>
- *                                                                             &lt;/restriction>
- *                                                                           &lt;/complexContent>
- *                                                                         &lt;/complexType>
- *                                                                       &lt;/element>
- *                                                                     &lt;/sequence>
- *                                                                   &lt;/restriction>
- *                                                                 &lt;/complexContent>
- *                                                               &lt;/complexType>
- *                                                             &lt;/element>
- *                                                           &lt;/sequence>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                 &lt;/sequence>
- *                                               &lt;/restriction>
- *                                             &lt;/complexContent>
- *                                           &lt;/complexType>
- *                                         &lt;/element>
- *                                       &lt;/sequence>
- *                                     &lt;/restriction>
- *                                   &lt;/complexContent>
- *                                 &lt;/complexType>
- *                               &lt;/element>
- *                               &lt;element name="ResGlobalInfo" minOccurs="0">
- *                                 &lt;complexType>
- *                                   &lt;complexContent>
- *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                       &lt;sequence>
- *                                         &lt;element name="Comments" minOccurs="0">
- *                                           &lt;complexType>
- *                                             &lt;complexContent>
- *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                 &lt;sequence>
- *                                                   &lt;element name="Comment" maxOccurs="2">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;choice>
- *                                                               &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0">
- *                                                                 &lt;complexType>
- *                                                                   &lt;simpleContent>
- *                                                                     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
- *                                                                       &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
- *                                                                       &lt;attribute name="Language" use="required">
- *                                                                         &lt;simpleType>
- *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
- *                                                                             &lt;pattern value="[a-z][a-z]"/>
- *                                                                           &lt;/restriction>
- *                                                                         &lt;/simpleType>
- *                                                                       &lt;/attribute>
- *                                                                     &lt;/extension>
- *                                                                   &lt;/simpleContent>
- *                                                                 &lt;/complexType>
- *                                                               &lt;/element>
- *                                                               &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
- *                                                             &lt;/choice>
- *                                                           &lt;/sequence>
- *                                                           &lt;attribute name="Name" use="required">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                 &lt;enumeration value="included services"/>
- *                                                                 &lt;enumeration value="customer comment"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/attribute>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                 &lt;/sequence>
- *                                               &lt;/restriction>
- *                                             &lt;/complexContent>
- *                                           &lt;/complexType>
- *                                         &lt;/element>
- *                                         &lt;element name="CancelPenalties" minOccurs="0">
- *                                           &lt;complexType>
- *                                             &lt;complexContent>
- *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                 &lt;sequence>
- *                                                   &lt;element name="CancelPenalty">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;sequence>
- *                                                             &lt;element name="PenaltyDescription">
- *                                                               &lt;complexType>
- *                                                                 &lt;complexContent>
- *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                     &lt;sequence>
- *                                                                       &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
- *                                                                     &lt;/sequence>
- *                                                                   &lt;/restriction>
- *                                                                 &lt;/complexContent>
- *                                                               &lt;/complexType>
- *                                                             &lt;/element>
- *                                                           &lt;/sequence>
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                 &lt;/sequence>
- *                                               &lt;/restriction>
- *                                             &lt;/complexContent>
- *                                           &lt;/complexType>
- *                                         &lt;/element>
- *                                         &lt;element name="HotelReservationIDs" minOccurs="0">
- *                                           &lt;complexType>
- *                                             &lt;complexContent>
- *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                 &lt;sequence>
- *                                                   &lt;element name="HotelReservationID">
- *                                                     &lt;complexType>
- *                                                       &lt;complexContent>
- *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                           &lt;attribute name="ResID_Type" use="required">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                 &lt;enumeration value="13"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/attribute>
- *                                                           &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                                           &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                                           &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                                         &lt;/restriction>
- *                                                       &lt;/complexContent>
- *                                                     &lt;/complexType>
- *                                                   &lt;/element>
- *                                                 &lt;/sequence>
- *                                               &lt;/restriction>
- *                                             &lt;/complexContent>
- *                                           &lt;/complexType>
- *                                         &lt;/element>
- *                                       &lt;/sequence>
- *                                     &lt;/restriction>
- *                                   &lt;/complexContent>
- *                                 &lt;/complexType>
- *                               &lt;/element>
- *                             &lt;/sequence>
- *                             &lt;attribute name="CreateDateTime" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_datetime" />
- *                             &lt;attribute name="ResStatus" use="required">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="Requested"/>
- *                                   &lt;enumeration value="Reserved"/>
- *                                   &lt;enumeration value="Cancelled"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/attribute>
- *                           &lt;/restriction>
- *                         &lt;/complexContent>
- *                       &lt;/complexType>
- *                     &lt;/element>
- *                   &lt;/sequence>
- *                 &lt;/restriction>
- *               &lt;/complexContent>
- *             &lt;/complexType>
- *           &lt;/element>
- *         &lt;/sequence>
- *       &lt;/choice>
- *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="Errors"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Error" maxOccurs="unbounded"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;attribute name="Type" use="required"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                 &lt;enumeration value="13"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="Code" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;sequence&gt;
+ *           &lt;element name="Success" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *           &lt;element name="ReservationsList"&gt;
+ *             &lt;complexType&gt;
+ *               &lt;complexContent&gt;
+ *                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                   &lt;sequence&gt;
+ *                     &lt;element name="HotelReservation" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                       &lt;complexType&gt;
+ *                         &lt;complexContent&gt;
+ *                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                             &lt;sequence&gt;
+ *                               &lt;element name="UniqueID"&gt;
+ *                                 &lt;complexType&gt;
+ *                                   &lt;complexContent&gt;
+ *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                       &lt;attribute name="Type" use="required"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="14"/&gt;
+ *                                             &lt;enumeration value="15"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/attribute&gt;
+ *                                       &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                     &lt;/restriction&gt;
+ *                                   &lt;/complexContent&gt;
+ *                                 &lt;/complexType&gt;
+ *                               &lt;/element&gt;
+ *                               &lt;element name="RoomStays" minOccurs="0"&gt;
+ *                                 &lt;complexType&gt;
+ *                                   &lt;complexContent&gt;
+ *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                       &lt;sequence&gt;
+ *                                         &lt;element name="RoomStay" maxOccurs="unbounded"&gt;
+ *                                           &lt;complexType&gt;
+ *                                             &lt;complexContent&gt;
+ *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                 &lt;sequence&gt;
+ *                                                   &lt;element name="RoomTypes" minOccurs="0"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;element name="RoomType"&gt;
+ *                                                               &lt;complexType&gt;
+ *                                                                 &lt;complexContent&gt;
+ *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                     &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                                                   &lt;/restriction&gt;
+ *                                                                 &lt;/complexContent&gt;
+ *                                                               &lt;/complexType&gt;
+ *                                                             &lt;/element&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                   &lt;element name="RatePlans" minOccurs="0"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;element name="RatePlan"&gt;
+ *                                                               &lt;complexType&gt;
+ *                                                                 &lt;complexContent&gt;
+ *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                     &lt;sequence&gt;
+ *                                                                       &lt;element name="MealsIncluded" minOccurs="0"&gt;
+ *                                                                         &lt;complexType&gt;
+ *                                                                           &lt;complexContent&gt;
+ *                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                               &lt;attribute name="MealPlanIndicator" use="required"&gt;
+ *                                                                                 &lt;simpleType&gt;
+ *                                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                     &lt;enumeration value="1"/&gt;
+ *                                                                                     &lt;enumeration value="true"/&gt;
+ *                                                                                   &lt;/restriction&gt;
+ *                                                                                 &lt;/simpleType&gt;
+ *                                                                               &lt;/attribute&gt;
+ *                                                                               &lt;attribute name="MealPlanCodes" use="required"&gt;
+ *                                                                                 &lt;simpleType&gt;
+ *                                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                     &lt;enumeration value="1"/&gt;
+ *                                                                                     &lt;enumeration value="3"/&gt;
+ *                                                                                     &lt;enumeration value="10"/&gt;
+ *                                                                                     &lt;enumeration value="12"/&gt;
+ *                                                                                     &lt;enumeration value="14"/&gt;
+ *                                                                                   &lt;/restriction&gt;
+ *                                                                                 &lt;/simpleType&gt;
+ *                                                                               &lt;/attribute&gt;
+ *                                                                             &lt;/restriction&gt;
+ *                                                                           &lt;/complexContent&gt;
+ *                                                                         &lt;/complexType&gt;
+ *                                                                       &lt;/element&gt;
+ *                                                                     &lt;/sequence&gt;
+ *                                                                     &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                                                   &lt;/restriction&gt;
+ *                                                                 &lt;/complexContent&gt;
+ *                                                               &lt;/complexType&gt;
+ *                                                             &lt;/element&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                   &lt;element name="GuestCounts" minOccurs="0"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;element name="GuestCount" maxOccurs="unbounded"&gt;
+ *                                                               &lt;complexType&gt;
+ *                                                                 &lt;complexContent&gt;
+ *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                     &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+ *                                                                     &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+ *                                                                   &lt;/restriction&gt;
+ *                                                                 &lt;/complexContent&gt;
+ *                                                               &lt;/complexType&gt;
+ *                                                             &lt;/element&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                   &lt;element name="TimeSpan"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;element name="StartDateWindow" minOccurs="0"&gt;
+ *                                                               &lt;complexType&gt;
+ *                                                                 &lt;complexContent&gt;
+ *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                     &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                                                     &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                                                   &lt;/restriction&gt;
+ *                                                                 &lt;/complexContent&gt;
+ *                                                               &lt;/complexType&gt;
+ *                                                             &lt;/element&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                           &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                                           &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                                           &lt;attribute name="Duration"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                 &lt;pattern value="P[0-9]+N"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/attribute&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                   &lt;element name="Total" minOccurs="0"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" /&gt;
+ *                                                           &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                 &lt;/sequence&gt;
+ *                                               &lt;/restriction&gt;
+ *                                             &lt;/complexContent&gt;
+ *                                           &lt;/complexType&gt;
+ *                                         &lt;/element&gt;
+ *                                       &lt;/sequence&gt;
+ *                                     &lt;/restriction&gt;
+ *                                   &lt;/complexContent&gt;
+ *                                 &lt;/complexType&gt;
+ *                               &lt;/element&gt;
+ *                               &lt;element name="ResGuests" minOccurs="0"&gt;
+ *                                 &lt;complexType&gt;
+ *                                   &lt;complexContent&gt;
+ *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                       &lt;sequence&gt;
+ *                                         &lt;element name="ResGuest"&gt;
+ *                                           &lt;complexType&gt;
+ *                                             &lt;complexContent&gt;
+ *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                 &lt;sequence&gt;
+ *                                                   &lt;element name="Profiles"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;element name="ProfileInfo"&gt;
+ *                                                               &lt;complexType&gt;
+ *                                                                 &lt;complexContent&gt;
+ *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                     &lt;sequence&gt;
+ *                                                                       &lt;element name="Profile"&gt;
+ *                                                                         &lt;complexType&gt;
+ *                                                                           &lt;complexContent&gt;
+ *                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                               &lt;sequence&gt;
+ *                                                                                 &lt;element name="Customer"&gt;
+ *                                                                                   &lt;complexType&gt;
+ *                                                                                     &lt;complexContent&gt;
+ *                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                                         &lt;sequence&gt;
+ *                                                                                           &lt;element name="PersonName"&gt;
+ *                                                                                             &lt;complexType&gt;
+ *                                                                                               &lt;complexContent&gt;
+ *                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                                                   &lt;sequence&gt;
+ *                                                                                                     &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+ *                                                                                                     &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+ *                                                                                                     &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+ *                                                                                                     &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+ *                                                                                                   &lt;/sequence&gt;
+ *                                                                                                 &lt;/restriction&gt;
+ *                                                                                               &lt;/complexContent&gt;
+ *                                                                                             &lt;/complexType&gt;
+ *                                                                                           &lt;/element&gt;
+ *                                                                                           &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                                                                                             &lt;complexType&gt;
+ *                                                                                               &lt;complexContent&gt;
+ *                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                                                   &lt;attribute name="PhoneTechType" use="required"&gt;
+ *                                                                                                     &lt;simpleType&gt;
+ *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                                         &lt;pattern value="(1|3|5)"/&gt;
+ *                                                                                                       &lt;/restriction&gt;
+ *                                                                                                     &lt;/simpleType&gt;
+ *                                                                                                   &lt;/attribute&gt;
+ *                                                                                                   &lt;attribute name="PhoneNumber" use="required"&gt;
+ *                                                                                                     &lt;simpleType&gt;
+ *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                                         &lt;pattern value="\+?[0-9]+"/&gt;
+ *                                                                                                       &lt;/restriction&gt;
+ *                                                                                                     &lt;/simpleType&gt;
+ *                                                                                                   &lt;/attribute&gt;
+ *                                                                                                 &lt;/restriction&gt;
+ *                                                                                               &lt;/complexContent&gt;
+ *                                                                                             &lt;/complexType&gt;
+ *                                                                                           &lt;/element&gt;
+ *                                                                                           &lt;element name="Email" minOccurs="0"&gt;
+ *                                                                                             &lt;complexType&gt;
+ *                                                                                               &lt;simpleContent&gt;
+ *                                                                                                 &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+ *                                                                                                   &lt;attribute name="Remark"&gt;
+ *                                                                                                     &lt;simpleType&gt;
+ *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                                         &lt;pattern value="newsletter:(no|yes)"/&gt;
+ *                                                                                                       &lt;/restriction&gt;
+ *                                                                                                     &lt;/simpleType&gt;
+ *                                                                                                   &lt;/attribute&gt;
+ *                                                                                                 &lt;/extension&gt;
+ *                                                                                               &lt;/simpleContent&gt;
+ *                                                                                             &lt;/complexType&gt;
+ *                                                                                           &lt;/element&gt;
+ *                                                                                           &lt;element name="Address" minOccurs="0"&gt;
+ *                                                                                             &lt;complexType&gt;
+ *                                                                                               &lt;complexContent&gt;
+ *                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                                                   &lt;sequence&gt;
+ *                                                                                                     &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+ *                                                                                                     &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+ *                                                                                                     &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+ *                                                                                                     &lt;element name="CountryName"&gt;
+ *                                                                                                       &lt;complexType&gt;
+ *                                                                                                         &lt;complexContent&gt;
+ *                                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                                                             &lt;attribute name="Code" use="required"&gt;
+ *                                                                                                               &lt;simpleType&gt;
+ *                                                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                                                   &lt;pattern value="[A-Z][A-Z]"/&gt;
+ *                                                                                                                 &lt;/restriction&gt;
+ *                                                                                                               &lt;/simpleType&gt;
+ *                                                                                                             &lt;/attribute&gt;
+ *                                                                                                           &lt;/restriction&gt;
+ *                                                                                                         &lt;/complexContent&gt;
+ *                                                                                                       &lt;/complexType&gt;
+ *                                                                                                     &lt;/element&gt;
+ *                                                                                                   &lt;/sequence&gt;
+ *                                                                                                   &lt;attribute name="Remark"&gt;
+ *                                                                                                     &lt;simpleType&gt;
+ *                                                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                                         &lt;pattern value="catalog:(no|yes)"/&gt;
+ *                                                                                                       &lt;/restriction&gt;
+ *                                                                                                     &lt;/simpleType&gt;
+ *                                                                                                   &lt;/attribute&gt;
+ *                                                                                                 &lt;/restriction&gt;
+ *                                                                                               &lt;/complexContent&gt;
+ *                                                                                             &lt;/complexType&gt;
+ *                                                                                           &lt;/element&gt;
+ *                                                                                         &lt;/sequence&gt;
+ *                                                                                         &lt;attribute name="Gender" use="required"&gt;
+ *                                                                                           &lt;simpleType&gt;
+ *                                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                                               &lt;pattern value="(Unknown|Male|Female)"/&gt;
+ *                                                                                             &lt;/restriction&gt;
+ *                                                                                           &lt;/simpleType&gt;
+ *                                                                                         &lt;/attribute&gt;
+ *                                                                                         &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                                                                         &lt;attribute name="Language" use="required"&gt;
+ *                                                                                           &lt;simpleType&gt;
+ *                                                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+ *                                                                                               &lt;pattern value="[a-z][a-z]"/&gt;
+ *                                                                                             &lt;/restriction&gt;
+ *                                                                                           &lt;/simpleType&gt;
+ *                                                                                         &lt;/attribute&gt;
+ *                                                                                       &lt;/restriction&gt;
+ *                                                                                     &lt;/complexContent&gt;
+ *                                                                                   &lt;/complexType&gt;
+ *                                                                                 &lt;/element&gt;
+ *                                                                               &lt;/sequence&gt;
+ *                                                                             &lt;/restriction&gt;
+ *                                                                           &lt;/complexContent&gt;
+ *                                                                         &lt;/complexType&gt;
+ *                                                                       &lt;/element&gt;
+ *                                                                     &lt;/sequence&gt;
+ *                                                                   &lt;/restriction&gt;
+ *                                                                 &lt;/complexContent&gt;
+ *                                                               &lt;/complexType&gt;
+ *                                                             &lt;/element&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                 &lt;/sequence&gt;
+ *                                               &lt;/restriction&gt;
+ *                                             &lt;/complexContent&gt;
+ *                                           &lt;/complexType&gt;
+ *                                         &lt;/element&gt;
+ *                                       &lt;/sequence&gt;
+ *                                     &lt;/restriction&gt;
+ *                                   &lt;/complexContent&gt;
+ *                                 &lt;/complexType&gt;
+ *                               &lt;/element&gt;
+ *                               &lt;element name="ResGlobalInfo" minOccurs="0"&gt;
+ *                                 &lt;complexType&gt;
+ *                                   &lt;complexContent&gt;
+ *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                       &lt;sequence&gt;
+ *                                         &lt;element name="Comments" minOccurs="0"&gt;
+ *                                           &lt;complexType&gt;
+ *                                             &lt;complexContent&gt;
+ *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                 &lt;sequence&gt;
+ *                                                   &lt;element name="Comment" maxOccurs="2"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;choice&gt;
+ *                                                               &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                                                                 &lt;complexType&gt;
+ *                                                                   &lt;simpleContent&gt;
+ *                                                                     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+ *                                                                       &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+ *                                                                       &lt;attribute name="Language" use="required"&gt;
+ *                                                                         &lt;simpleType&gt;
+ *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+ *                                                                             &lt;pattern value="[a-z][a-z]"/&gt;
+ *                                                                           &lt;/restriction&gt;
+ *                                                                         &lt;/simpleType&gt;
+ *                                                                       &lt;/attribute&gt;
+ *                                                                     &lt;/extension&gt;
+ *                                                                   &lt;/simpleContent&gt;
+ *                                                                 &lt;/complexType&gt;
+ *                                                               &lt;/element&gt;
+ *                                                               &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+ *                                                             &lt;/choice&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                           &lt;attribute name="Name" use="required"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                 &lt;enumeration value="included services"/&gt;
+ *                                                                 &lt;enumeration value="customer comment"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/attribute&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                 &lt;/sequence&gt;
+ *                                               &lt;/restriction&gt;
+ *                                             &lt;/complexContent&gt;
+ *                                           &lt;/complexType&gt;
+ *                                         &lt;/element&gt;
+ *                                         &lt;element name="CancelPenalties" minOccurs="0"&gt;
+ *                                           &lt;complexType&gt;
+ *                                             &lt;complexContent&gt;
+ *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                 &lt;sequence&gt;
+ *                                                   &lt;element name="CancelPenalty"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;sequence&gt;
+ *                                                             &lt;element name="PenaltyDescription"&gt;
+ *                                                               &lt;complexType&gt;
+ *                                                                 &lt;complexContent&gt;
+ *                                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                     &lt;sequence&gt;
+ *                                                                       &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+ *                                                                     &lt;/sequence&gt;
+ *                                                                   &lt;/restriction&gt;
+ *                                                                 &lt;/complexContent&gt;
+ *                                                               &lt;/complexType&gt;
+ *                                                             &lt;/element&gt;
+ *                                                           &lt;/sequence&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                 &lt;/sequence&gt;
+ *                                               &lt;/restriction&gt;
+ *                                             &lt;/complexContent&gt;
+ *                                           &lt;/complexType&gt;
+ *                                         &lt;/element&gt;
+ *                                         &lt;element name="HotelReservationIDs" minOccurs="0"&gt;
+ *                                           &lt;complexType&gt;
+ *                                             &lt;complexContent&gt;
+ *                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                 &lt;sequence&gt;
+ *                                                   &lt;element name="HotelReservationID"&gt;
+ *                                                     &lt;complexType&gt;
+ *                                                       &lt;complexContent&gt;
+ *                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                           &lt;attribute name="ResID_Type" use="required"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                 &lt;enumeration value="13"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/attribute&gt;
+ *                                                           &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                                           &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                                           &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                                         &lt;/restriction&gt;
+ *                                                       &lt;/complexContent&gt;
+ *                                                     &lt;/complexType&gt;
+ *                                                   &lt;/element&gt;
+ *                                                 &lt;/sequence&gt;
+ *                                               &lt;/restriction&gt;
+ *                                             &lt;/complexContent&gt;
+ *                                           &lt;/complexType&gt;
+ *                                         &lt;/element&gt;
+ *                                       &lt;/sequence&gt;
+ *                                     &lt;/restriction&gt;
+ *                                   &lt;/complexContent&gt;
+ *                                 &lt;/complexType&gt;
+ *                               &lt;/element&gt;
+ *                             &lt;/sequence&gt;
+ *                             &lt;attribute name="CreateDateTime" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_datetime" /&gt;
+ *                             &lt;attribute name="ResStatus" use="required"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="Requested"/&gt;
+ *                                   &lt;enumeration value="Reserved"/&gt;
+ *                                   &lt;enumeration value="Cancelled"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/attribute&gt;
+ *                           &lt;/restriction&gt;
+ *                         &lt;/complexContent&gt;
+ *                       &lt;/complexType&gt;
+ *                     &lt;/element&gt;
+ *                   &lt;/sequence&gt;
+ *                 &lt;/restriction&gt;
+ *               &lt;/complexContent&gt;
+ *             &lt;/complexType&gt;
+ *           &lt;/element&gt;
+ *         &lt;/sequence&gt;
+ *       &lt;/choice&gt;
+ *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -560,7 +560,7 @@ public class OTAResRetrieveRS {
     protected String timeStamp;
 
     /**
-     * Gets the value of the errors property.
+     * Recupera il valore della proprietà errors.
      * 
      * @return
      *     possible object is
@@ -572,7 +572,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Sets the value of the errors property.
+     * Imposta il valore della proprietà errors.
      * 
      * @param value
      *     allowed object is
@@ -584,7 +584,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Gets the value of the success property.
+     * Recupera il valore della proprietà success.
      * 
      * @return
      *     possible object is
@@ -596,7 +596,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Sets the value of the success property.
+     * Imposta il valore della proprietà success.
      * 
      * @param value
      *     allowed object is
@@ -608,7 +608,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Gets the value of the reservationsList property.
+     * Recupera il valore della proprietà reservationsList.
      * 
      * @return
      *     possible object is
@@ -620,7 +620,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Sets the value of the reservationsList property.
+     * Imposta il valore della proprietà reservationsList.
      * 
      * @param value
      *     allowed object is
@@ -632,7 +632,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Gets the value of the version property.
+     * Recupera il valore della proprietà version.
      * 
      * @return
      *     possible object is
@@ -644,7 +644,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Sets the value of the version property.
+     * Imposta il valore della proprietà version.
      * 
      * @param value
      *     allowed object is
@@ -656,7 +656,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Gets the value of the timeStamp property.
+     * Recupera il valore della proprietà timeStamp.
      * 
      * @return
      *     possible object is
@@ -668,7 +668,7 @@ public class OTAResRetrieveRS {
     }
 
     /**
-     * Sets the value of the timeStamp property.
+     * Imposta il valore della proprietà timeStamp.
      * 
      * @param value
      *     allowed object is
@@ -681,35 +681,35 @@ public class OTAResRetrieveRS {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java per anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="Error" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;attribute name="Type" use="required">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                       &lt;enumeration value="13"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="Code" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Error" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;attribute name="Type" use="required"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                       &lt;enumeration value="13"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="Code" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -754,25 +754,25 @@ public class OTAResRetrieveRS {
 
 
         /**
-         * <p>Java class for anonymous complex type.
+         * <p>Classe Java per anonymous complex type.
          * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
+         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;attribute name="Type" use="required">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *             &lt;enumeration value="13"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="Code" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;attribute name="Type" use="required"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *             &lt;enumeration value="13"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="Code" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -791,7 +791,7 @@ public class OTAResRetrieveRS {
             protected BigInteger code;
 
             /**
-             * Gets the value of the content property.
+             * Recupera il valore della proprietà content.
              * 
              * @return
              *     possible object is
@@ -803,7 +803,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the content property.
+             * Imposta il valore della proprietà content.
              * 
              * @param value
              *     allowed object is
@@ -815,7 +815,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the type property.
+             * Recupera il valore della proprietà type.
              * 
              * @return
              *     possible object is
@@ -827,7 +827,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the type property.
+             * Imposta il valore della proprietà type.
              * 
              * @param value
              *     allowed object is
@@ -839,7 +839,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the code property.
+             * Recupera il valore della proprietà code.
              * 
              * @return
              *     possible object is
@@ -851,7 +851,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the code property.
+             * Imposta il valore della proprietà code.
              * 
              * @param value
              *     allowed object is
@@ -868,479 +868,479 @@ public class OTAResRetrieveRS {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java per anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="HotelReservation" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="UniqueID">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="Type" use="required">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                 &lt;enumeration value="14"/>
-     *                                 &lt;enumeration value="15"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="RoomStays" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="RoomStay" maxOccurs="unbounded">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="RoomTypes" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="RoomType">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="RatePlans" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="RatePlan">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="MealsIncluded" minOccurs="0">
-     *                                                             &lt;complexType>
-     *                                                               &lt;complexContent>
-     *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                   &lt;attribute name="MealPlanIndicator" use="required">
-     *                                                                     &lt;simpleType>
-     *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                         &lt;enumeration value="1"/>
-     *                                                                         &lt;enumeration value="true"/>
-     *                                                                       &lt;/restriction>
-     *                                                                     &lt;/simpleType>
-     *                                                                   &lt;/attribute>
-     *                                                                   &lt;attribute name="MealPlanCodes" use="required">
-     *                                                                     &lt;simpleType>
-     *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                         &lt;enumeration value="1"/>
-     *                                                                         &lt;enumeration value="3"/>
-     *                                                                         &lt;enumeration value="10"/>
-     *                                                                         &lt;enumeration value="12"/>
-     *                                                                         &lt;enumeration value="14"/>
-     *                                                                       &lt;/restriction>
-     *                                                                     &lt;/simpleType>
-     *                                                                   &lt;/attribute>
-     *                                                                 &lt;/restriction>
-     *                                                               &lt;/complexContent>
-     *                                                             &lt;/complexType>
-     *                                                           &lt;/element>
-     *                                                         &lt;/sequence>
-     *                                                         &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="GuestCounts" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="GuestCount" maxOccurs="unbounded">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
-     *                                                         &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="TimeSpan">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="StartDateWindow" minOccurs="0">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                                                         &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                               &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                                               &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                                               &lt;attribute name="Duration">
-     *                                                 &lt;simpleType>
-     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                     &lt;pattern value="P[0-9]+N"/>
-     *                                                   &lt;/restriction>
-     *                                                 &lt;/simpleType>
-     *                                               &lt;/attribute>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Total" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" />
-     *                                               &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="ResGuests" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="ResGuest">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="Profiles">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="ProfileInfo">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="Profile">
-     *                                                             &lt;complexType>
-     *                                                               &lt;complexContent>
-     *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                   &lt;sequence>
-     *                                                                     &lt;element name="Customer">
-     *                                                                       &lt;complexType>
-     *                                                                         &lt;complexContent>
-     *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                             &lt;sequence>
-     *                                                                               &lt;element name="PersonName">
-     *                                                                                 &lt;complexType>
-     *                                                                                   &lt;complexContent>
-     *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                                       &lt;sequence>
-     *                                                                                         &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-     *                                                                                         &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-     *                                                                                         &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-     *                                                                                         &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-     *                                                                                       &lt;/sequence>
-     *                                                                                     &lt;/restriction>
-     *                                                                                   &lt;/complexContent>
-     *                                                                                 &lt;/complexType>
-     *                                                                               &lt;/element>
-     *                                                                               &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-     *                                                                                 &lt;complexType>
-     *                                                                                   &lt;complexContent>
-     *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                                       &lt;attribute name="PhoneTechType" use="required">
-     *                                                                                         &lt;simpleType>
-     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                                             &lt;pattern value="(1|3|5)"/>
-     *                                                                                           &lt;/restriction>
-     *                                                                                         &lt;/simpleType>
-     *                                                                                       &lt;/attribute>
-     *                                                                                       &lt;attribute name="PhoneNumber" use="required">
-     *                                                                                         &lt;simpleType>
-     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                                             &lt;pattern value="\+?[0-9]+"/>
-     *                                                                                           &lt;/restriction>
-     *                                                                                         &lt;/simpleType>
-     *                                                                                       &lt;/attribute>
-     *                                                                                     &lt;/restriction>
-     *                                                                                   &lt;/complexContent>
-     *                                                                                 &lt;/complexType>
-     *                                                                               &lt;/element>
-     *                                                                               &lt;element name="Email" minOccurs="0">
-     *                                                                                 &lt;complexType>
-     *                                                                                   &lt;simpleContent>
-     *                                                                                     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-     *                                                                                       &lt;attribute name="Remark">
-     *                                                                                         &lt;simpleType>
-     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                                             &lt;pattern value="newsletter:(no|yes)"/>
-     *                                                                                           &lt;/restriction>
-     *                                                                                         &lt;/simpleType>
-     *                                                                                       &lt;/attribute>
-     *                                                                                     &lt;/extension>
-     *                                                                                   &lt;/simpleContent>
-     *                                                                                 &lt;/complexType>
-     *                                                                               &lt;/element>
-     *                                                                               &lt;element name="Address" minOccurs="0">
-     *                                                                                 &lt;complexType>
-     *                                                                                   &lt;complexContent>
-     *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                                       &lt;sequence>
-     *                                                                                         &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-     *                                                                                         &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-     *                                                                                         &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-     *                                                                                         &lt;element name="CountryName">
-     *                                                                                           &lt;complexType>
-     *                                                                                             &lt;complexContent>
-     *                                                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                                                 &lt;attribute name="Code" use="required">
-     *                                                                                                   &lt;simpleType>
-     *                                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                                                       &lt;pattern value="[A-Z][A-Z]"/>
-     *                                                                                                     &lt;/restriction>
-     *                                                                                                   &lt;/simpleType>
-     *                                                                                                 &lt;/attribute>
-     *                                                                                               &lt;/restriction>
-     *                                                                                             &lt;/complexContent>
-     *                                                                                           &lt;/complexType>
-     *                                                                                         &lt;/element>
-     *                                                                                       &lt;/sequence>
-     *                                                                                       &lt;attribute name="Remark">
-     *                                                                                         &lt;simpleType>
-     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                                             &lt;pattern value="catalog:(no|yes)"/>
-     *                                                                                           &lt;/restriction>
-     *                                                                                         &lt;/simpleType>
-     *                                                                                       &lt;/attribute>
-     *                                                                                     &lt;/restriction>
-     *                                                                                   &lt;/complexContent>
-     *                                                                                 &lt;/complexType>
-     *                                                                               &lt;/element>
-     *                                                                             &lt;/sequence>
-     *                                                                             &lt;attribute name="Gender" use="required">
-     *                                                                               &lt;simpleType>
-     *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                                   &lt;pattern value="(Unknown|Male|Female)"/>
-     *                                                                                 &lt;/restriction>
-     *                                                                               &lt;/simpleType>
-     *                                                                             &lt;/attribute>
-     *                                                                             &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                                                                             &lt;attribute name="Language" use="required">
-     *                                                                               &lt;simpleType>
-     *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-     *                                                                                   &lt;pattern value="[a-z][a-z]"/>
-     *                                                                                 &lt;/restriction>
-     *                                                                               &lt;/simpleType>
-     *                                                                             &lt;/attribute>
-     *                                                                           &lt;/restriction>
-     *                                                                         &lt;/complexContent>
-     *                                                                       &lt;/complexType>
-     *                                                                     &lt;/element>
-     *                                                                   &lt;/sequence>
-     *                                                                 &lt;/restriction>
-     *                                                               &lt;/complexContent>
-     *                                                             &lt;/complexType>
-     *                                                           &lt;/element>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="ResGlobalInfo" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="Comments" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="Comment" maxOccurs="2">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;choice>
-     *                                                   &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0">
-     *                                                     &lt;complexType>
-     *                                                       &lt;simpleContent>
-     *                                                         &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
-     *                                                           &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-     *                                                           &lt;attribute name="Language" use="required">
-     *                                                             &lt;simpleType>
-     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-     *                                                                 &lt;pattern value="[a-z][a-z]"/>
-     *                                                               &lt;/restriction>
-     *                                                             &lt;/simpleType>
-     *                                                           &lt;/attribute>
-     *                                                         &lt;/extension>
-     *                                                       &lt;/simpleContent>
-     *                                                     &lt;/complexType>
-     *                                                   &lt;/element>
-     *                                                   &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-     *                                                 &lt;/choice>
-     *                                               &lt;/sequence>
-     *                                               &lt;attribute name="Name" use="required">
-     *                                                 &lt;simpleType>
-     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                     &lt;enumeration value="included services"/>
-     *                                                     &lt;enumeration value="customer comment"/>
-     *                                                   &lt;/restriction>
-     *                                                 &lt;/simpleType>
-     *                                               &lt;/attribute>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="CancelPenalties" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="CancelPenalty">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="PenaltyDescription">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="HotelReservationIDs" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="HotelReservationID">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;attribute name="ResID_Type" use="required">
-     *                                                 &lt;simpleType>
-     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                     &lt;enumeration value="13"/>
-     *                                                   &lt;/restriction>
-     *                                                 &lt;/simpleType>
-     *                                               &lt;/attribute>
-     *                                               &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                                               &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                                               &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *                 &lt;attribute name="CreateDateTime" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_datetime" />
-     *                 &lt;attribute name="ResStatus" use="required">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                       &lt;enumeration value="Requested"/>
-     *                       &lt;enumeration value="Reserved"/>
-     *                       &lt;enumeration value="Cancelled"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="HotelReservation" maxOccurs="unbounded" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="UniqueID"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="Type" use="required"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                 &lt;enumeration value="14"/&gt;
+     *                                 &lt;enumeration value="15"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="RoomStays" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="RoomStay" maxOccurs="unbounded"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="RoomTypes" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="RoomType"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="RatePlans" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="RatePlan"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;sequence&gt;
+     *                                                           &lt;element name="MealsIncluded" minOccurs="0"&gt;
+     *                                                             &lt;complexType&gt;
+     *                                                               &lt;complexContent&gt;
+     *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                   &lt;attribute name="MealPlanIndicator" use="required"&gt;
+     *                                                                     &lt;simpleType&gt;
+     *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                         &lt;enumeration value="1"/&gt;
+     *                                                                         &lt;enumeration value="true"/&gt;
+     *                                                                       &lt;/restriction&gt;
+     *                                                                     &lt;/simpleType&gt;
+     *                                                                   &lt;/attribute&gt;
+     *                                                                   &lt;attribute name="MealPlanCodes" use="required"&gt;
+     *                                                                     &lt;simpleType&gt;
+     *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                         &lt;enumeration value="1"/&gt;
+     *                                                                         &lt;enumeration value="3"/&gt;
+     *                                                                         &lt;enumeration value="10"/&gt;
+     *                                                                         &lt;enumeration value="12"/&gt;
+     *                                                                         &lt;enumeration value="14"/&gt;
+     *                                                                       &lt;/restriction&gt;
+     *                                                                     &lt;/simpleType&gt;
+     *                                                                   &lt;/attribute&gt;
+     *                                                                 &lt;/restriction&gt;
+     *                                                               &lt;/complexContent&gt;
+     *                                                             &lt;/complexType&gt;
+     *                                                           &lt;/element&gt;
+     *                                                         &lt;/sequence&gt;
+     *                                                         &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="GuestCounts" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="GuestCount" maxOccurs="unbounded"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+     *                                                         &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="TimeSpan"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="StartDateWindow" minOccurs="0"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                                                         &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                               &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                                               &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                                               &lt;attribute name="Duration"&gt;
+     *                                                 &lt;simpleType&gt;
+     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                     &lt;pattern value="P[0-9]+N"/&gt;
+     *                                                   &lt;/restriction&gt;
+     *                                                 &lt;/simpleType&gt;
+     *                                               &lt;/attribute&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="Total" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" /&gt;
+     *                                               &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="ResGuests" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="ResGuest"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="Profiles"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="ProfileInfo"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;sequence&gt;
+     *                                                           &lt;element name="Profile"&gt;
+     *                                                             &lt;complexType&gt;
+     *                                                               &lt;complexContent&gt;
+     *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                   &lt;sequence&gt;
+     *                                                                     &lt;element name="Customer"&gt;
+     *                                                                       &lt;complexType&gt;
+     *                                                                         &lt;complexContent&gt;
+     *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                             &lt;sequence&gt;
+     *                                                                               &lt;element name="PersonName"&gt;
+     *                                                                                 &lt;complexType&gt;
+     *                                                                                   &lt;complexContent&gt;
+     *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                                       &lt;sequence&gt;
+     *                                                                                         &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+     *                                                                                         &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+     *                                                                                         &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+     *                                                                                         &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+     *                                                                                       &lt;/sequence&gt;
+     *                                                                                     &lt;/restriction&gt;
+     *                                                                                   &lt;/complexContent&gt;
+     *                                                                                 &lt;/complexType&gt;
+     *                                                                               &lt;/element&gt;
+     *                                                                               &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+     *                                                                                 &lt;complexType&gt;
+     *                                                                                   &lt;complexContent&gt;
+     *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                                       &lt;attribute name="PhoneTechType" use="required"&gt;
+     *                                                                                         &lt;simpleType&gt;
+     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                                             &lt;pattern value="(1|3|5)"/&gt;
+     *                                                                                           &lt;/restriction&gt;
+     *                                                                                         &lt;/simpleType&gt;
+     *                                                                                       &lt;/attribute&gt;
+     *                                                                                       &lt;attribute name="PhoneNumber" use="required"&gt;
+     *                                                                                         &lt;simpleType&gt;
+     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                                             &lt;pattern value="\+?[0-9]+"/&gt;
+     *                                                                                           &lt;/restriction&gt;
+     *                                                                                         &lt;/simpleType&gt;
+     *                                                                                       &lt;/attribute&gt;
+     *                                                                                     &lt;/restriction&gt;
+     *                                                                                   &lt;/complexContent&gt;
+     *                                                                                 &lt;/complexType&gt;
+     *                                                                               &lt;/element&gt;
+     *                                                                               &lt;element name="Email" minOccurs="0"&gt;
+     *                                                                                 &lt;complexType&gt;
+     *                                                                                   &lt;simpleContent&gt;
+     *                                                                                     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+     *                                                                                       &lt;attribute name="Remark"&gt;
+     *                                                                                         &lt;simpleType&gt;
+     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                                             &lt;pattern value="newsletter:(no|yes)"/&gt;
+     *                                                                                           &lt;/restriction&gt;
+     *                                                                                         &lt;/simpleType&gt;
+     *                                                                                       &lt;/attribute&gt;
+     *                                                                                     &lt;/extension&gt;
+     *                                                                                   &lt;/simpleContent&gt;
+     *                                                                                 &lt;/complexType&gt;
+     *                                                                               &lt;/element&gt;
+     *                                                                               &lt;element name="Address" minOccurs="0"&gt;
+     *                                                                                 &lt;complexType&gt;
+     *                                                                                   &lt;complexContent&gt;
+     *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                                       &lt;sequence&gt;
+     *                                                                                         &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+     *                                                                                         &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+     *                                                                                         &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+     *                                                                                         &lt;element name="CountryName"&gt;
+     *                                                                                           &lt;complexType&gt;
+     *                                                                                             &lt;complexContent&gt;
+     *                                                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                                                                 &lt;attribute name="Code" use="required"&gt;
+     *                                                                                                   &lt;simpleType&gt;
+     *                                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                                                       &lt;pattern value="[A-Z][A-Z]"/&gt;
+     *                                                                                                     &lt;/restriction&gt;
+     *                                                                                                   &lt;/simpleType&gt;
+     *                                                                                                 &lt;/attribute&gt;
+     *                                                                                               &lt;/restriction&gt;
+     *                                                                                             &lt;/complexContent&gt;
+     *                                                                                           &lt;/complexType&gt;
+     *                                                                                         &lt;/element&gt;
+     *                                                                                       &lt;/sequence&gt;
+     *                                                                                       &lt;attribute name="Remark"&gt;
+     *                                                                                         &lt;simpleType&gt;
+     *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                                             &lt;pattern value="catalog:(no|yes)"/&gt;
+     *                                                                                           &lt;/restriction&gt;
+     *                                                                                         &lt;/simpleType&gt;
+     *                                                                                       &lt;/attribute&gt;
+     *                                                                                     &lt;/restriction&gt;
+     *                                                                                   &lt;/complexContent&gt;
+     *                                                                                 &lt;/complexType&gt;
+     *                                                                               &lt;/element&gt;
+     *                                                                             &lt;/sequence&gt;
+     *                                                                             &lt;attribute name="Gender" use="required"&gt;
+     *                                                                               &lt;simpleType&gt;
+     *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                                   &lt;pattern value="(Unknown|Male|Female)"/&gt;
+     *                                                                                 &lt;/restriction&gt;
+     *                                                                               &lt;/simpleType&gt;
+     *                                                                             &lt;/attribute&gt;
+     *                                                                             &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                                                                             &lt;attribute name="Language" use="required"&gt;
+     *                                                                               &lt;simpleType&gt;
+     *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+     *                                                                                   &lt;pattern value="[a-z][a-z]"/&gt;
+     *                                                                                 &lt;/restriction&gt;
+     *                                                                               &lt;/simpleType&gt;
+     *                                                                             &lt;/attribute&gt;
+     *                                                                           &lt;/restriction&gt;
+     *                                                                         &lt;/complexContent&gt;
+     *                                                                       &lt;/complexType&gt;
+     *                                                                     &lt;/element&gt;
+     *                                                                   &lt;/sequence&gt;
+     *                                                                 &lt;/restriction&gt;
+     *                                                               &lt;/complexContent&gt;
+     *                                                             &lt;/complexType&gt;
+     *                                                           &lt;/element&gt;
+     *                                                         &lt;/sequence&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="ResGlobalInfo" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="Comments" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="Comment" maxOccurs="2"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;choice&gt;
+     *                                                   &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0"&gt;
+     *                                                     &lt;complexType&gt;
+     *                                                       &lt;simpleContent&gt;
+     *                                                         &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+     *                                                           &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+     *                                                           &lt;attribute name="Language" use="required"&gt;
+     *                                                             &lt;simpleType&gt;
+     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+     *                                                                 &lt;pattern value="[a-z][a-z]"/&gt;
+     *                                                               &lt;/restriction&gt;
+     *                                                             &lt;/simpleType&gt;
+     *                                                           &lt;/attribute&gt;
+     *                                                         &lt;/extension&gt;
+     *                                                       &lt;/simpleContent&gt;
+     *                                                     &lt;/complexType&gt;
+     *                                                   &lt;/element&gt;
+     *                                                   &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+     *                                                 &lt;/choice&gt;
+     *                                               &lt;/sequence&gt;
+     *                                               &lt;attribute name="Name" use="required"&gt;
+     *                                                 &lt;simpleType&gt;
+     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                     &lt;enumeration value="included services"/&gt;
+     *                                                     &lt;enumeration value="customer comment"/&gt;
+     *                                                   &lt;/restriction&gt;
+     *                                                 &lt;/simpleType&gt;
+     *                                               &lt;/attribute&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="CancelPenalties" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="CancelPenalty"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="PenaltyDescription"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;sequence&gt;
+     *                                                           &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+     *                                                         &lt;/sequence&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="HotelReservationIDs" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="HotelReservationID"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;attribute name="ResID_Type" use="required"&gt;
+     *                                                 &lt;simpleType&gt;
+     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                     &lt;enumeration value="13"/&gt;
+     *                                                   &lt;/restriction&gt;
+     *                                                 &lt;/simpleType&gt;
+     *                                               &lt;/attribute&gt;
+     *                                               &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                                               &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                                               &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *                 &lt;attribute name="CreateDateTime" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_datetime" /&gt;
+     *                 &lt;attribute name="ResStatus" use="required"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                       &lt;enumeration value="Requested"/&gt;
+     *                       &lt;enumeration value="Reserved"/&gt;
+     *                       &lt;enumeration value="Cancelled"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1385,469 +1385,469 @@ public class OTAResRetrieveRS {
 
 
         /**
-         * <p>Java class for anonymous complex type.
+         * <p>Classe Java per anonymous complex type.
          * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
+         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="UniqueID">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="Type" use="required">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                       &lt;enumeration value="14"/>
-         *                       &lt;enumeration value="15"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="RoomStays" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="RoomStay" maxOccurs="unbounded">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="RoomTypes" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="RoomType">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="RatePlans" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="RatePlan">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="MealsIncluded" minOccurs="0">
-         *                                                   &lt;complexType>
-         *                                                     &lt;complexContent>
-         *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                         &lt;attribute name="MealPlanIndicator" use="required">
-         *                                                           &lt;simpleType>
-         *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                               &lt;enumeration value="1"/>
-         *                                                               &lt;enumeration value="true"/>
-         *                                                             &lt;/restriction>
-         *                                                           &lt;/simpleType>
-         *                                                         &lt;/attribute>
-         *                                                         &lt;attribute name="MealPlanCodes" use="required">
-         *                                                           &lt;simpleType>
-         *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                               &lt;enumeration value="1"/>
-         *                                                               &lt;enumeration value="3"/>
-         *                                                               &lt;enumeration value="10"/>
-         *                                                               &lt;enumeration value="12"/>
-         *                                                               &lt;enumeration value="14"/>
-         *                                                             &lt;/restriction>
-         *                                                           &lt;/simpleType>
-         *                                                         &lt;/attribute>
-         *                                                       &lt;/restriction>
-         *                                                     &lt;/complexContent>
-         *                                                   &lt;/complexType>
-         *                                                 &lt;/element>
-         *                                               &lt;/sequence>
-         *                                               &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="GuestCounts" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="GuestCount" maxOccurs="unbounded">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
-         *                                               &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="TimeSpan">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="StartDateWindow" minOccurs="0">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                                               &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                     &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                                     &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                                     &lt;attribute name="Duration">
-         *                                       &lt;simpleType>
-         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                           &lt;pattern value="P[0-9]+N"/>
-         *                                         &lt;/restriction>
-         *                                       &lt;/simpleType>
-         *                                     &lt;/attribute>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="Total" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" />
-         *                                     &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="ResGuests" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="ResGuest">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="Profiles">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="ProfileInfo">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="Profile">
-         *                                                   &lt;complexType>
-         *                                                     &lt;complexContent>
-         *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                         &lt;sequence>
-         *                                                           &lt;element name="Customer">
-         *                                                             &lt;complexType>
-         *                                                               &lt;complexContent>
-         *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                                   &lt;sequence>
-         *                                                                     &lt;element name="PersonName">
-         *                                                                       &lt;complexType>
-         *                                                                         &lt;complexContent>
-         *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                                             &lt;sequence>
-         *                                                                               &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-         *                                                                               &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-         *                                                                               &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-         *                                                                               &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-         *                                                                             &lt;/sequence>
-         *                                                                           &lt;/restriction>
-         *                                                                         &lt;/complexContent>
-         *                                                                       &lt;/complexType>
-         *                                                                     &lt;/element>
-         *                                                                     &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-         *                                                                       &lt;complexType>
-         *                                                                         &lt;complexContent>
-         *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                                             &lt;attribute name="PhoneTechType" use="required">
-         *                                                                               &lt;simpleType>
-         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                                                   &lt;pattern value="(1|3|5)"/>
-         *                                                                                 &lt;/restriction>
-         *                                                                               &lt;/simpleType>
-         *                                                                             &lt;/attribute>
-         *                                                                             &lt;attribute name="PhoneNumber" use="required">
-         *                                                                               &lt;simpleType>
-         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                                                   &lt;pattern value="\+?[0-9]+"/>
-         *                                                                                 &lt;/restriction>
-         *                                                                               &lt;/simpleType>
-         *                                                                             &lt;/attribute>
-         *                                                                           &lt;/restriction>
-         *                                                                         &lt;/complexContent>
-         *                                                                       &lt;/complexType>
-         *                                                                     &lt;/element>
-         *                                                                     &lt;element name="Email" minOccurs="0">
-         *                                                                       &lt;complexType>
-         *                                                                         &lt;simpleContent>
-         *                                                                           &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-         *                                                                             &lt;attribute name="Remark">
-         *                                                                               &lt;simpleType>
-         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                                                   &lt;pattern value="newsletter:(no|yes)"/>
-         *                                                                                 &lt;/restriction>
-         *                                                                               &lt;/simpleType>
-         *                                                                             &lt;/attribute>
-         *                                                                           &lt;/extension>
-         *                                                                         &lt;/simpleContent>
-         *                                                                       &lt;/complexType>
-         *                                                                     &lt;/element>
-         *                                                                     &lt;element name="Address" minOccurs="0">
-         *                                                                       &lt;complexType>
-         *                                                                         &lt;complexContent>
-         *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                                             &lt;sequence>
-         *                                                                               &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-         *                                                                               &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-         *                                                                               &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-         *                                                                               &lt;element name="CountryName">
-         *                                                                                 &lt;complexType>
-         *                                                                                   &lt;complexContent>
-         *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                                                       &lt;attribute name="Code" use="required">
-         *                                                                                         &lt;simpleType>
-         *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                                                             &lt;pattern value="[A-Z][A-Z]"/>
-         *                                                                                           &lt;/restriction>
-         *                                                                                         &lt;/simpleType>
-         *                                                                                       &lt;/attribute>
-         *                                                                                     &lt;/restriction>
-         *                                                                                   &lt;/complexContent>
-         *                                                                                 &lt;/complexType>
-         *                                                                               &lt;/element>
-         *                                                                             &lt;/sequence>
-         *                                                                             &lt;attribute name="Remark">
-         *                                                                               &lt;simpleType>
-         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                                                   &lt;pattern value="catalog:(no|yes)"/>
-         *                                                                                 &lt;/restriction>
-         *                                                                               &lt;/simpleType>
-         *                                                                             &lt;/attribute>
-         *                                                                           &lt;/restriction>
-         *                                                                         &lt;/complexContent>
-         *                                                                       &lt;/complexType>
-         *                                                                     &lt;/element>
-         *                                                                   &lt;/sequence>
-         *                                                                   &lt;attribute name="Gender" use="required">
-         *                                                                     &lt;simpleType>
-         *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                                         &lt;pattern value="(Unknown|Male|Female)"/>
-         *                                                                       &lt;/restriction>
-         *                                                                     &lt;/simpleType>
-         *                                                                   &lt;/attribute>
-         *                                                                   &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                                                                   &lt;attribute name="Language" use="required">
-         *                                                                     &lt;simpleType>
-         *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-         *                                                                         &lt;pattern value="[a-z][a-z]"/>
-         *                                                                       &lt;/restriction>
-         *                                                                     &lt;/simpleType>
-         *                                                                   &lt;/attribute>
-         *                                                                 &lt;/restriction>
-         *                                                               &lt;/complexContent>
-         *                                                             &lt;/complexType>
-         *                                                           &lt;/element>
-         *                                                         &lt;/sequence>
-         *                                                       &lt;/restriction>
-         *                                                     &lt;/complexContent>
-         *                                                   &lt;/complexType>
-         *                                                 &lt;/element>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="ResGlobalInfo" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="Comments" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="Comment" maxOccurs="2">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;choice>
-         *                                         &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0">
-         *                                           &lt;complexType>
-         *                                             &lt;simpleContent>
-         *                                               &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
-         *                                                 &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-         *                                                 &lt;attribute name="Language" use="required">
-         *                                                   &lt;simpleType>
-         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-         *                                                       &lt;pattern value="[a-z][a-z]"/>
-         *                                                     &lt;/restriction>
-         *                                                   &lt;/simpleType>
-         *                                                 &lt;/attribute>
-         *                                               &lt;/extension>
-         *                                             &lt;/simpleContent>
-         *                                           &lt;/complexType>
-         *                                         &lt;/element>
-         *                                         &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-         *                                       &lt;/choice>
-         *                                     &lt;/sequence>
-         *                                     &lt;attribute name="Name" use="required">
-         *                                       &lt;simpleType>
-         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                           &lt;enumeration value="included services"/>
-         *                                           &lt;enumeration value="customer comment"/>
-         *                                         &lt;/restriction>
-         *                                       &lt;/simpleType>
-         *                                     &lt;/attribute>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="CancelPenalties" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="CancelPenalty">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="PenaltyDescription">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="HotelReservationIDs" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="HotelReservationID">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;attribute name="ResID_Type" use="required">
-         *                                       &lt;simpleType>
-         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                           &lt;enumeration value="13"/>
-         *                                         &lt;/restriction>
-         *                                       &lt;/simpleType>
-         *                                     &lt;/attribute>
-         *                                     &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                                     &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                                     &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *       &lt;attribute name="CreateDateTime" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_datetime" />
-         *       &lt;attribute name="ResStatus" use="required">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *             &lt;enumeration value="Requested"/>
-         *             &lt;enumeration value="Reserved"/>
-         *             &lt;enumeration value="Cancelled"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="UniqueID"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="Type" use="required"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                       &lt;enumeration value="14"/&gt;
+         *                       &lt;enumeration value="15"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="RoomStays" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="RoomStay" maxOccurs="unbounded"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="RoomTypes" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="RoomType"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="RatePlans" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="RatePlan"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;sequence&gt;
+         *                                                 &lt;element name="MealsIncluded" minOccurs="0"&gt;
+         *                                                   &lt;complexType&gt;
+         *                                                     &lt;complexContent&gt;
+         *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                         &lt;attribute name="MealPlanIndicator" use="required"&gt;
+         *                                                           &lt;simpleType&gt;
+         *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                               &lt;enumeration value="1"/&gt;
+         *                                                               &lt;enumeration value="true"/&gt;
+         *                                                             &lt;/restriction&gt;
+         *                                                           &lt;/simpleType&gt;
+         *                                                         &lt;/attribute&gt;
+         *                                                         &lt;attribute name="MealPlanCodes" use="required"&gt;
+         *                                                           &lt;simpleType&gt;
+         *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                               &lt;enumeration value="1"/&gt;
+         *                                                               &lt;enumeration value="3"/&gt;
+         *                                                               &lt;enumeration value="10"/&gt;
+         *                                                               &lt;enumeration value="12"/&gt;
+         *                                                               &lt;enumeration value="14"/&gt;
+         *                                                             &lt;/restriction&gt;
+         *                                                           &lt;/simpleType&gt;
+         *                                                         &lt;/attribute&gt;
+         *                                                       &lt;/restriction&gt;
+         *                                                     &lt;/complexContent&gt;
+         *                                                   &lt;/complexType&gt;
+         *                                                 &lt;/element&gt;
+         *                                               &lt;/sequence&gt;
+         *                                               &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="GuestCounts" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="GuestCount" maxOccurs="unbounded"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+         *                                               &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="TimeSpan"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="StartDateWindow" minOccurs="0"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                                               &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                     &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                                     &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                                     &lt;attribute name="Duration"&gt;
+         *                                       &lt;simpleType&gt;
+         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                           &lt;pattern value="P[0-9]+N"/&gt;
+         *                                         &lt;/restriction&gt;
+         *                                       &lt;/simpleType&gt;
+         *                                     &lt;/attribute&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="Total" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" /&gt;
+         *                                     &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="ResGuests" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="ResGuest"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="Profiles"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="ProfileInfo"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;sequence&gt;
+         *                                                 &lt;element name="Profile"&gt;
+         *                                                   &lt;complexType&gt;
+         *                                                     &lt;complexContent&gt;
+         *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                         &lt;sequence&gt;
+         *                                                           &lt;element name="Customer"&gt;
+         *                                                             &lt;complexType&gt;
+         *                                                               &lt;complexContent&gt;
+         *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                                   &lt;sequence&gt;
+         *                                                                     &lt;element name="PersonName"&gt;
+         *                                                                       &lt;complexType&gt;
+         *                                                                         &lt;complexContent&gt;
+         *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                                             &lt;sequence&gt;
+         *                                                                               &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+         *                                                                               &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+         *                                                                               &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+         *                                                                               &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+         *                                                                             &lt;/sequence&gt;
+         *                                                                           &lt;/restriction&gt;
+         *                                                                         &lt;/complexContent&gt;
+         *                                                                       &lt;/complexType&gt;
+         *                                                                     &lt;/element&gt;
+         *                                                                     &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+         *                                                                       &lt;complexType&gt;
+         *                                                                         &lt;complexContent&gt;
+         *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                                             &lt;attribute name="PhoneTechType" use="required"&gt;
+         *                                                                               &lt;simpleType&gt;
+         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                                                   &lt;pattern value="(1|3|5)"/&gt;
+         *                                                                                 &lt;/restriction&gt;
+         *                                                                               &lt;/simpleType&gt;
+         *                                                                             &lt;/attribute&gt;
+         *                                                                             &lt;attribute name="PhoneNumber" use="required"&gt;
+         *                                                                               &lt;simpleType&gt;
+         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                                                   &lt;pattern value="\+?[0-9]+"/&gt;
+         *                                                                                 &lt;/restriction&gt;
+         *                                                                               &lt;/simpleType&gt;
+         *                                                                             &lt;/attribute&gt;
+         *                                                                           &lt;/restriction&gt;
+         *                                                                         &lt;/complexContent&gt;
+         *                                                                       &lt;/complexType&gt;
+         *                                                                     &lt;/element&gt;
+         *                                                                     &lt;element name="Email" minOccurs="0"&gt;
+         *                                                                       &lt;complexType&gt;
+         *                                                                         &lt;simpleContent&gt;
+         *                                                                           &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+         *                                                                             &lt;attribute name="Remark"&gt;
+         *                                                                               &lt;simpleType&gt;
+         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                                                   &lt;pattern value="newsletter:(no|yes)"/&gt;
+         *                                                                                 &lt;/restriction&gt;
+         *                                                                               &lt;/simpleType&gt;
+         *                                                                             &lt;/attribute&gt;
+         *                                                                           &lt;/extension&gt;
+         *                                                                         &lt;/simpleContent&gt;
+         *                                                                       &lt;/complexType&gt;
+         *                                                                     &lt;/element&gt;
+         *                                                                     &lt;element name="Address" minOccurs="0"&gt;
+         *                                                                       &lt;complexType&gt;
+         *                                                                         &lt;complexContent&gt;
+         *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                                             &lt;sequence&gt;
+         *                                                                               &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+         *                                                                               &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+         *                                                                               &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+         *                                                                               &lt;element name="CountryName"&gt;
+         *                                                                                 &lt;complexType&gt;
+         *                                                                                   &lt;complexContent&gt;
+         *                                                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                                                                       &lt;attribute name="Code" use="required"&gt;
+         *                                                                                         &lt;simpleType&gt;
+         *                                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                                                             &lt;pattern value="[A-Z][A-Z]"/&gt;
+         *                                                                                           &lt;/restriction&gt;
+         *                                                                                         &lt;/simpleType&gt;
+         *                                                                                       &lt;/attribute&gt;
+         *                                                                                     &lt;/restriction&gt;
+         *                                                                                   &lt;/complexContent&gt;
+         *                                                                                 &lt;/complexType&gt;
+         *                                                                               &lt;/element&gt;
+         *                                                                             &lt;/sequence&gt;
+         *                                                                             &lt;attribute name="Remark"&gt;
+         *                                                                               &lt;simpleType&gt;
+         *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                                                   &lt;pattern value="catalog:(no|yes)"/&gt;
+         *                                                                                 &lt;/restriction&gt;
+         *                                                                               &lt;/simpleType&gt;
+         *                                                                             &lt;/attribute&gt;
+         *                                                                           &lt;/restriction&gt;
+         *                                                                         &lt;/complexContent&gt;
+         *                                                                       &lt;/complexType&gt;
+         *                                                                     &lt;/element&gt;
+         *                                                                   &lt;/sequence&gt;
+         *                                                                   &lt;attribute name="Gender" use="required"&gt;
+         *                                                                     &lt;simpleType&gt;
+         *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                                         &lt;pattern value="(Unknown|Male|Female)"/&gt;
+         *                                                                       &lt;/restriction&gt;
+         *                                                                     &lt;/simpleType&gt;
+         *                                                                   &lt;/attribute&gt;
+         *                                                                   &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                                                                   &lt;attribute name="Language" use="required"&gt;
+         *                                                                     &lt;simpleType&gt;
+         *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+         *                                                                         &lt;pattern value="[a-z][a-z]"/&gt;
+         *                                                                       &lt;/restriction&gt;
+         *                                                                     &lt;/simpleType&gt;
+         *                                                                   &lt;/attribute&gt;
+         *                                                                 &lt;/restriction&gt;
+         *                                                               &lt;/complexContent&gt;
+         *                                                             &lt;/complexType&gt;
+         *                                                           &lt;/element&gt;
+         *                                                         &lt;/sequence&gt;
+         *                                                       &lt;/restriction&gt;
+         *                                                     &lt;/complexContent&gt;
+         *                                                   &lt;/complexType&gt;
+         *                                                 &lt;/element&gt;
+         *                                               &lt;/sequence&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="ResGlobalInfo" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="Comments" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="Comment" maxOccurs="2"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;choice&gt;
+         *                                         &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0"&gt;
+         *                                           &lt;complexType&gt;
+         *                                             &lt;simpleContent&gt;
+         *                                               &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+         *                                                 &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+         *                                                 &lt;attribute name="Language" use="required"&gt;
+         *                                                   &lt;simpleType&gt;
+         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+         *                                                       &lt;pattern value="[a-z][a-z]"/&gt;
+         *                                                     &lt;/restriction&gt;
+         *                                                   &lt;/simpleType&gt;
+         *                                                 &lt;/attribute&gt;
+         *                                               &lt;/extension&gt;
+         *                                             &lt;/simpleContent&gt;
+         *                                           &lt;/complexType&gt;
+         *                                         &lt;/element&gt;
+         *                                         &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+         *                                       &lt;/choice&gt;
+         *                                     &lt;/sequence&gt;
+         *                                     &lt;attribute name="Name" use="required"&gt;
+         *                                       &lt;simpleType&gt;
+         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                           &lt;enumeration value="included services"/&gt;
+         *                                           &lt;enumeration value="customer comment"/&gt;
+         *                                         &lt;/restriction&gt;
+         *                                       &lt;/simpleType&gt;
+         *                                     &lt;/attribute&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="CancelPenalties" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="CancelPenalty"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="PenaltyDescription"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;sequence&gt;
+         *                                                 &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+         *                                               &lt;/sequence&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="HotelReservationIDs" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="HotelReservationID"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;attribute name="ResID_Type" use="required"&gt;
+         *                                       &lt;simpleType&gt;
+         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                           &lt;enumeration value="13"/&gt;
+         *                                         &lt;/restriction&gt;
+         *                                       &lt;/simpleType&gt;
+         *                                     &lt;/attribute&gt;
+         *                                     &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                                     &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                                     &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *       &lt;attribute name="CreateDateTime" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_datetime" /&gt;
+         *       &lt;attribute name="ResStatus" use="required"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *             &lt;enumeration value="Requested"/&gt;
+         *             &lt;enumeration value="Reserved"/&gt;
+         *             &lt;enumeration value="Cancelled"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -1875,7 +1875,7 @@ public class OTAResRetrieveRS {
             protected String resStatus;
 
             /**
-             * Gets the value of the uniqueID property.
+             * Recupera il valore della proprietà uniqueID.
              * 
              * @return
              *     possible object is
@@ -1887,7 +1887,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the uniqueID property.
+             * Imposta il valore della proprietà uniqueID.
              * 
              * @param value
              *     allowed object is
@@ -1899,7 +1899,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the roomStays property.
+             * Recupera il valore della proprietà roomStays.
              * 
              * @return
              *     possible object is
@@ -1911,7 +1911,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the roomStays property.
+             * Imposta il valore della proprietà roomStays.
              * 
              * @param value
              *     allowed object is
@@ -1923,7 +1923,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the resGuests property.
+             * Recupera il valore della proprietà resGuests.
              * 
              * @return
              *     possible object is
@@ -1935,7 +1935,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the resGuests property.
+             * Imposta il valore della proprietà resGuests.
              * 
              * @param value
              *     allowed object is
@@ -1947,7 +1947,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the resGlobalInfo property.
+             * Recupera il valore della proprietà resGlobalInfo.
              * 
              * @return
              *     possible object is
@@ -1959,7 +1959,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the resGlobalInfo property.
+             * Imposta il valore della proprietà resGlobalInfo.
              * 
              * @param value
              *     allowed object is
@@ -1971,7 +1971,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the createDateTime property.
+             * Recupera il valore della proprietà createDateTime.
              * 
              * @return
              *     possible object is
@@ -1983,7 +1983,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the createDateTime property.
+             * Imposta il valore della proprietà createDateTime.
              * 
              * @param value
              *     allowed object is
@@ -1995,7 +1995,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Gets the value of the resStatus property.
+             * Recupera il valore della proprietà resStatus.
              * 
              * @return
              *     possible object is
@@ -2007,7 +2007,7 @@ public class OTAResRetrieveRS {
             }
 
             /**
-             * Sets the value of the resStatus property.
+             * Imposta il valore della proprietà resStatus.
              * 
              * @param value
              *     allowed object is
@@ -2020,125 +2020,125 @@ public class OTAResRetrieveRS {
 
 
             /**
-             * <p>Java class for anonymous complex type.
+             * <p>Classe Java per anonymous complex type.
              * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
+             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="Comments" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="Comment" maxOccurs="2">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;choice>
-             *                               &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0">
-             *                                 &lt;complexType>
-             *                                   &lt;simpleContent>
-             *                                     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
-             *                                       &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-             *                                       &lt;attribute name="Language" use="required">
-             *                                         &lt;simpleType>
-             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-             *                                             &lt;pattern value="[a-z][a-z]"/>
-             *                                           &lt;/restriction>
-             *                                         &lt;/simpleType>
-             *                                       &lt;/attribute>
-             *                                     &lt;/extension>
-             *                                   &lt;/simpleContent>
-             *                                 &lt;/complexType>
-             *                               &lt;/element>
-             *                               &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-             *                             &lt;/choice>
-             *                           &lt;/sequence>
-             *                           &lt;attribute name="Name" use="required">
-             *                             &lt;simpleType>
-             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                 &lt;enumeration value="included services"/>
-             *                                 &lt;enumeration value="customer comment"/>
-             *                               &lt;/restriction>
-             *                             &lt;/simpleType>
-             *                           &lt;/attribute>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="CancelPenalties" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="CancelPenalty">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="PenaltyDescription">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;sequence>
-             *                                       &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-             *                                     &lt;/sequence>
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="HotelReservationIDs" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="HotelReservationID">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;attribute name="ResID_Type" use="required">
-             *                             &lt;simpleType>
-             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                 &lt;enumeration value="13"/>
-             *                               &lt;/restriction>
-             *                             &lt;/simpleType>
-             *                           &lt;/attribute>
-             *                           &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *                           &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *                           &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="Comments" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="Comment" maxOccurs="2"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;choice&gt;
+             *                               &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0"&gt;
+             *                                 &lt;complexType&gt;
+             *                                   &lt;simpleContent&gt;
+             *                                     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+             *                                       &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+             *                                       &lt;attribute name="Language" use="required"&gt;
+             *                                         &lt;simpleType&gt;
+             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+             *                                             &lt;pattern value="[a-z][a-z]"/&gt;
+             *                                           &lt;/restriction&gt;
+             *                                         &lt;/simpleType&gt;
+             *                                       &lt;/attribute&gt;
+             *                                     &lt;/extension&gt;
+             *                                   &lt;/simpleContent&gt;
+             *                                 &lt;/complexType&gt;
+             *                               &lt;/element&gt;
+             *                               &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+             *                             &lt;/choice&gt;
+             *                           &lt;/sequence&gt;
+             *                           &lt;attribute name="Name" use="required"&gt;
+             *                             &lt;simpleType&gt;
+             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                 &lt;enumeration value="included services"/&gt;
+             *                                 &lt;enumeration value="customer comment"/&gt;
+             *                               &lt;/restriction&gt;
+             *                             &lt;/simpleType&gt;
+             *                           &lt;/attribute&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="CancelPenalties" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="CancelPenalty"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="PenaltyDescription"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;sequence&gt;
+             *                                       &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+             *                                     &lt;/sequence&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="HotelReservationIDs" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="HotelReservationID"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;attribute name="ResID_Type" use="required"&gt;
+             *                             &lt;simpleType&gt;
+             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                 &lt;enumeration value="13"/&gt;
+             *                               &lt;/restriction&gt;
+             *                             &lt;/simpleType&gt;
+             *                           &lt;/attribute&gt;
+             *                           &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *                           &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *                           &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -2159,7 +2159,7 @@ public class OTAResRetrieveRS {
                 protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGlobalInfo.HotelReservationIDs hotelReservationIDs;
 
                 /**
-                 * Gets the value of the comments property.
+                 * Recupera il valore della proprietà comments.
                  * 
                  * @return
                  *     possible object is
@@ -2171,7 +2171,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Sets the value of the comments property.
+                 * Imposta il valore della proprietà comments.
                  * 
                  * @param value
                  *     allowed object is
@@ -2183,7 +2183,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Gets the value of the cancelPenalties property.
+                 * Recupera il valore della proprietà cancelPenalties.
                  * 
                  * @return
                  *     possible object is
@@ -2195,7 +2195,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Sets the value of the cancelPenalties property.
+                 * Imposta il valore della proprietà cancelPenalties.
                  * 
                  * @param value
                  *     allowed object is
@@ -2207,7 +2207,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Gets the value of the hotelReservationIDs property.
+                 * Recupera il valore della proprietà hotelReservationIDs.
                  * 
                  * @return
                  *     possible object is
@@ -2219,7 +2219,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Sets the value of the hotelReservationIDs property.
+                 * Imposta il valore della proprietà hotelReservationIDs.
                  * 
                  * @param value
                  *     allowed object is
@@ -2232,40 +2232,40 @@ public class OTAResRetrieveRS {
 
 
                 /**
-                 * <p>Java class for anonymous complex type.
+                 * <p>Classe Java per anonymous complex type.
                  * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
+                 * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="CancelPenalty">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="PenaltyDescription">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;sequence>
-                 *                             &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                 *                           &lt;/sequence>
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="CancelPenalty"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="PenaltyDescription"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;sequence&gt;
+                 *                             &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                 *                           &lt;/sequence&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -2280,7 +2280,7 @@ public class OTAResRetrieveRS {
                     protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGlobalInfo.CancelPenalties.CancelPenalty cancelPenalty;
 
                     /**
-                     * Gets the value of the cancelPenalty property.
+                     * Recupera il valore della proprietà cancelPenalty.
                      * 
                      * @return
                      *     possible object is
@@ -2292,7 +2292,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the cancelPenalty property.
+                     * Imposta il valore della proprietà cancelPenalty.
                      * 
                      * @param value
                      *     allowed object is
@@ -2305,30 +2305,30 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="PenaltyDescription">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;sequence>
-                     *                   &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                     *                 &lt;/sequence>
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="PenaltyDescription"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;sequence&gt;
+                     *                   &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                     *                 &lt;/sequence&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -2343,7 +2343,7 @@ public class OTAResRetrieveRS {
                         protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGlobalInfo.CancelPenalties.CancelPenalty.PenaltyDescription penaltyDescription;
 
                         /**
-                         * Gets the value of the penaltyDescription property.
+                         * Recupera il valore della proprietà penaltyDescription.
                          * 
                          * @return
                          *     possible object is
@@ -2355,7 +2355,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the penaltyDescription property.
+                         * Imposta il valore della proprietà penaltyDescription.
                          * 
                          * @param value
                          *     allowed object is
@@ -2368,20 +2368,20 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;sequence>
-                         *         &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                         *       &lt;/sequence>
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;sequence&gt;
+                         *         &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                         *       &lt;/sequence&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -2396,7 +2396,7 @@ public class OTAResRetrieveRS {
                             protected String text;
 
                             /**
-                             * Gets the value of the text property.
+                             * Recupera il valore della proprietà text.
                              * 
                              * @return
                              *     possible object is
@@ -2408,7 +2408,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the text property.
+                             * Imposta il valore della proprietà text.
                              * 
                              * @param value
                              *     allowed object is
@@ -2427,56 +2427,56 @@ public class OTAResRetrieveRS {
 
 
                 /**
-                 * <p>Java class for anonymous complex type.
+                 * <p>Classe Java per anonymous complex type.
                  * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
+                 * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="Comment" maxOccurs="2">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;choice>
-                 *                     &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0">
-                 *                       &lt;complexType>
-                 *                         &lt;simpleContent>
-                 *                           &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
-                 *                             &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-                 *                             &lt;attribute name="Language" use="required">
-                 *                               &lt;simpleType>
-                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                 *                                   &lt;pattern value="[a-z][a-z]"/>
-                 *                                 &lt;/restriction>
-                 *                               &lt;/simpleType>
-                 *                             &lt;/attribute>
-                 *                           &lt;/extension>
-                 *                         &lt;/simpleContent>
-                 *                       &lt;/complexType>
-                 *                     &lt;/element>
-                 *                     &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                 *                   &lt;/choice>
-                 *                 &lt;/sequence>
-                 *                 &lt;attribute name="Name" use="required">
-                 *                   &lt;simpleType>
-                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                       &lt;enumeration value="included services"/>
-                 *                       &lt;enumeration value="customer comment"/>
-                 *                     &lt;/restriction>
-                 *                   &lt;/simpleType>
-                 *                 &lt;/attribute>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="Comment" maxOccurs="2"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;choice&gt;
+                 *                     &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0"&gt;
+                 *                       &lt;complexType&gt;
+                 *                         &lt;simpleContent&gt;
+                 *                           &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+                 *                             &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+                 *                             &lt;attribute name="Language" use="required"&gt;
+                 *                               &lt;simpleType&gt;
+                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                 *                                   &lt;pattern value="[a-z][a-z]"/&gt;
+                 *                                 &lt;/restriction&gt;
+                 *                               &lt;/simpleType&gt;
+                 *                             &lt;/attribute&gt;
+                 *                           &lt;/extension&gt;
+                 *                         &lt;/simpleContent&gt;
+                 *                       &lt;/complexType&gt;
+                 *                     &lt;/element&gt;
+                 *                     &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                 *                   &lt;/choice&gt;
+                 *                 &lt;/sequence&gt;
+                 *                 &lt;attribute name="Name" use="required"&gt;
+                 *                   &lt;simpleType&gt;
+                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                       &lt;enumeration value="included services"/&gt;
+                 *                       &lt;enumeration value="customer comment"/&gt;
+                 *                     &lt;/restriction&gt;
+                 *                   &lt;/simpleType&gt;
+                 *                 &lt;/attribute&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -2521,46 +2521,46 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;choice>
-                     *           &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0">
-                     *             &lt;complexType>
-                     *               &lt;simpleContent>
-                     *                 &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
-                     *                   &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-                     *                   &lt;attribute name="Language" use="required">
-                     *                     &lt;simpleType>
-                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                     *                         &lt;pattern value="[a-z][a-z]"/>
-                     *                       &lt;/restriction>
-                     *                     &lt;/simpleType>
-                     *                   &lt;/attribute>
-                     *                 &lt;/extension>
-                     *               &lt;/simpleContent>
-                     *             &lt;/complexType>
-                     *           &lt;/element>
-                     *           &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                     *         &lt;/choice>
-                     *       &lt;/sequence>
-                     *       &lt;attribute name="Name" use="required">
-                     *         &lt;simpleType>
-                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *             &lt;enumeration value="included services"/>
-                     *             &lt;enumeration value="customer comment"/>
-                     *           &lt;/restriction>
-                     *         &lt;/simpleType>
-                     *       &lt;/attribute>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;choice&gt;
+                     *           &lt;element name="ListItem" maxOccurs="unbounded" minOccurs="0"&gt;
+                     *             &lt;complexType&gt;
+                     *               &lt;simpleContent&gt;
+                     *                 &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+                     *                   &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+                     *                   &lt;attribute name="Language" use="required"&gt;
+                     *                     &lt;simpleType&gt;
+                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                     *                         &lt;pattern value="[a-z][a-z]"/&gt;
+                     *                       &lt;/restriction&gt;
+                     *                     &lt;/simpleType&gt;
+                     *                   &lt;/attribute&gt;
+                     *                 &lt;/extension&gt;
+                     *               &lt;/simpleContent&gt;
+                     *             &lt;/complexType&gt;
+                     *           &lt;/element&gt;
+                     *           &lt;element name="Text" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                     *         &lt;/choice&gt;
+                     *       &lt;/sequence&gt;
+                     *       &lt;attribute name="Name" use="required"&gt;
+                     *         &lt;simpleType&gt;
+                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *             &lt;enumeration value="included services"/&gt;
+                     *             &lt;enumeration value="customer comment"/&gt;
+                     *           &lt;/restriction&gt;
+                     *         &lt;/simpleType&gt;
+                     *       &lt;/attribute&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -2609,7 +2609,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the text property.
+                         * Recupera il valore della proprietà text.
                          * 
                          * @return
                          *     possible object is
@@ -2621,7 +2621,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the text property.
+                         * Imposta il valore della proprietà text.
                          * 
                          * @param value
                          *     allowed object is
@@ -2633,7 +2633,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the name property.
+                         * Recupera il valore della proprietà name.
                          * 
                          * @return
                          *     possible object is
@@ -2645,7 +2645,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the name property.
+                         * Imposta il valore della proprietà name.
                          * 
                          * @param value
                          *     allowed object is
@@ -2658,25 +2658,25 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;simpleContent>
-                         *     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_nonempty_string">
-                         *       &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-                         *       &lt;attribute name="Language" use="required">
-                         *         &lt;simpleType>
-                         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                         *             &lt;pattern value="[a-z][a-z]"/>
-                         *           &lt;/restriction>
-                         *         &lt;/simpleType>
-                         *       &lt;/attribute>
-                         *     &lt;/extension>
-                         *   &lt;/simpleContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;simpleContent&gt;
+                         *     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_nonempty_string"&gt;
+                         *       &lt;attribute name="ListItem" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+                         *       &lt;attribute name="Language" use="required"&gt;
+                         *         &lt;simpleType&gt;
+                         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                         *             &lt;pattern value="[a-z][a-z]"/&gt;
+                         *           &lt;/restriction&gt;
+                         *         &lt;/simpleType&gt;
+                         *       &lt;/attribute&gt;
+                         *     &lt;/extension&gt;
+                         *   &lt;/simpleContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -2696,7 +2696,7 @@ public class OTAResRetrieveRS {
                             protected String language;
 
                             /**
-                             * Gets the value of the value property.
+                             * Recupera il valore della proprietà value.
                              * 
                              * @return
                              *     possible object is
@@ -2708,7 +2708,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the value property.
+                             * Imposta il valore della proprietà value.
                              * 
                              * @param value
                              *     allowed object is
@@ -2720,7 +2720,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Gets the value of the listItem property.
+                             * Recupera il valore della proprietà listItem.
                              * 
                              * @return
                              *     possible object is
@@ -2732,7 +2732,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the listItem property.
+                             * Imposta il valore della proprietà listItem.
                              * 
                              * @param value
                              *     allowed object is
@@ -2744,7 +2744,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Gets the value of the language property.
+                             * Recupera il valore della proprietà language.
                              * 
                              * @return
                              *     possible object is
@@ -2756,7 +2756,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the language property.
+                             * Imposta il valore della proprietà language.
                              * 
                              * @param value
                              *     allowed object is
@@ -2775,37 +2775,37 @@ public class OTAResRetrieveRS {
 
 
                 /**
-                 * <p>Java class for anonymous complex type.
+                 * <p>Classe Java per anonymous complex type.
                  * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
+                 * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="HotelReservationID">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;attribute name="ResID_Type" use="required">
-                 *                   &lt;simpleType>
-                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                       &lt;enumeration value="13"/>
-                 *                     &lt;/restriction>
-                 *                   &lt;/simpleType>
-                 *                 &lt;/attribute>
-                 *                 &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                 *                 &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                 *                 &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="HotelReservationID"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;attribute name="ResID_Type" use="required"&gt;
+                 *                   &lt;simpleType&gt;
+                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                       &lt;enumeration value="13"/&gt;
+                 *                     &lt;/restriction&gt;
+                 *                   &lt;/simpleType&gt;
+                 *                 &lt;/attribute&gt;
+                 *                 &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                 *                 &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                 *                 &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -2820,7 +2820,7 @@ public class OTAResRetrieveRS {
                     protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGlobalInfo.HotelReservationIDs.HotelReservationID hotelReservationID;
 
                     /**
-                     * Gets the value of the hotelReservationID property.
+                     * Recupera il valore della proprietà hotelReservationID.
                      * 
                      * @return
                      *     possible object is
@@ -2832,7 +2832,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the hotelReservationID property.
+                     * Imposta il valore della proprietà hotelReservationID.
                      * 
                      * @param value
                      *     allowed object is
@@ -2845,27 +2845,27 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;attribute name="ResID_Type" use="required">
-                     *         &lt;simpleType>
-                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *             &lt;enumeration value="13"/>
-                     *           &lt;/restriction>
-                     *         &lt;/simpleType>
-                     *       &lt;/attribute>
-                     *       &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                     *       &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                     *       &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;attribute name="ResID_Type" use="required"&gt;
+                     *         &lt;simpleType&gt;
+                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *             &lt;enumeration value="13"/&gt;
+                     *           &lt;/restriction&gt;
+                     *         &lt;/simpleType&gt;
+                     *       &lt;/attribute&gt;
+                     *       &lt;attribute name="ResID_Value" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                     *       &lt;attribute name="ResID_Source" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                     *       &lt;attribute name="ResID_SourceContext" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -2884,7 +2884,7 @@ public class OTAResRetrieveRS {
                         protected String resIDSourceContext;
 
                         /**
-                         * Gets the value of the resIDType property.
+                         * Recupera il valore della proprietà resIDType.
                          * 
                          * @return
                          *     possible object is
@@ -2896,7 +2896,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the resIDType property.
+                         * Imposta il valore della proprietà resIDType.
                          * 
                          * @param value
                          *     allowed object is
@@ -2908,7 +2908,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the resIDValue property.
+                         * Recupera il valore della proprietà resIDValue.
                          * 
                          * @return
                          *     possible object is
@@ -2920,7 +2920,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the resIDValue property.
+                         * Imposta il valore della proprietà resIDValue.
                          * 
                          * @param value
                          *     allowed object is
@@ -2932,7 +2932,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the resIDSource property.
+                         * Recupera il valore della proprietà resIDSource.
                          * 
                          * @return
                          *     possible object is
@@ -2944,7 +2944,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the resIDSource property.
+                         * Imposta il valore della proprietà resIDSource.
                          * 
                          * @param value
                          *     allowed object is
@@ -2956,7 +2956,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the resIDSourceContext property.
+                         * Recupera il valore della proprietà resIDSourceContext.
                          * 
                          * @return
                          *     possible object is
@@ -2968,7 +2968,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the resIDSourceContext property.
+                         * Imposta il valore della proprietà resIDSourceContext.
                          * 
                          * @param value
                          *     allowed object is
@@ -2987,170 +2987,170 @@ public class OTAResRetrieveRS {
 
 
             /**
-             * <p>Java class for anonymous complex type.
+             * <p>Classe Java per anonymous complex type.
              * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
+             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="ResGuest">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="Profiles">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="ProfileInfo">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;sequence>
-             *                                       &lt;element name="Profile">
-             *                                         &lt;complexType>
-             *                                           &lt;complexContent>
-             *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                               &lt;sequence>
-             *                                                 &lt;element name="Customer">
-             *                                                   &lt;complexType>
-             *                                                     &lt;complexContent>
-             *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                                         &lt;sequence>
-             *                                                           &lt;element name="PersonName">
-             *                                                             &lt;complexType>
-             *                                                               &lt;complexContent>
-             *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                                                   &lt;sequence>
-             *                                                                     &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-             *                                                                     &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-             *                                                                     &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-             *                                                                     &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-             *                                                                   &lt;/sequence>
-             *                                                                 &lt;/restriction>
-             *                                                               &lt;/complexContent>
-             *                                                             &lt;/complexType>
-             *                                                           &lt;/element>
-             *                                                           &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-             *                                                             &lt;complexType>
-             *                                                               &lt;complexContent>
-             *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                                                   &lt;attribute name="PhoneTechType" use="required">
-             *                                                                     &lt;simpleType>
-             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                                         &lt;pattern value="(1|3|5)"/>
-             *                                                                       &lt;/restriction>
-             *                                                                     &lt;/simpleType>
-             *                                                                   &lt;/attribute>
-             *                                                                   &lt;attribute name="PhoneNumber" use="required">
-             *                                                                     &lt;simpleType>
-             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                                         &lt;pattern value="\+?[0-9]+"/>
-             *                                                                       &lt;/restriction>
-             *                                                                     &lt;/simpleType>
-             *                                                                   &lt;/attribute>
-             *                                                                 &lt;/restriction>
-             *                                                               &lt;/complexContent>
-             *                                                             &lt;/complexType>
-             *                                                           &lt;/element>
-             *                                                           &lt;element name="Email" minOccurs="0">
-             *                                                             &lt;complexType>
-             *                                                               &lt;simpleContent>
-             *                                                                 &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-             *                                                                   &lt;attribute name="Remark">
-             *                                                                     &lt;simpleType>
-             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                                         &lt;pattern value="newsletter:(no|yes)"/>
-             *                                                                       &lt;/restriction>
-             *                                                                     &lt;/simpleType>
-             *                                                                   &lt;/attribute>
-             *                                                                 &lt;/extension>
-             *                                                               &lt;/simpleContent>
-             *                                                             &lt;/complexType>
-             *                                                           &lt;/element>
-             *                                                           &lt;element name="Address" minOccurs="0">
-             *                                                             &lt;complexType>
-             *                                                               &lt;complexContent>
-             *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                                                   &lt;sequence>
-             *                                                                     &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-             *                                                                     &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-             *                                                                     &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-             *                                                                     &lt;element name="CountryName">
-             *                                                                       &lt;complexType>
-             *                                                                         &lt;complexContent>
-             *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                                                             &lt;attribute name="Code" use="required">
-             *                                                                               &lt;simpleType>
-             *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                                                   &lt;pattern value="[A-Z][A-Z]"/>
-             *                                                                                 &lt;/restriction>
-             *                                                                               &lt;/simpleType>
-             *                                                                             &lt;/attribute>
-             *                                                                           &lt;/restriction>
-             *                                                                         &lt;/complexContent>
-             *                                                                       &lt;/complexType>
-             *                                                                     &lt;/element>
-             *                                                                   &lt;/sequence>
-             *                                                                   &lt;attribute name="Remark">
-             *                                                                     &lt;simpleType>
-             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                                         &lt;pattern value="catalog:(no|yes)"/>
-             *                                                                       &lt;/restriction>
-             *                                                                     &lt;/simpleType>
-             *                                                                   &lt;/attribute>
-             *                                                                 &lt;/restriction>
-             *                                                               &lt;/complexContent>
-             *                                                             &lt;/complexType>
-             *                                                           &lt;/element>
-             *                                                         &lt;/sequence>
-             *                                                         &lt;attribute name="Gender" use="required">
-             *                                                           &lt;simpleType>
-             *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                               &lt;pattern value="(Unknown|Male|Female)"/>
-             *                                                             &lt;/restriction>
-             *                                                           &lt;/simpleType>
-             *                                                         &lt;/attribute>
-             *                                                         &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *                                                         &lt;attribute name="Language" use="required">
-             *                                                           &lt;simpleType>
-             *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-             *                                                               &lt;pattern value="[a-z][a-z]"/>
-             *                                                             &lt;/restriction>
-             *                                                           &lt;/simpleType>
-             *                                                         &lt;/attribute>
-             *                                                       &lt;/restriction>
-             *                                                     &lt;/complexContent>
-             *                                                   &lt;/complexType>
-             *                                                 &lt;/element>
-             *                                               &lt;/sequence>
-             *                                             &lt;/restriction>
-             *                                           &lt;/complexContent>
-             *                                         &lt;/complexType>
-             *                                       &lt;/element>
-             *                                     &lt;/sequence>
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="ResGuest"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="Profiles"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="ProfileInfo"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;sequence&gt;
+             *                                       &lt;element name="Profile"&gt;
+             *                                         &lt;complexType&gt;
+             *                                           &lt;complexContent&gt;
+             *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                               &lt;sequence&gt;
+             *                                                 &lt;element name="Customer"&gt;
+             *                                                   &lt;complexType&gt;
+             *                                                     &lt;complexContent&gt;
+             *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                                         &lt;sequence&gt;
+             *                                                           &lt;element name="PersonName"&gt;
+             *                                                             &lt;complexType&gt;
+             *                                                               &lt;complexContent&gt;
+             *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                                                   &lt;sequence&gt;
+             *                                                                     &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+             *                                                                     &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+             *                                                                     &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+             *                                                                     &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+             *                                                                   &lt;/sequence&gt;
+             *                                                                 &lt;/restriction&gt;
+             *                                                               &lt;/complexContent&gt;
+             *                                                             &lt;/complexType&gt;
+             *                                                           &lt;/element&gt;
+             *                                                           &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+             *                                                             &lt;complexType&gt;
+             *                                                               &lt;complexContent&gt;
+             *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                                                   &lt;attribute name="PhoneTechType" use="required"&gt;
+             *                                                                     &lt;simpleType&gt;
+             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                                         &lt;pattern value="(1|3|5)"/&gt;
+             *                                                                       &lt;/restriction&gt;
+             *                                                                     &lt;/simpleType&gt;
+             *                                                                   &lt;/attribute&gt;
+             *                                                                   &lt;attribute name="PhoneNumber" use="required"&gt;
+             *                                                                     &lt;simpleType&gt;
+             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                                         &lt;pattern value="\+?[0-9]+"/&gt;
+             *                                                                       &lt;/restriction&gt;
+             *                                                                     &lt;/simpleType&gt;
+             *                                                                   &lt;/attribute&gt;
+             *                                                                 &lt;/restriction&gt;
+             *                                                               &lt;/complexContent&gt;
+             *                                                             &lt;/complexType&gt;
+             *                                                           &lt;/element&gt;
+             *                                                           &lt;element name="Email" minOccurs="0"&gt;
+             *                                                             &lt;complexType&gt;
+             *                                                               &lt;simpleContent&gt;
+             *                                                                 &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+             *                                                                   &lt;attribute name="Remark"&gt;
+             *                                                                     &lt;simpleType&gt;
+             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                                         &lt;pattern value="newsletter:(no|yes)"/&gt;
+             *                                                                       &lt;/restriction&gt;
+             *                                                                     &lt;/simpleType&gt;
+             *                                                                   &lt;/attribute&gt;
+             *                                                                 &lt;/extension&gt;
+             *                                                               &lt;/simpleContent&gt;
+             *                                                             &lt;/complexType&gt;
+             *                                                           &lt;/element&gt;
+             *                                                           &lt;element name="Address" minOccurs="0"&gt;
+             *                                                             &lt;complexType&gt;
+             *                                                               &lt;complexContent&gt;
+             *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                                                   &lt;sequence&gt;
+             *                                                                     &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+             *                                                                     &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+             *                                                                     &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+             *                                                                     &lt;element name="CountryName"&gt;
+             *                                                                       &lt;complexType&gt;
+             *                                                                         &lt;complexContent&gt;
+             *                                                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                                                             &lt;attribute name="Code" use="required"&gt;
+             *                                                                               &lt;simpleType&gt;
+             *                                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                                                   &lt;pattern value="[A-Z][A-Z]"/&gt;
+             *                                                                                 &lt;/restriction&gt;
+             *                                                                               &lt;/simpleType&gt;
+             *                                                                             &lt;/attribute&gt;
+             *                                                                           &lt;/restriction&gt;
+             *                                                                         &lt;/complexContent&gt;
+             *                                                                       &lt;/complexType&gt;
+             *                                                                     &lt;/element&gt;
+             *                                                                   &lt;/sequence&gt;
+             *                                                                   &lt;attribute name="Remark"&gt;
+             *                                                                     &lt;simpleType&gt;
+             *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                                         &lt;pattern value="catalog:(no|yes)"/&gt;
+             *                                                                       &lt;/restriction&gt;
+             *                                                                     &lt;/simpleType&gt;
+             *                                                                   &lt;/attribute&gt;
+             *                                                                 &lt;/restriction&gt;
+             *                                                               &lt;/complexContent&gt;
+             *                                                             &lt;/complexType&gt;
+             *                                                           &lt;/element&gt;
+             *                                                         &lt;/sequence&gt;
+             *                                                         &lt;attribute name="Gender" use="required"&gt;
+             *                                                           &lt;simpleType&gt;
+             *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                               &lt;pattern value="(Unknown|Male|Female)"/&gt;
+             *                                                             &lt;/restriction&gt;
+             *                                                           &lt;/simpleType&gt;
+             *                                                         &lt;/attribute&gt;
+             *                                                         &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *                                                         &lt;attribute name="Language" use="required"&gt;
+             *                                                           &lt;simpleType&gt;
+             *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+             *                                                               &lt;pattern value="[a-z][a-z]"/&gt;
+             *                                                             &lt;/restriction&gt;
+             *                                                           &lt;/simpleType&gt;
+             *                                                         &lt;/attribute&gt;
+             *                                                       &lt;/restriction&gt;
+             *                                                     &lt;/complexContent&gt;
+             *                                                   &lt;/complexType&gt;
+             *                                                 &lt;/element&gt;
+             *                                               &lt;/sequence&gt;
+             *                                             &lt;/restriction&gt;
+             *                                           &lt;/complexContent&gt;
+             *                                         &lt;/complexType&gt;
+             *                                       &lt;/element&gt;
+             *                                     &lt;/sequence&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3165,7 +3165,7 @@ public class OTAResRetrieveRS {
                 protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest resGuest;
 
                 /**
-                 * Gets the value of the resGuest property.
+                 * Recupera il valore della proprietà resGuest.
                  * 
                  * @return
                  *     possible object is
@@ -3177,7 +3177,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Sets the value of the resGuest property.
+                 * Imposta il valore della proprietà resGuest.
                  * 
                  * @param value
                  *     allowed object is
@@ -3190,160 +3190,160 @@ public class OTAResRetrieveRS {
 
 
                 /**
-                 * <p>Java class for anonymous complex type.
+                 * <p>Classe Java per anonymous complex type.
                  * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
+                 * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="Profiles">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="ProfileInfo">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;sequence>
-                 *                             &lt;element name="Profile">
-                 *                               &lt;complexType>
-                 *                                 &lt;complexContent>
-                 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                     &lt;sequence>
-                 *                                       &lt;element name="Customer">
-                 *                                         &lt;complexType>
-                 *                                           &lt;complexContent>
-                 *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                               &lt;sequence>
-                 *                                                 &lt;element name="PersonName">
-                 *                                                   &lt;complexType>
-                 *                                                     &lt;complexContent>
-                 *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                                         &lt;sequence>
-                 *                                                           &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                 *                                                           &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                 *                                                           &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                 *                                                           &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                 *                                                         &lt;/sequence>
-                 *                                                       &lt;/restriction>
-                 *                                                     &lt;/complexContent>
-                 *                                                   &lt;/complexType>
-                 *                                                 &lt;/element>
-                 *                                                 &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-                 *                                                   &lt;complexType>
-                 *                                                     &lt;complexContent>
-                 *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                                         &lt;attribute name="PhoneTechType" use="required">
-                 *                                                           &lt;simpleType>
-                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                                               &lt;pattern value="(1|3|5)"/>
-                 *                                                             &lt;/restriction>
-                 *                                                           &lt;/simpleType>
-                 *                                                         &lt;/attribute>
-                 *                                                         &lt;attribute name="PhoneNumber" use="required">
-                 *                                                           &lt;simpleType>
-                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                                               &lt;pattern value="\+?[0-9]+"/>
-                 *                                                             &lt;/restriction>
-                 *                                                           &lt;/simpleType>
-                 *                                                         &lt;/attribute>
-                 *                                                       &lt;/restriction>
-                 *                                                     &lt;/complexContent>
-                 *                                                   &lt;/complexType>
-                 *                                                 &lt;/element>
-                 *                                                 &lt;element name="Email" minOccurs="0">
-                 *                                                   &lt;complexType>
-                 *                                                     &lt;simpleContent>
-                 *                                                       &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-                 *                                                         &lt;attribute name="Remark">
-                 *                                                           &lt;simpleType>
-                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                                               &lt;pattern value="newsletter:(no|yes)"/>
-                 *                                                             &lt;/restriction>
-                 *                                                           &lt;/simpleType>
-                 *                                                         &lt;/attribute>
-                 *                                                       &lt;/extension>
-                 *                                                     &lt;/simpleContent>
-                 *                                                   &lt;/complexType>
-                 *                                                 &lt;/element>
-                 *                                                 &lt;element name="Address" minOccurs="0">
-                 *                                                   &lt;complexType>
-                 *                                                     &lt;complexContent>
-                 *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                                         &lt;sequence>
-                 *                                                           &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                 *                                                           &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                 *                                                           &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                 *                                                           &lt;element name="CountryName">
-                 *                                                             &lt;complexType>
-                 *                                                               &lt;complexContent>
-                 *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                                                   &lt;attribute name="Code" use="required">
-                 *                                                                     &lt;simpleType>
-                 *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                                                         &lt;pattern value="[A-Z][A-Z]"/>
-                 *                                                                       &lt;/restriction>
-                 *                                                                     &lt;/simpleType>
-                 *                                                                   &lt;/attribute>
-                 *                                                                 &lt;/restriction>
-                 *                                                               &lt;/complexContent>
-                 *                                                             &lt;/complexType>
-                 *                                                           &lt;/element>
-                 *                                                         &lt;/sequence>
-                 *                                                         &lt;attribute name="Remark">
-                 *                                                           &lt;simpleType>
-                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                                               &lt;pattern value="catalog:(no|yes)"/>
-                 *                                                             &lt;/restriction>
-                 *                                                           &lt;/simpleType>
-                 *                                                         &lt;/attribute>
-                 *                                                       &lt;/restriction>
-                 *                                                     &lt;/complexContent>
-                 *                                                   &lt;/complexType>
-                 *                                                 &lt;/element>
-                 *                                               &lt;/sequence>
-                 *                                               &lt;attribute name="Gender" use="required">
-                 *                                                 &lt;simpleType>
-                 *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                                     &lt;pattern value="(Unknown|Male|Female)"/>
-                 *                                                   &lt;/restriction>
-                 *                                                 &lt;/simpleType>
-                 *                                               &lt;/attribute>
-                 *                                               &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                 *                                               &lt;attribute name="Language" use="required">
-                 *                                                 &lt;simpleType>
-                 *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                 *                                                     &lt;pattern value="[a-z][a-z]"/>
-                 *                                                   &lt;/restriction>
-                 *                                                 &lt;/simpleType>
-                 *                                               &lt;/attribute>
-                 *                                             &lt;/restriction>
-                 *                                           &lt;/complexContent>
-                 *                                         &lt;/complexType>
-                 *                                       &lt;/element>
-                 *                                     &lt;/sequence>
-                 *                                   &lt;/restriction>
-                 *                                 &lt;/complexContent>
-                 *                               &lt;/complexType>
-                 *                             &lt;/element>
-                 *                           &lt;/sequence>
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="Profiles"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="ProfileInfo"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;sequence&gt;
+                 *                             &lt;element name="Profile"&gt;
+                 *                               &lt;complexType&gt;
+                 *                                 &lt;complexContent&gt;
+                 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                     &lt;sequence&gt;
+                 *                                       &lt;element name="Customer"&gt;
+                 *                                         &lt;complexType&gt;
+                 *                                           &lt;complexContent&gt;
+                 *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                               &lt;sequence&gt;
+                 *                                                 &lt;element name="PersonName"&gt;
+                 *                                                   &lt;complexType&gt;
+                 *                                                     &lt;complexContent&gt;
+                 *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                                         &lt;sequence&gt;
+                 *                                                           &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                 *                                                           &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                 *                                                           &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                 *                                                           &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                 *                                                         &lt;/sequence&gt;
+                 *                                                       &lt;/restriction&gt;
+                 *                                                     &lt;/complexContent&gt;
+                 *                                                   &lt;/complexType&gt;
+                 *                                                 &lt;/element&gt;
+                 *                                                 &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+                 *                                                   &lt;complexType&gt;
+                 *                                                     &lt;complexContent&gt;
+                 *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                                         &lt;attribute name="PhoneTechType" use="required"&gt;
+                 *                                                           &lt;simpleType&gt;
+                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                                               &lt;pattern value="(1|3|5)"/&gt;
+                 *                                                             &lt;/restriction&gt;
+                 *                                                           &lt;/simpleType&gt;
+                 *                                                         &lt;/attribute&gt;
+                 *                                                         &lt;attribute name="PhoneNumber" use="required"&gt;
+                 *                                                           &lt;simpleType&gt;
+                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                                               &lt;pattern value="\+?[0-9]+"/&gt;
+                 *                                                             &lt;/restriction&gt;
+                 *                                                           &lt;/simpleType&gt;
+                 *                                                         &lt;/attribute&gt;
+                 *                                                       &lt;/restriction&gt;
+                 *                                                     &lt;/complexContent&gt;
+                 *                                                   &lt;/complexType&gt;
+                 *                                                 &lt;/element&gt;
+                 *                                                 &lt;element name="Email" minOccurs="0"&gt;
+                 *                                                   &lt;complexType&gt;
+                 *                                                     &lt;simpleContent&gt;
+                 *                                                       &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+                 *                                                         &lt;attribute name="Remark"&gt;
+                 *                                                           &lt;simpleType&gt;
+                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                                               &lt;pattern value="newsletter:(no|yes)"/&gt;
+                 *                                                             &lt;/restriction&gt;
+                 *                                                           &lt;/simpleType&gt;
+                 *                                                         &lt;/attribute&gt;
+                 *                                                       &lt;/extension&gt;
+                 *                                                     &lt;/simpleContent&gt;
+                 *                                                   &lt;/complexType&gt;
+                 *                                                 &lt;/element&gt;
+                 *                                                 &lt;element name="Address" minOccurs="0"&gt;
+                 *                                                   &lt;complexType&gt;
+                 *                                                     &lt;complexContent&gt;
+                 *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                                         &lt;sequence&gt;
+                 *                                                           &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                 *                                                           &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                 *                                                           &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                 *                                                           &lt;element name="CountryName"&gt;
+                 *                                                             &lt;complexType&gt;
+                 *                                                               &lt;complexContent&gt;
+                 *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                                                   &lt;attribute name="Code" use="required"&gt;
+                 *                                                                     &lt;simpleType&gt;
+                 *                                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                                                         &lt;pattern value="[A-Z][A-Z]"/&gt;
+                 *                                                                       &lt;/restriction&gt;
+                 *                                                                     &lt;/simpleType&gt;
+                 *                                                                   &lt;/attribute&gt;
+                 *                                                                 &lt;/restriction&gt;
+                 *                                                               &lt;/complexContent&gt;
+                 *                                                             &lt;/complexType&gt;
+                 *                                                           &lt;/element&gt;
+                 *                                                         &lt;/sequence&gt;
+                 *                                                         &lt;attribute name="Remark"&gt;
+                 *                                                           &lt;simpleType&gt;
+                 *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                                               &lt;pattern value="catalog:(no|yes)"/&gt;
+                 *                                                             &lt;/restriction&gt;
+                 *                                                           &lt;/simpleType&gt;
+                 *                                                         &lt;/attribute&gt;
+                 *                                                       &lt;/restriction&gt;
+                 *                                                     &lt;/complexContent&gt;
+                 *                                                   &lt;/complexType&gt;
+                 *                                                 &lt;/element&gt;
+                 *                                               &lt;/sequence&gt;
+                 *                                               &lt;attribute name="Gender" use="required"&gt;
+                 *                                                 &lt;simpleType&gt;
+                 *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                                     &lt;pattern value="(Unknown|Male|Female)"/&gt;
+                 *                                                   &lt;/restriction&gt;
+                 *                                                 &lt;/simpleType&gt;
+                 *                                               &lt;/attribute&gt;
+                 *                                               &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                 *                                               &lt;attribute name="Language" use="required"&gt;
+                 *                                                 &lt;simpleType&gt;
+                 *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                 *                                                     &lt;pattern value="[a-z][a-z]"/&gt;
+                 *                                                   &lt;/restriction&gt;
+                 *                                                 &lt;/simpleType&gt;
+                 *                                               &lt;/attribute&gt;
+                 *                                             &lt;/restriction&gt;
+                 *                                           &lt;/complexContent&gt;
+                 *                                         &lt;/complexType&gt;
+                 *                                       &lt;/element&gt;
+                 *                                     &lt;/sequence&gt;
+                 *                                   &lt;/restriction&gt;
+                 *                                 &lt;/complexContent&gt;
+                 *                               &lt;/complexType&gt;
+                 *                             &lt;/element&gt;
+                 *                           &lt;/sequence&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -3358,7 +3358,7 @@ public class OTAResRetrieveRS {
                     protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles profiles;
 
                     /**
-                     * Gets the value of the profiles property.
+                     * Recupera il valore della proprietà profiles.
                      * 
                      * @return
                      *     possible object is
@@ -3370,7 +3370,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the profiles property.
+                     * Imposta il valore della proprietà profiles.
                      * 
                      * @param value
                      *     allowed object is
@@ -3383,150 +3383,150 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="ProfileInfo">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;sequence>
-                     *                   &lt;element name="Profile">
-                     *                     &lt;complexType>
-                     *                       &lt;complexContent>
-                     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                           &lt;sequence>
-                     *                             &lt;element name="Customer">
-                     *                               &lt;complexType>
-                     *                                 &lt;complexContent>
-                     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                                     &lt;sequence>
-                     *                                       &lt;element name="PersonName">
-                     *                                         &lt;complexType>
-                     *                                           &lt;complexContent>
-                     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                                               &lt;sequence>
-                     *                                                 &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                     *                                                 &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                     *                                                 &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                     *                                                 &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                     *                                               &lt;/sequence>
-                     *                                             &lt;/restriction>
-                     *                                           &lt;/complexContent>
-                     *                                         &lt;/complexType>
-                     *                                       &lt;/element>
-                     *                                       &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-                     *                                         &lt;complexType>
-                     *                                           &lt;complexContent>
-                     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                                               &lt;attribute name="PhoneTechType" use="required">
-                     *                                                 &lt;simpleType>
-                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                                     &lt;pattern value="(1|3|5)"/>
-                     *                                                   &lt;/restriction>
-                     *                                                 &lt;/simpleType>
-                     *                                               &lt;/attribute>
-                     *                                               &lt;attribute name="PhoneNumber" use="required">
-                     *                                                 &lt;simpleType>
-                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                                     &lt;pattern value="\+?[0-9]+"/>
-                     *                                                   &lt;/restriction>
-                     *                                                 &lt;/simpleType>
-                     *                                               &lt;/attribute>
-                     *                                             &lt;/restriction>
-                     *                                           &lt;/complexContent>
-                     *                                         &lt;/complexType>
-                     *                                       &lt;/element>
-                     *                                       &lt;element name="Email" minOccurs="0">
-                     *                                         &lt;complexType>
-                     *                                           &lt;simpleContent>
-                     *                                             &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-                     *                                               &lt;attribute name="Remark">
-                     *                                                 &lt;simpleType>
-                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                                     &lt;pattern value="newsletter:(no|yes)"/>
-                     *                                                   &lt;/restriction>
-                     *                                                 &lt;/simpleType>
-                     *                                               &lt;/attribute>
-                     *                                             &lt;/extension>
-                     *                                           &lt;/simpleContent>
-                     *                                         &lt;/complexType>
-                     *                                       &lt;/element>
-                     *                                       &lt;element name="Address" minOccurs="0">
-                     *                                         &lt;complexType>
-                     *                                           &lt;complexContent>
-                     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                                               &lt;sequence>
-                     *                                                 &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                     *                                                 &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                     *                                                 &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                     *                                                 &lt;element name="CountryName">
-                     *                                                   &lt;complexType>
-                     *                                                     &lt;complexContent>
-                     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                                                         &lt;attribute name="Code" use="required">
-                     *                                                           &lt;simpleType>
-                     *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                                               &lt;pattern value="[A-Z][A-Z]"/>
-                     *                                                             &lt;/restriction>
-                     *                                                           &lt;/simpleType>
-                     *                                                         &lt;/attribute>
-                     *                                                       &lt;/restriction>
-                     *                                                     &lt;/complexContent>
-                     *                                                   &lt;/complexType>
-                     *                                                 &lt;/element>
-                     *                                               &lt;/sequence>
-                     *                                               &lt;attribute name="Remark">
-                     *                                                 &lt;simpleType>
-                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                                     &lt;pattern value="catalog:(no|yes)"/>
-                     *                                                   &lt;/restriction>
-                     *                                                 &lt;/simpleType>
-                     *                                               &lt;/attribute>
-                     *                                             &lt;/restriction>
-                     *                                           &lt;/complexContent>
-                     *                                         &lt;/complexType>
-                     *                                       &lt;/element>
-                     *                                     &lt;/sequence>
-                     *                                     &lt;attribute name="Gender" use="required">
-                     *                                       &lt;simpleType>
-                     *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                           &lt;pattern value="(Unknown|Male|Female)"/>
-                     *                                         &lt;/restriction>
-                     *                                       &lt;/simpleType>
-                     *                                     &lt;/attribute>
-                     *                                     &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                     *                                     &lt;attribute name="Language" use="required">
-                     *                                       &lt;simpleType>
-                     *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                     *                                           &lt;pattern value="[a-z][a-z]"/>
-                     *                                         &lt;/restriction>
-                     *                                       &lt;/simpleType>
-                     *                                     &lt;/attribute>
-                     *                                   &lt;/restriction>
-                     *                                 &lt;/complexContent>
-                     *                               &lt;/complexType>
-                     *                             &lt;/element>
-                     *                           &lt;/sequence>
-                     *                         &lt;/restriction>
-                     *                       &lt;/complexContent>
-                     *                     &lt;/complexType>
-                     *                   &lt;/element>
-                     *                 &lt;/sequence>
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="ProfileInfo"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;sequence&gt;
+                     *                   &lt;element name="Profile"&gt;
+                     *                     &lt;complexType&gt;
+                     *                       &lt;complexContent&gt;
+                     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                           &lt;sequence&gt;
+                     *                             &lt;element name="Customer"&gt;
+                     *                               &lt;complexType&gt;
+                     *                                 &lt;complexContent&gt;
+                     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                                     &lt;sequence&gt;
+                     *                                       &lt;element name="PersonName"&gt;
+                     *                                         &lt;complexType&gt;
+                     *                                           &lt;complexContent&gt;
+                     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                                               &lt;sequence&gt;
+                     *                                                 &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                     *                                                 &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                     *                                                 &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                     *                                                 &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                     *                                               &lt;/sequence&gt;
+                     *                                             &lt;/restriction&gt;
+                     *                                           &lt;/complexContent&gt;
+                     *                                         &lt;/complexType&gt;
+                     *                                       &lt;/element&gt;
+                     *                                       &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+                     *                                         &lt;complexType&gt;
+                     *                                           &lt;complexContent&gt;
+                     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                                               &lt;attribute name="PhoneTechType" use="required"&gt;
+                     *                                                 &lt;simpleType&gt;
+                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                                     &lt;pattern value="(1|3|5)"/&gt;
+                     *                                                   &lt;/restriction&gt;
+                     *                                                 &lt;/simpleType&gt;
+                     *                                               &lt;/attribute&gt;
+                     *                                               &lt;attribute name="PhoneNumber" use="required"&gt;
+                     *                                                 &lt;simpleType&gt;
+                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                                     &lt;pattern value="\+?[0-9]+"/&gt;
+                     *                                                   &lt;/restriction&gt;
+                     *                                                 &lt;/simpleType&gt;
+                     *                                               &lt;/attribute&gt;
+                     *                                             &lt;/restriction&gt;
+                     *                                           &lt;/complexContent&gt;
+                     *                                         &lt;/complexType&gt;
+                     *                                       &lt;/element&gt;
+                     *                                       &lt;element name="Email" minOccurs="0"&gt;
+                     *                                         &lt;complexType&gt;
+                     *                                           &lt;simpleContent&gt;
+                     *                                             &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+                     *                                               &lt;attribute name="Remark"&gt;
+                     *                                                 &lt;simpleType&gt;
+                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                                     &lt;pattern value="newsletter:(no|yes)"/&gt;
+                     *                                                   &lt;/restriction&gt;
+                     *                                                 &lt;/simpleType&gt;
+                     *                                               &lt;/attribute&gt;
+                     *                                             &lt;/extension&gt;
+                     *                                           &lt;/simpleContent&gt;
+                     *                                         &lt;/complexType&gt;
+                     *                                       &lt;/element&gt;
+                     *                                       &lt;element name="Address" minOccurs="0"&gt;
+                     *                                         &lt;complexType&gt;
+                     *                                           &lt;complexContent&gt;
+                     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                                               &lt;sequence&gt;
+                     *                                                 &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                     *                                                 &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                     *                                                 &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                     *                                                 &lt;element name="CountryName"&gt;
+                     *                                                   &lt;complexType&gt;
+                     *                                                     &lt;complexContent&gt;
+                     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                                                         &lt;attribute name="Code" use="required"&gt;
+                     *                                                           &lt;simpleType&gt;
+                     *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                                               &lt;pattern value="[A-Z][A-Z]"/&gt;
+                     *                                                             &lt;/restriction&gt;
+                     *                                                           &lt;/simpleType&gt;
+                     *                                                         &lt;/attribute&gt;
+                     *                                                       &lt;/restriction&gt;
+                     *                                                     &lt;/complexContent&gt;
+                     *                                                   &lt;/complexType&gt;
+                     *                                                 &lt;/element&gt;
+                     *                                               &lt;/sequence&gt;
+                     *                                               &lt;attribute name="Remark"&gt;
+                     *                                                 &lt;simpleType&gt;
+                     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                                     &lt;pattern value="catalog:(no|yes)"/&gt;
+                     *                                                   &lt;/restriction&gt;
+                     *                                                 &lt;/simpleType&gt;
+                     *                                               &lt;/attribute&gt;
+                     *                                             &lt;/restriction&gt;
+                     *                                           &lt;/complexContent&gt;
+                     *                                         &lt;/complexType&gt;
+                     *                                       &lt;/element&gt;
+                     *                                     &lt;/sequence&gt;
+                     *                                     &lt;attribute name="Gender" use="required"&gt;
+                     *                                       &lt;simpleType&gt;
+                     *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                           &lt;pattern value="(Unknown|Male|Female)"/&gt;
+                     *                                         &lt;/restriction&gt;
+                     *                                       &lt;/simpleType&gt;
+                     *                                     &lt;/attribute&gt;
+                     *                                     &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                     *                                     &lt;attribute name="Language" use="required"&gt;
+                     *                                       &lt;simpleType&gt;
+                     *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                     *                                           &lt;pattern value="[a-z][a-z]"/&gt;
+                     *                                         &lt;/restriction&gt;
+                     *                                       &lt;/simpleType&gt;
+                     *                                     &lt;/attribute&gt;
+                     *                                   &lt;/restriction&gt;
+                     *                                 &lt;/complexContent&gt;
+                     *                               &lt;/complexType&gt;
+                     *                             &lt;/element&gt;
+                     *                           &lt;/sequence&gt;
+                     *                         &lt;/restriction&gt;
+                     *                       &lt;/complexContent&gt;
+                     *                     &lt;/complexType&gt;
+                     *                   &lt;/element&gt;
+                     *                 &lt;/sequence&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -3541,7 +3541,7 @@ public class OTAResRetrieveRS {
                         protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo profileInfo;
 
                         /**
-                         * Gets the value of the profileInfo property.
+                         * Recupera il valore della proprietà profileInfo.
                          * 
                          * @return
                          *     possible object is
@@ -3553,7 +3553,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the profileInfo property.
+                         * Imposta il valore della proprietà profileInfo.
                          * 
                          * @param value
                          *     allowed object is
@@ -3566,140 +3566,140 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;sequence>
-                         *         &lt;element name="Profile">
-                         *           &lt;complexType>
-                         *             &lt;complexContent>
-                         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                 &lt;sequence>
-                         *                   &lt;element name="Customer">
-                         *                     &lt;complexType>
-                         *                       &lt;complexContent>
-                         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                           &lt;sequence>
-                         *                             &lt;element name="PersonName">
-                         *                               &lt;complexType>
-                         *                                 &lt;complexContent>
-                         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                                     &lt;sequence>
-                         *                                       &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                         *                                       &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                         *                                       &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                         *                                       &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                         *                                     &lt;/sequence>
-                         *                                   &lt;/restriction>
-                         *                                 &lt;/complexContent>
-                         *                               &lt;/complexType>
-                         *                             &lt;/element>
-                         *                             &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-                         *                               &lt;complexType>
-                         *                                 &lt;complexContent>
-                         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                                     &lt;attribute name="PhoneTechType" use="required">
-                         *                                       &lt;simpleType>
-                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                                           &lt;pattern value="(1|3|5)"/>
-                         *                                         &lt;/restriction>
-                         *                                       &lt;/simpleType>
-                         *                                     &lt;/attribute>
-                         *                                     &lt;attribute name="PhoneNumber" use="required">
-                         *                                       &lt;simpleType>
-                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                                           &lt;pattern value="\+?[0-9]+"/>
-                         *                                         &lt;/restriction>
-                         *                                       &lt;/simpleType>
-                         *                                     &lt;/attribute>
-                         *                                   &lt;/restriction>
-                         *                                 &lt;/complexContent>
-                         *                               &lt;/complexType>
-                         *                             &lt;/element>
-                         *                             &lt;element name="Email" minOccurs="0">
-                         *                               &lt;complexType>
-                         *                                 &lt;simpleContent>
-                         *                                   &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-                         *                                     &lt;attribute name="Remark">
-                         *                                       &lt;simpleType>
-                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                                           &lt;pattern value="newsletter:(no|yes)"/>
-                         *                                         &lt;/restriction>
-                         *                                       &lt;/simpleType>
-                         *                                     &lt;/attribute>
-                         *                                   &lt;/extension>
-                         *                                 &lt;/simpleContent>
-                         *                               &lt;/complexType>
-                         *                             &lt;/element>
-                         *                             &lt;element name="Address" minOccurs="0">
-                         *                               &lt;complexType>
-                         *                                 &lt;complexContent>
-                         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                                     &lt;sequence>
-                         *                                       &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                         *                                       &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                         *                                       &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                         *                                       &lt;element name="CountryName">
-                         *                                         &lt;complexType>
-                         *                                           &lt;complexContent>
-                         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                                               &lt;attribute name="Code" use="required">
-                         *                                                 &lt;simpleType>
-                         *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                                                     &lt;pattern value="[A-Z][A-Z]"/>
-                         *                                                   &lt;/restriction>
-                         *                                                 &lt;/simpleType>
-                         *                                               &lt;/attribute>
-                         *                                             &lt;/restriction>
-                         *                                           &lt;/complexContent>
-                         *                                         &lt;/complexType>
-                         *                                       &lt;/element>
-                         *                                     &lt;/sequence>
-                         *                                     &lt;attribute name="Remark">
-                         *                                       &lt;simpleType>
-                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                                           &lt;pattern value="catalog:(no|yes)"/>
-                         *                                         &lt;/restriction>
-                         *                                       &lt;/simpleType>
-                         *                                     &lt;/attribute>
-                         *                                   &lt;/restriction>
-                         *                                 &lt;/complexContent>
-                         *                               &lt;/complexType>
-                         *                             &lt;/element>
-                         *                           &lt;/sequence>
-                         *                           &lt;attribute name="Gender" use="required">
-                         *                             &lt;simpleType>
-                         *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                                 &lt;pattern value="(Unknown|Male|Female)"/>
-                         *                               &lt;/restriction>
-                         *                             &lt;/simpleType>
-                         *                           &lt;/attribute>
-                         *                           &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                         *                           &lt;attribute name="Language" use="required">
-                         *                             &lt;simpleType>
-                         *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                         *                                 &lt;pattern value="[a-z][a-z]"/>
-                         *                               &lt;/restriction>
-                         *                             &lt;/simpleType>
-                         *                           &lt;/attribute>
-                         *                         &lt;/restriction>
-                         *                       &lt;/complexContent>
-                         *                     &lt;/complexType>
-                         *                   &lt;/element>
-                         *                 &lt;/sequence>
-                         *               &lt;/restriction>
-                         *             &lt;/complexContent>
-                         *           &lt;/complexType>
-                         *         &lt;/element>
-                         *       &lt;/sequence>
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;sequence&gt;
+                         *         &lt;element name="Profile"&gt;
+                         *           &lt;complexType&gt;
+                         *             &lt;complexContent&gt;
+                         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                 &lt;sequence&gt;
+                         *                   &lt;element name="Customer"&gt;
+                         *                     &lt;complexType&gt;
+                         *                       &lt;complexContent&gt;
+                         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                           &lt;sequence&gt;
+                         *                             &lt;element name="PersonName"&gt;
+                         *                               &lt;complexType&gt;
+                         *                                 &lt;complexContent&gt;
+                         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                                     &lt;sequence&gt;
+                         *                                       &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                         *                                       &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                         *                                       &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                         *                                       &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                         *                                     &lt;/sequence&gt;
+                         *                                   &lt;/restriction&gt;
+                         *                                 &lt;/complexContent&gt;
+                         *                               &lt;/complexType&gt;
+                         *                             &lt;/element&gt;
+                         *                             &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+                         *                               &lt;complexType&gt;
+                         *                                 &lt;complexContent&gt;
+                         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                                     &lt;attribute name="PhoneTechType" use="required"&gt;
+                         *                                       &lt;simpleType&gt;
+                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                                           &lt;pattern value="(1|3|5)"/&gt;
+                         *                                         &lt;/restriction&gt;
+                         *                                       &lt;/simpleType&gt;
+                         *                                     &lt;/attribute&gt;
+                         *                                     &lt;attribute name="PhoneNumber" use="required"&gt;
+                         *                                       &lt;simpleType&gt;
+                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                                           &lt;pattern value="\+?[0-9]+"/&gt;
+                         *                                         &lt;/restriction&gt;
+                         *                                       &lt;/simpleType&gt;
+                         *                                     &lt;/attribute&gt;
+                         *                                   &lt;/restriction&gt;
+                         *                                 &lt;/complexContent&gt;
+                         *                               &lt;/complexType&gt;
+                         *                             &lt;/element&gt;
+                         *                             &lt;element name="Email" minOccurs="0"&gt;
+                         *                               &lt;complexType&gt;
+                         *                                 &lt;simpleContent&gt;
+                         *                                   &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+                         *                                     &lt;attribute name="Remark"&gt;
+                         *                                       &lt;simpleType&gt;
+                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                                           &lt;pattern value="newsletter:(no|yes)"/&gt;
+                         *                                         &lt;/restriction&gt;
+                         *                                       &lt;/simpleType&gt;
+                         *                                     &lt;/attribute&gt;
+                         *                                   &lt;/extension&gt;
+                         *                                 &lt;/simpleContent&gt;
+                         *                               &lt;/complexType&gt;
+                         *                             &lt;/element&gt;
+                         *                             &lt;element name="Address" minOccurs="0"&gt;
+                         *                               &lt;complexType&gt;
+                         *                                 &lt;complexContent&gt;
+                         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                                     &lt;sequence&gt;
+                         *                                       &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                         *                                       &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                         *                                       &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                         *                                       &lt;element name="CountryName"&gt;
+                         *                                         &lt;complexType&gt;
+                         *                                           &lt;complexContent&gt;
+                         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                                               &lt;attribute name="Code" use="required"&gt;
+                         *                                                 &lt;simpleType&gt;
+                         *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                                                     &lt;pattern value="[A-Z][A-Z]"/&gt;
+                         *                                                   &lt;/restriction&gt;
+                         *                                                 &lt;/simpleType&gt;
+                         *                                               &lt;/attribute&gt;
+                         *                                             &lt;/restriction&gt;
+                         *                                           &lt;/complexContent&gt;
+                         *                                         &lt;/complexType&gt;
+                         *                                       &lt;/element&gt;
+                         *                                     &lt;/sequence&gt;
+                         *                                     &lt;attribute name="Remark"&gt;
+                         *                                       &lt;simpleType&gt;
+                         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                                           &lt;pattern value="catalog:(no|yes)"/&gt;
+                         *                                         &lt;/restriction&gt;
+                         *                                       &lt;/simpleType&gt;
+                         *                                     &lt;/attribute&gt;
+                         *                                   &lt;/restriction&gt;
+                         *                                 &lt;/complexContent&gt;
+                         *                               &lt;/complexType&gt;
+                         *                             &lt;/element&gt;
+                         *                           &lt;/sequence&gt;
+                         *                           &lt;attribute name="Gender" use="required"&gt;
+                         *                             &lt;simpleType&gt;
+                         *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                                 &lt;pattern value="(Unknown|Male|Female)"/&gt;
+                         *                               &lt;/restriction&gt;
+                         *                             &lt;/simpleType&gt;
+                         *                           &lt;/attribute&gt;
+                         *                           &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                         *                           &lt;attribute name="Language" use="required"&gt;
+                         *                             &lt;simpleType&gt;
+                         *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                         *                                 &lt;pattern value="[a-z][a-z]"/&gt;
+                         *                               &lt;/restriction&gt;
+                         *                             &lt;/simpleType&gt;
+                         *                           &lt;/attribute&gt;
+                         *                         &lt;/restriction&gt;
+                         *                       &lt;/complexContent&gt;
+                         *                     &lt;/complexType&gt;
+                         *                   &lt;/element&gt;
+                         *                 &lt;/sequence&gt;
+                         *               &lt;/restriction&gt;
+                         *             &lt;/complexContent&gt;
+                         *           &lt;/complexType&gt;
+                         *         &lt;/element&gt;
+                         *       &lt;/sequence&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -3714,7 +3714,7 @@ public class OTAResRetrieveRS {
                             protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile profile;
 
                             /**
-                             * Gets the value of the profile property.
+                             * Recupera il valore della proprietà profile.
                              * 
                              * @return
                              *     possible object is
@@ -3726,7 +3726,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the profile property.
+                             * Imposta il valore della proprietà profile.
                              * 
                              * @param value
                              *     allowed object is
@@ -3739,130 +3739,130 @@ public class OTAResRetrieveRS {
 
 
                             /**
-                             * <p>Java class for anonymous complex type.
+                             * <p>Classe Java per anonymous complex type.
                              * 
-                             * <p>The following schema fragment specifies the expected content contained within this class.
+                             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                              * 
                              * <pre>
-                             * &lt;complexType>
-                             *   &lt;complexContent>
-                             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *       &lt;sequence>
-                             *         &lt;element name="Customer">
-                             *           &lt;complexType>
-                             *             &lt;complexContent>
-                             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *                 &lt;sequence>
-                             *                   &lt;element name="PersonName">
-                             *                     &lt;complexType>
-                             *                       &lt;complexContent>
-                             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *                           &lt;sequence>
-                             *                             &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                             *                             &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                             *                             &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                             *                             &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                             *                           &lt;/sequence>
-                             *                         &lt;/restriction>
-                             *                       &lt;/complexContent>
-                             *                     &lt;/complexType>
-                             *                   &lt;/element>
-                             *                   &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-                             *                     &lt;complexType>
-                             *                       &lt;complexContent>
-                             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *                           &lt;attribute name="PhoneTechType" use="required">
-                             *                             &lt;simpleType>
-                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *                                 &lt;pattern value="(1|3|5)"/>
-                             *                               &lt;/restriction>
-                             *                             &lt;/simpleType>
-                             *                           &lt;/attribute>
-                             *                           &lt;attribute name="PhoneNumber" use="required">
-                             *                             &lt;simpleType>
-                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *                                 &lt;pattern value="\+?[0-9]+"/>
-                             *                               &lt;/restriction>
-                             *                             &lt;/simpleType>
-                             *                           &lt;/attribute>
-                             *                         &lt;/restriction>
-                             *                       &lt;/complexContent>
-                             *                     &lt;/complexType>
-                             *                   &lt;/element>
-                             *                   &lt;element name="Email" minOccurs="0">
-                             *                     &lt;complexType>
-                             *                       &lt;simpleContent>
-                             *                         &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-                             *                           &lt;attribute name="Remark">
-                             *                             &lt;simpleType>
-                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *                                 &lt;pattern value="newsletter:(no|yes)"/>
-                             *                               &lt;/restriction>
-                             *                             &lt;/simpleType>
-                             *                           &lt;/attribute>
-                             *                         &lt;/extension>
-                             *                       &lt;/simpleContent>
-                             *                     &lt;/complexType>
-                             *                   &lt;/element>
-                             *                   &lt;element name="Address" minOccurs="0">
-                             *                     &lt;complexType>
-                             *                       &lt;complexContent>
-                             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *                           &lt;sequence>
-                             *                             &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                             *                             &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                             *                             &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                             *                             &lt;element name="CountryName">
-                             *                               &lt;complexType>
-                             *                                 &lt;complexContent>
-                             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *                                     &lt;attribute name="Code" use="required">
-                             *                                       &lt;simpleType>
-                             *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *                                           &lt;pattern value="[A-Z][A-Z]"/>
-                             *                                         &lt;/restriction>
-                             *                                       &lt;/simpleType>
-                             *                                     &lt;/attribute>
-                             *                                   &lt;/restriction>
-                             *                                 &lt;/complexContent>
-                             *                               &lt;/complexType>
-                             *                             &lt;/element>
-                             *                           &lt;/sequence>
-                             *                           &lt;attribute name="Remark">
-                             *                             &lt;simpleType>
-                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *                                 &lt;pattern value="catalog:(no|yes)"/>
-                             *                               &lt;/restriction>
-                             *                             &lt;/simpleType>
-                             *                           &lt;/attribute>
-                             *                         &lt;/restriction>
-                             *                       &lt;/complexContent>
-                             *                     &lt;/complexType>
-                             *                   &lt;/element>
-                             *                 &lt;/sequence>
-                             *                 &lt;attribute name="Gender" use="required">
-                             *                   &lt;simpleType>
-                             *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *                       &lt;pattern value="(Unknown|Male|Female)"/>
-                             *                     &lt;/restriction>
-                             *                   &lt;/simpleType>
-                             *                 &lt;/attribute>
-                             *                 &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                             *                 &lt;attribute name="Language" use="required">
-                             *                   &lt;simpleType>
-                             *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                             *                       &lt;pattern value="[a-z][a-z]"/>
-                             *                     &lt;/restriction>
-                             *                   &lt;/simpleType>
-                             *                 &lt;/attribute>
-                             *               &lt;/restriction>
-                             *             &lt;/complexContent>
-                             *           &lt;/complexType>
-                             *         &lt;/element>
-                             *       &lt;/sequence>
-                             *     &lt;/restriction>
-                             *   &lt;/complexContent>
-                             * &lt;/complexType>
+                             * &lt;complexType&gt;
+                             *   &lt;complexContent&gt;
+                             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *       &lt;sequence&gt;
+                             *         &lt;element name="Customer"&gt;
+                             *           &lt;complexType&gt;
+                             *             &lt;complexContent&gt;
+                             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *                 &lt;sequence&gt;
+                             *                   &lt;element name="PersonName"&gt;
+                             *                     &lt;complexType&gt;
+                             *                       &lt;complexContent&gt;
+                             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *                           &lt;sequence&gt;
+                             *                             &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                             *                             &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                             *                             &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                             *                             &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                             *                           &lt;/sequence&gt;
+                             *                         &lt;/restriction&gt;
+                             *                       &lt;/complexContent&gt;
+                             *                     &lt;/complexType&gt;
+                             *                   &lt;/element&gt;
+                             *                   &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+                             *                     &lt;complexType&gt;
+                             *                       &lt;complexContent&gt;
+                             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *                           &lt;attribute name="PhoneTechType" use="required"&gt;
+                             *                             &lt;simpleType&gt;
+                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *                                 &lt;pattern value="(1|3|5)"/&gt;
+                             *                               &lt;/restriction&gt;
+                             *                             &lt;/simpleType&gt;
+                             *                           &lt;/attribute&gt;
+                             *                           &lt;attribute name="PhoneNumber" use="required"&gt;
+                             *                             &lt;simpleType&gt;
+                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *                                 &lt;pattern value="\+?[0-9]+"/&gt;
+                             *                               &lt;/restriction&gt;
+                             *                             &lt;/simpleType&gt;
+                             *                           &lt;/attribute&gt;
+                             *                         &lt;/restriction&gt;
+                             *                       &lt;/complexContent&gt;
+                             *                     &lt;/complexType&gt;
+                             *                   &lt;/element&gt;
+                             *                   &lt;element name="Email" minOccurs="0"&gt;
+                             *                     &lt;complexType&gt;
+                             *                       &lt;simpleContent&gt;
+                             *                         &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+                             *                           &lt;attribute name="Remark"&gt;
+                             *                             &lt;simpleType&gt;
+                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *                                 &lt;pattern value="newsletter:(no|yes)"/&gt;
+                             *                               &lt;/restriction&gt;
+                             *                             &lt;/simpleType&gt;
+                             *                           &lt;/attribute&gt;
+                             *                         &lt;/extension&gt;
+                             *                       &lt;/simpleContent&gt;
+                             *                     &lt;/complexType&gt;
+                             *                   &lt;/element&gt;
+                             *                   &lt;element name="Address" minOccurs="0"&gt;
+                             *                     &lt;complexType&gt;
+                             *                       &lt;complexContent&gt;
+                             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *                           &lt;sequence&gt;
+                             *                             &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                             *                             &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                             *                             &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                             *                             &lt;element name="CountryName"&gt;
+                             *                               &lt;complexType&gt;
+                             *                                 &lt;complexContent&gt;
+                             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *                                     &lt;attribute name="Code" use="required"&gt;
+                             *                                       &lt;simpleType&gt;
+                             *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *                                           &lt;pattern value="[A-Z][A-Z]"/&gt;
+                             *                                         &lt;/restriction&gt;
+                             *                                       &lt;/simpleType&gt;
+                             *                                     &lt;/attribute&gt;
+                             *                                   &lt;/restriction&gt;
+                             *                                 &lt;/complexContent&gt;
+                             *                               &lt;/complexType&gt;
+                             *                             &lt;/element&gt;
+                             *                           &lt;/sequence&gt;
+                             *                           &lt;attribute name="Remark"&gt;
+                             *                             &lt;simpleType&gt;
+                             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *                                 &lt;pattern value="catalog:(no|yes)"/&gt;
+                             *                               &lt;/restriction&gt;
+                             *                             &lt;/simpleType&gt;
+                             *                           &lt;/attribute&gt;
+                             *                         &lt;/restriction&gt;
+                             *                       &lt;/complexContent&gt;
+                             *                     &lt;/complexType&gt;
+                             *                   &lt;/element&gt;
+                             *                 &lt;/sequence&gt;
+                             *                 &lt;attribute name="Gender" use="required"&gt;
+                             *                   &lt;simpleType&gt;
+                             *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *                       &lt;pattern value="(Unknown|Male|Female)"/&gt;
+                             *                     &lt;/restriction&gt;
+                             *                   &lt;/simpleType&gt;
+                             *                 &lt;/attribute&gt;
+                             *                 &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                             *                 &lt;attribute name="Language" use="required"&gt;
+                             *                   &lt;simpleType&gt;
+                             *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                             *                       &lt;pattern value="[a-z][a-z]"/&gt;
+                             *                     &lt;/restriction&gt;
+                             *                   &lt;/simpleType&gt;
+                             *                 &lt;/attribute&gt;
+                             *               &lt;/restriction&gt;
+                             *             &lt;/complexContent&gt;
+                             *           &lt;/complexType&gt;
+                             *         &lt;/element&gt;
+                             *       &lt;/sequence&gt;
+                             *     &lt;/restriction&gt;
+                             *   &lt;/complexContent&gt;
+                             * &lt;/complexType&gt;
                              * </pre>
                              * 
                              * 
@@ -3877,7 +3877,7 @@ public class OTAResRetrieveRS {
                                 protected OTAResRetrieveRS.ReservationsList.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer customer;
 
                                 /**
-                                 * Gets the value of the customer property.
+                                 * Recupera il valore della proprietà customer.
                                  * 
                                  * @return
                                  *     possible object is
@@ -3889,7 +3889,7 @@ public class OTAResRetrieveRS {
                                 }
 
                                 /**
-                                 * Sets the value of the customer property.
+                                 * Imposta il valore della proprietà customer.
                                  * 
                                  * @param value
                                  *     allowed object is
@@ -3902,120 +3902,120 @@ public class OTAResRetrieveRS {
 
 
                                 /**
-                                 * <p>Java class for anonymous complex type.
+                                 * <p>Classe Java per anonymous complex type.
                                  * 
-                                 * <p>The following schema fragment specifies the expected content contained within this class.
+                                 * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                                  * 
                                  * <pre>
-                                 * &lt;complexType>
-                                 *   &lt;complexContent>
-                                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                 *       &lt;sequence>
-                                 *         &lt;element name="PersonName">
-                                 *           &lt;complexType>
-                                 *             &lt;complexContent>
-                                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                 *                 &lt;sequence>
-                                 *                   &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                                 *                   &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                 *                   &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                 *                   &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                                 *                 &lt;/sequence>
-                                 *               &lt;/restriction>
-                                 *             &lt;/complexContent>
-                                 *           &lt;/complexType>
-                                 *         &lt;/element>
-                                 *         &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0">
-                                 *           &lt;complexType>
-                                 *             &lt;complexContent>
-                                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                 *                 &lt;attribute name="PhoneTechType" use="required">
-                                 *                   &lt;simpleType>
-                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                 *                       &lt;pattern value="(1|3|5)"/>
-                                 *                     &lt;/restriction>
-                                 *                   &lt;/simpleType>
-                                 *                 &lt;/attribute>
-                                 *                 &lt;attribute name="PhoneNumber" use="required">
-                                 *                   &lt;simpleType>
-                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                 *                       &lt;pattern value="\+?[0-9]+"/>
-                                 *                     &lt;/restriction>
-                                 *                   &lt;/simpleType>
-                                 *                 &lt;/attribute>
-                                 *               &lt;/restriction>
-                                 *             &lt;/complexContent>
-                                 *           &lt;/complexType>
-                                 *         &lt;/element>
-                                 *         &lt;element name="Email" minOccurs="0">
-                                 *           &lt;complexType>
-                                 *             &lt;simpleContent>
-                                 *               &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-                                 *                 &lt;attribute name="Remark">
-                                 *                   &lt;simpleType>
-                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                 *                       &lt;pattern value="newsletter:(no|yes)"/>
-                                 *                     &lt;/restriction>
-                                 *                   &lt;/simpleType>
-                                 *                 &lt;/attribute>
-                                 *               &lt;/extension>
-                                 *             &lt;/simpleContent>
-                                 *           &lt;/complexType>
-                                 *         &lt;/element>
-                                 *         &lt;element name="Address" minOccurs="0">
-                                 *           &lt;complexType>
-                                 *             &lt;complexContent>
-                                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                 *                 &lt;sequence>
-                                 *                   &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                 *                   &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                 *                   &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                 *                   &lt;element name="CountryName">
-                                 *                     &lt;complexType>
-                                 *                       &lt;complexContent>
-                                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                 *                           &lt;attribute name="Code" use="required">
-                                 *                             &lt;simpleType>
-                                 *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                 *                                 &lt;pattern value="[A-Z][A-Z]"/>
-                                 *                               &lt;/restriction>
-                                 *                             &lt;/simpleType>
-                                 *                           &lt;/attribute>
-                                 *                         &lt;/restriction>
-                                 *                       &lt;/complexContent>
-                                 *                     &lt;/complexType>
-                                 *                   &lt;/element>
-                                 *                 &lt;/sequence>
-                                 *                 &lt;attribute name="Remark">
-                                 *                   &lt;simpleType>
-                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                 *                       &lt;pattern value="catalog:(no|yes)"/>
-                                 *                     &lt;/restriction>
-                                 *                   &lt;/simpleType>
-                                 *                 &lt;/attribute>
-                                 *               &lt;/restriction>
-                                 *             &lt;/complexContent>
-                                 *           &lt;/complexType>
-                                 *         &lt;/element>
-                                 *       &lt;/sequence>
-                                 *       &lt;attribute name="Gender" use="required">
-                                 *         &lt;simpleType>
-                                 *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                 *             &lt;pattern value="(Unknown|Male|Female)"/>
-                                 *           &lt;/restriction>
-                                 *         &lt;/simpleType>
-                                 *       &lt;/attribute>
-                                 *       &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                                 *       &lt;attribute name="Language" use="required">
-                                 *         &lt;simpleType>
-                                 *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language">
-                                 *             &lt;pattern value="[a-z][a-z]"/>
-                                 *           &lt;/restriction>
-                                 *         &lt;/simpleType>
-                                 *       &lt;/attribute>
-                                 *     &lt;/restriction>
-                                 *   &lt;/complexContent>
-                                 * &lt;/complexType>
+                                 * &lt;complexType&gt;
+                                 *   &lt;complexContent&gt;
+                                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                 *       &lt;sequence&gt;
+                                 *         &lt;element name="PersonName"&gt;
+                                 *           &lt;complexType&gt;
+                                 *             &lt;complexContent&gt;
+                                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                 *                 &lt;sequence&gt;
+                                 *                   &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                                 *                   &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                 *                   &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                 *                   &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                                 *                 &lt;/sequence&gt;
+                                 *               &lt;/restriction&gt;
+                                 *             &lt;/complexContent&gt;
+                                 *           &lt;/complexType&gt;
+                                 *         &lt;/element&gt;
+                                 *         &lt;element name="Telephone" maxOccurs="unbounded" minOccurs="0"&gt;
+                                 *           &lt;complexType&gt;
+                                 *             &lt;complexContent&gt;
+                                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                 *                 &lt;attribute name="PhoneTechType" use="required"&gt;
+                                 *                   &lt;simpleType&gt;
+                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                 *                       &lt;pattern value="(1|3|5)"/&gt;
+                                 *                     &lt;/restriction&gt;
+                                 *                   &lt;/simpleType&gt;
+                                 *                 &lt;/attribute&gt;
+                                 *                 &lt;attribute name="PhoneNumber" use="required"&gt;
+                                 *                   &lt;simpleType&gt;
+                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                 *                       &lt;pattern value="\+?[0-9]+"/&gt;
+                                 *                     &lt;/restriction&gt;
+                                 *                   &lt;/simpleType&gt;
+                                 *                 &lt;/attribute&gt;
+                                 *               &lt;/restriction&gt;
+                                 *             &lt;/complexContent&gt;
+                                 *           &lt;/complexType&gt;
+                                 *         &lt;/element&gt;
+                                 *         &lt;element name="Email" minOccurs="0"&gt;
+                                 *           &lt;complexType&gt;
+                                 *             &lt;simpleContent&gt;
+                                 *               &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+                                 *                 &lt;attribute name="Remark"&gt;
+                                 *                   &lt;simpleType&gt;
+                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                 *                       &lt;pattern value="newsletter:(no|yes)"/&gt;
+                                 *                     &lt;/restriction&gt;
+                                 *                   &lt;/simpleType&gt;
+                                 *                 &lt;/attribute&gt;
+                                 *               &lt;/extension&gt;
+                                 *             &lt;/simpleContent&gt;
+                                 *           &lt;/complexType&gt;
+                                 *         &lt;/element&gt;
+                                 *         &lt;element name="Address" minOccurs="0"&gt;
+                                 *           &lt;complexType&gt;
+                                 *             &lt;complexContent&gt;
+                                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                 *                 &lt;sequence&gt;
+                                 *                   &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                 *                   &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                 *                   &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                 *                   &lt;element name="CountryName"&gt;
+                                 *                     &lt;complexType&gt;
+                                 *                       &lt;complexContent&gt;
+                                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                 *                           &lt;attribute name="Code" use="required"&gt;
+                                 *                             &lt;simpleType&gt;
+                                 *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                 *                                 &lt;pattern value="[A-Z][A-Z]"/&gt;
+                                 *                               &lt;/restriction&gt;
+                                 *                             &lt;/simpleType&gt;
+                                 *                           &lt;/attribute&gt;
+                                 *                         &lt;/restriction&gt;
+                                 *                       &lt;/complexContent&gt;
+                                 *                     &lt;/complexType&gt;
+                                 *                   &lt;/element&gt;
+                                 *                 &lt;/sequence&gt;
+                                 *                 &lt;attribute name="Remark"&gt;
+                                 *                   &lt;simpleType&gt;
+                                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                 *                       &lt;pattern value="catalog:(no|yes)"/&gt;
+                                 *                     &lt;/restriction&gt;
+                                 *                   &lt;/simpleType&gt;
+                                 *                 &lt;/attribute&gt;
+                                 *               &lt;/restriction&gt;
+                                 *             &lt;/complexContent&gt;
+                                 *           &lt;/complexType&gt;
+                                 *         &lt;/element&gt;
+                                 *       &lt;/sequence&gt;
+                                 *       &lt;attribute name="Gender" use="required"&gt;
+                                 *         &lt;simpleType&gt;
+                                 *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                 *             &lt;pattern value="(Unknown|Male|Female)"/&gt;
+                                 *           &lt;/restriction&gt;
+                                 *         &lt;/simpleType&gt;
+                                 *       &lt;/attribute&gt;
+                                 *       &lt;attribute name="BirthDate" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                                 *       &lt;attribute name="Language" use="required"&gt;
+                                 *         &lt;simpleType&gt;
+                                 *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}language"&gt;
+                                 *             &lt;pattern value="[a-z][a-z]"/&gt;
+                                 *           &lt;/restriction&gt;
+                                 *         &lt;/simpleType&gt;
+                                 *       &lt;/attribute&gt;
+                                 *     &lt;/restriction&gt;
+                                 *   &lt;/complexContent&gt;
+                                 * &lt;/complexType&gt;
                                  * </pre>
                                  * 
                                  * 
@@ -4046,7 +4046,7 @@ public class OTAResRetrieveRS {
                                     protected String language;
 
                                     /**
-                                     * Gets the value of the personName property.
+                                     * Recupera il valore della proprietà personName.
                                      * 
                                      * @return
                                      *     possible object is
@@ -4058,7 +4058,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Sets the value of the personName property.
+                                     * Imposta il valore della proprietà personName.
                                      * 
                                      * @param value
                                      *     allowed object is
@@ -4099,7 +4099,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Gets the value of the email property.
+                                     * Recupera il valore della proprietà email.
                                      * 
                                      * @return
                                      *     possible object is
@@ -4111,7 +4111,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Sets the value of the email property.
+                                     * Imposta il valore della proprietà email.
                                      * 
                                      * @param value
                                      *     allowed object is
@@ -4123,7 +4123,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Gets the value of the address property.
+                                     * Recupera il valore della proprietà address.
                                      * 
                                      * @return
                                      *     possible object is
@@ -4135,7 +4135,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Sets the value of the address property.
+                                     * Imposta il valore della proprietà address.
                                      * 
                                      * @param value
                                      *     allowed object is
@@ -4147,7 +4147,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Gets the value of the gender property.
+                                     * Recupera il valore della proprietà gender.
                                      * 
                                      * @return
                                      *     possible object is
@@ -4159,7 +4159,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Sets the value of the gender property.
+                                     * Imposta il valore della proprietà gender.
                                      * 
                                      * @param value
                                      *     allowed object is
@@ -4171,7 +4171,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Gets the value of the birthDate property.
+                                     * Recupera il valore della proprietà birthDate.
                                      * 
                                      * @return
                                      *     possible object is
@@ -4183,7 +4183,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Sets the value of the birthDate property.
+                                     * Imposta il valore della proprietà birthDate.
                                      * 
                                      * @param value
                                      *     allowed object is
@@ -4195,7 +4195,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Gets the value of the language property.
+                                     * Recupera il valore della proprietà language.
                                      * 
                                      * @return
                                      *     possible object is
@@ -4207,7 +4207,7 @@ public class OTAResRetrieveRS {
                                     }
 
                                     /**
-                                     * Sets the value of the language property.
+                                     * Imposta il valore della proprietà language.
                                      * 
                                      * @param value
                                      *     allowed object is
@@ -4220,44 +4220,44 @@ public class OTAResRetrieveRS {
 
 
                                     /**
-                                     * <p>Java class for anonymous complex type.
+                                     * <p>Classe Java per anonymous complex type.
                                      * 
-                                     * <p>The following schema fragment specifies the expected content contained within this class.
+                                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                                      * 
                                      * <pre>
-                                     * &lt;complexType>
-                                     *   &lt;complexContent>
-                                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                     *       &lt;sequence>
-                                     *         &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                     *         &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                     *         &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                     *         &lt;element name="CountryName">
-                                     *           &lt;complexType>
-                                     *             &lt;complexContent>
-                                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                     *                 &lt;attribute name="Code" use="required">
-                                     *                   &lt;simpleType>
-                                     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                     *                       &lt;pattern value="[A-Z][A-Z]"/>
-                                     *                     &lt;/restriction>
-                                     *                   &lt;/simpleType>
-                                     *                 &lt;/attribute>
-                                     *               &lt;/restriction>
-                                     *             &lt;/complexContent>
-                                     *           &lt;/complexType>
-                                     *         &lt;/element>
-                                     *       &lt;/sequence>
-                                     *       &lt;attribute name="Remark">
-                                     *         &lt;simpleType>
-                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                     *             &lt;pattern value="catalog:(no|yes)"/>
-                                     *           &lt;/restriction>
-                                     *         &lt;/simpleType>
-                                     *       &lt;/attribute>
-                                     *     &lt;/restriction>
-                                     *   &lt;/complexContent>
-                                     * &lt;/complexType>
+                                     * &lt;complexType&gt;
+                                     *   &lt;complexContent&gt;
+                                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                     *       &lt;sequence&gt;
+                                     *         &lt;element name="AddressLine" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                     *         &lt;element name="CityName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                     *         &lt;element name="PostalCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                     *         &lt;element name="CountryName"&gt;
+                                     *           &lt;complexType&gt;
+                                     *             &lt;complexContent&gt;
+                                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                     *                 &lt;attribute name="Code" use="required"&gt;
+                                     *                   &lt;simpleType&gt;
+                                     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                     *                       &lt;pattern value="[A-Z][A-Z]"/&gt;
+                                     *                     &lt;/restriction&gt;
+                                     *                   &lt;/simpleType&gt;
+                                     *                 &lt;/attribute&gt;
+                                     *               &lt;/restriction&gt;
+                                     *             &lt;/complexContent&gt;
+                                     *           &lt;/complexType&gt;
+                                     *         &lt;/element&gt;
+                                     *       &lt;/sequence&gt;
+                                     *       &lt;attribute name="Remark"&gt;
+                                     *         &lt;simpleType&gt;
+                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                     *             &lt;pattern value="catalog:(no|yes)"/&gt;
+                                     *           &lt;/restriction&gt;
+                                     *         &lt;/simpleType&gt;
+                                     *       &lt;/attribute&gt;
+                                     *     &lt;/restriction&gt;
+                                     *   &lt;/complexContent&gt;
+                                     * &lt;/complexType&gt;
                                      * </pre>
                                      * 
                                      * 
@@ -4283,7 +4283,7 @@ public class OTAResRetrieveRS {
                                         protected String remark;
 
                                         /**
-                                         * Gets the value of the addressLine property.
+                                         * Recupera il valore della proprietà addressLine.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4295,7 +4295,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the addressLine property.
+                                         * Imposta il valore della proprietà addressLine.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4307,7 +4307,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the cityName property.
+                                         * Recupera il valore della proprietà cityName.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4319,7 +4319,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the cityName property.
+                                         * Imposta il valore della proprietà cityName.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4331,7 +4331,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the postalCode property.
+                                         * Recupera il valore della proprietà postalCode.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4343,7 +4343,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the postalCode property.
+                                         * Imposta il valore della proprietà postalCode.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4355,7 +4355,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the countryName property.
+                                         * Recupera il valore della proprietà countryName.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4367,7 +4367,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the countryName property.
+                                         * Imposta il valore della proprietà countryName.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4379,7 +4379,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the remark property.
+                                         * Recupera il valore della proprietà remark.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4391,7 +4391,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the remark property.
+                                         * Imposta il valore della proprietà remark.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4404,24 +4404,24 @@ public class OTAResRetrieveRS {
 
 
                                         /**
-                                         * <p>Java class for anonymous complex type.
+                                         * <p>Classe Java per anonymous complex type.
                                          * 
-                                         * <p>The following schema fragment specifies the expected content contained within this class.
+                                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                                          * 
                                          * <pre>
-                                         * &lt;complexType>
-                                         *   &lt;complexContent>
-                                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                         *       &lt;attribute name="Code" use="required">
-                                         *         &lt;simpleType>
-                                         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                         *             &lt;pattern value="[A-Z][A-Z]"/>
-                                         *           &lt;/restriction>
-                                         *         &lt;/simpleType>
-                                         *       &lt;/attribute>
-                                         *     &lt;/restriction>
-                                         *   &lt;/complexContent>
-                                         * &lt;/complexType>
+                                         * &lt;complexType&gt;
+                                         *   &lt;complexContent&gt;
+                                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                         *       &lt;attribute name="Code" use="required"&gt;
+                                         *         &lt;simpleType&gt;
+                                         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                         *             &lt;pattern value="[A-Z][A-Z]"/&gt;
+                                         *           &lt;/restriction&gt;
+                                         *         &lt;/simpleType&gt;
+                                         *       &lt;/attribute&gt;
+                                         *     &lt;/restriction&gt;
+                                         *   &lt;/complexContent&gt;
+                                         * &lt;/complexType&gt;
                                          * </pre>
                                          * 
                                          * 
@@ -4434,7 +4434,7 @@ public class OTAResRetrieveRS {
                                             protected String code;
 
                                             /**
-                                             * Gets the value of the code property.
+                                             * Recupera il valore della proprietà code.
                                              * 
                                              * @return
                                              *     possible object is
@@ -4446,7 +4446,7 @@ public class OTAResRetrieveRS {
                                             }
 
                                             /**
-                                             * Sets the value of the code property.
+                                             * Imposta il valore della proprietà code.
                                              * 
                                              * @param value
                                              *     allowed object is
@@ -4463,24 +4463,24 @@ public class OTAResRetrieveRS {
 
 
                                     /**
-                                     * <p>Java class for anonymous complex type.
+                                     * <p>Classe Java per anonymous complex type.
                                      * 
-                                     * <p>The following schema fragment specifies the expected content contained within this class.
+                                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                                      * 
                                      * <pre>
-                                     * &lt;complexType>
-                                     *   &lt;simpleContent>
-                                     *     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05>def_email_string">
-                                     *       &lt;attribute name="Remark">
-                                     *         &lt;simpleType>
-                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                     *             &lt;pattern value="newsletter:(no|yes)"/>
-                                     *           &lt;/restriction>
-                                     *         &lt;/simpleType>
-                                     *       &lt;/attribute>
-                                     *     &lt;/extension>
-                                     *   &lt;/simpleContent>
-                                     * &lt;/complexType>
+                                     * &lt;complexType&gt;
+                                     *   &lt;simpleContent&gt;
+                                     *     &lt;extension base="&lt;http://www.opentravel.org/OTA/2003/05&gt;def_email_string"&gt;
+                                     *       &lt;attribute name="Remark"&gt;
+                                     *         &lt;simpleType&gt;
+                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                     *             &lt;pattern value="newsletter:(no|yes)"/&gt;
+                                     *           &lt;/restriction&gt;
+                                     *         &lt;/simpleType&gt;
+                                     *       &lt;/attribute&gt;
+                                     *     &lt;/extension&gt;
+                                     *   &lt;/simpleContent&gt;
+                                     * &lt;/complexType&gt;
                                      * </pre>
                                      * 
                                      * 
@@ -4497,7 +4497,7 @@ public class OTAResRetrieveRS {
                                         protected String remark;
 
                                         /**
-                                         * Gets the value of the value property.
+                                         * Recupera il valore della proprietà value.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4509,7 +4509,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the value property.
+                                         * Imposta il valore della proprietà value.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4521,7 +4521,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the remark property.
+                                         * Recupera il valore della proprietà remark.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4533,7 +4533,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the remark property.
+                                         * Imposta il valore della proprietà remark.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4548,23 +4548,23 @@ public class OTAResRetrieveRS {
 
 
                                     /**
-                                     * <p>Java class for anonymous complex type.
+                                     * <p>Classe Java per anonymous complex type.
                                      * 
-                                     * <p>The following schema fragment specifies the expected content contained within this class.
+                                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                                      * 
                                      * <pre>
-                                     * &lt;complexType>
-                                     *   &lt;complexContent>
-                                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                     *       &lt;sequence>
-                                     *         &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                                     *         &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                     *         &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/>
-                                     *         &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/>
-                                     *       &lt;/sequence>
-                                     *     &lt;/restriction>
-                                     *   &lt;/complexContent>
-                                     * &lt;/complexType>
+                                     * &lt;complexType&gt;
+                                     *   &lt;complexContent&gt;
+                                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                     *       &lt;sequence&gt;
+                                     *         &lt;element name="NamePrefix" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                                     *         &lt;element name="GivenName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                     *         &lt;element name="Surname" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string"/&gt;
+                                     *         &lt;element name="NameTitle" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" minOccurs="0"/&gt;
+                                     *       &lt;/sequence&gt;
+                                     *     &lt;/restriction&gt;
+                                     *   &lt;/complexContent&gt;
+                                     * &lt;/complexType&gt;
                                      * </pre>
                                      * 
                                      * 
@@ -4588,7 +4588,7 @@ public class OTAResRetrieveRS {
                                         protected String nameTitle;
 
                                         /**
-                                         * Gets the value of the namePrefix property.
+                                         * Recupera il valore della proprietà namePrefix.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4600,7 +4600,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the namePrefix property.
+                                         * Imposta il valore della proprietà namePrefix.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4612,7 +4612,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the givenName property.
+                                         * Recupera il valore della proprietà givenName.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4624,7 +4624,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the givenName property.
+                                         * Imposta il valore della proprietà givenName.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4636,7 +4636,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the surname property.
+                                         * Recupera il valore della proprietà surname.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4648,7 +4648,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the surname property.
+                                         * Imposta il valore della proprietà surname.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4660,7 +4660,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the nameTitle property.
+                                         * Recupera il valore della proprietà nameTitle.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4672,7 +4672,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the nameTitle property.
+                                         * Imposta il valore della proprietà nameTitle.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4687,31 +4687,31 @@ public class OTAResRetrieveRS {
 
 
                                     /**
-                                     * <p>Java class for anonymous complex type.
+                                     * <p>Classe Java per anonymous complex type.
                                      * 
-                                     * <p>The following schema fragment specifies the expected content contained within this class.
+                                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                                      * 
                                      * <pre>
-                                     * &lt;complexType>
-                                     *   &lt;complexContent>
-                                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                                     *       &lt;attribute name="PhoneTechType" use="required">
-                                     *         &lt;simpleType>
-                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                     *             &lt;pattern value="(1|3|5)"/>
-                                     *           &lt;/restriction>
-                                     *         &lt;/simpleType>
-                                     *       &lt;/attribute>
-                                     *       &lt;attribute name="PhoneNumber" use="required">
-                                     *         &lt;simpleType>
-                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                                     *             &lt;pattern value="\+?[0-9]+"/>
-                                     *           &lt;/restriction>
-                                     *         &lt;/simpleType>
-                                     *       &lt;/attribute>
-                                     *     &lt;/restriction>
-                                     *   &lt;/complexContent>
-                                     * &lt;/complexType>
+                                     * &lt;complexType&gt;
+                                     *   &lt;complexContent&gt;
+                                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                                     *       &lt;attribute name="PhoneTechType" use="required"&gt;
+                                     *         &lt;simpleType&gt;
+                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                     *             &lt;pattern value="(1|3|5)"/&gt;
+                                     *           &lt;/restriction&gt;
+                                     *         &lt;/simpleType&gt;
+                                     *       &lt;/attribute&gt;
+                                     *       &lt;attribute name="PhoneNumber" use="required"&gt;
+                                     *         &lt;simpleType&gt;
+                                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                                     *             &lt;pattern value="\+?[0-9]+"/&gt;
+                                     *           &lt;/restriction&gt;
+                                     *         &lt;/simpleType&gt;
+                                     *       &lt;/attribute&gt;
+                                     *     &lt;/restriction&gt;
+                                     *   &lt;/complexContent&gt;
+                                     * &lt;/complexType&gt;
                                      * </pre>
                                      * 
                                      * 
@@ -4726,7 +4726,7 @@ public class OTAResRetrieveRS {
                                         protected String phoneNumber;
 
                                         /**
-                                         * Gets the value of the phoneTechType property.
+                                         * Recupera il valore della proprietà phoneTechType.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4738,7 +4738,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the phoneTechType property.
+                                         * Imposta il valore della proprietà phoneTechType.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4750,7 +4750,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Gets the value of the phoneNumber property.
+                                         * Recupera il valore della proprietà phoneNumber.
                                          * 
                                          * @return
                                          *     possible object is
@@ -4762,7 +4762,7 @@ public class OTAResRetrieveRS {
                                         }
 
                                         /**
-                                         * Sets the value of the phoneNumber property.
+                                         * Imposta il valore della proprietà phoneNumber.
                                          * 
                                          * @param value
                                          *     allowed object is
@@ -4789,155 +4789,155 @@ public class OTAResRetrieveRS {
 
 
             /**
-             * <p>Java class for anonymous complex type.
+             * <p>Classe Java per anonymous complex type.
              * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
+             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="RoomStay" maxOccurs="unbounded">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="RoomTypes" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="RoomType">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="RatePlans" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="RatePlan">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;sequence>
-             *                                       &lt;element name="MealsIncluded" minOccurs="0">
-             *                                         &lt;complexType>
-             *                                           &lt;complexContent>
-             *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                               &lt;attribute name="MealPlanIndicator" use="required">
-             *                                                 &lt;simpleType>
-             *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                     &lt;enumeration value="1"/>
-             *                                                     &lt;enumeration value="true"/>
-             *                                                   &lt;/restriction>
-             *                                                 &lt;/simpleType>
-             *                                               &lt;/attribute>
-             *                                               &lt;attribute name="MealPlanCodes" use="required">
-             *                                                 &lt;simpleType>
-             *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                                     &lt;enumeration value="1"/>
-             *                                                     &lt;enumeration value="3"/>
-             *                                                     &lt;enumeration value="10"/>
-             *                                                     &lt;enumeration value="12"/>
-             *                                                     &lt;enumeration value="14"/>
-             *                                                   &lt;/restriction>
-             *                                                 &lt;/simpleType>
-             *                                               &lt;/attribute>
-             *                                             &lt;/restriction>
-             *                                           &lt;/complexContent>
-             *                                         &lt;/complexType>
-             *                                       &lt;/element>
-             *                                     &lt;/sequence>
-             *                                     &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="GuestCounts" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="GuestCount" maxOccurs="unbounded">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
-             *                                     &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="TimeSpan">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="StartDateWindow" minOccurs="0">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *                                     &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                           &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *                           &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *                           &lt;attribute name="Duration">
-             *                             &lt;simpleType>
-             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                 &lt;pattern value="P[0-9]+N"/>
-             *                               &lt;/restriction>
-             *                             &lt;/simpleType>
-             *                           &lt;/attribute>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="Total" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" />
-             *                           &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="RoomStay" maxOccurs="unbounded"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="RoomTypes" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="RoomType"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="RatePlans" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="RatePlan"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;sequence&gt;
+             *                                       &lt;element name="MealsIncluded" minOccurs="0"&gt;
+             *                                         &lt;complexType&gt;
+             *                                           &lt;complexContent&gt;
+             *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                               &lt;attribute name="MealPlanIndicator" use="required"&gt;
+             *                                                 &lt;simpleType&gt;
+             *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                     &lt;enumeration value="1"/&gt;
+             *                                                     &lt;enumeration value="true"/&gt;
+             *                                                   &lt;/restriction&gt;
+             *                                                 &lt;/simpleType&gt;
+             *                                               &lt;/attribute&gt;
+             *                                               &lt;attribute name="MealPlanCodes" use="required"&gt;
+             *                                                 &lt;simpleType&gt;
+             *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                                     &lt;enumeration value="1"/&gt;
+             *                                                     &lt;enumeration value="3"/&gt;
+             *                                                     &lt;enumeration value="10"/&gt;
+             *                                                     &lt;enumeration value="12"/&gt;
+             *                                                     &lt;enumeration value="14"/&gt;
+             *                                                   &lt;/restriction&gt;
+             *                                                 &lt;/simpleType&gt;
+             *                                               &lt;/attribute&gt;
+             *                                             &lt;/restriction&gt;
+             *                                           &lt;/complexContent&gt;
+             *                                         &lt;/complexType&gt;
+             *                                       &lt;/element&gt;
+             *                                     &lt;/sequence&gt;
+             *                                     &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="GuestCounts" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="GuestCount" maxOccurs="unbounded"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+             *                                     &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="TimeSpan"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="StartDateWindow" minOccurs="0"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *                                     &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                           &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *                           &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *                           &lt;attribute name="Duration"&gt;
+             *                             &lt;simpleType&gt;
+             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                 &lt;pattern value="P[0-9]+N"/&gt;
+             *                               &lt;/restriction&gt;
+             *                             &lt;/simpleType&gt;
+             *                           &lt;/attribute&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="Total" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" /&gt;
+             *                           &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -4982,145 +4982,145 @@ public class OTAResRetrieveRS {
 
 
                 /**
-                 * <p>Java class for anonymous complex type.
+                 * <p>Classe Java per anonymous complex type.
                  * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
+                 * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="RoomTypes" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="RoomType">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="RatePlans" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="RatePlan">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;sequence>
-                 *                             &lt;element name="MealsIncluded" minOccurs="0">
-                 *                               &lt;complexType>
-                 *                                 &lt;complexContent>
-                 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                                     &lt;attribute name="MealPlanIndicator" use="required">
-                 *                                       &lt;simpleType>
-                 *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                           &lt;enumeration value="1"/>
-                 *                                           &lt;enumeration value="true"/>
-                 *                                         &lt;/restriction>
-                 *                                       &lt;/simpleType>
-                 *                                     &lt;/attribute>
-                 *                                     &lt;attribute name="MealPlanCodes" use="required">
-                 *                                       &lt;simpleType>
-                 *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                           &lt;enumeration value="1"/>
-                 *                                           &lt;enumeration value="3"/>
-                 *                                           &lt;enumeration value="10"/>
-                 *                                           &lt;enumeration value="12"/>
-                 *                                           &lt;enumeration value="14"/>
-                 *                                         &lt;/restriction>
-                 *                                       &lt;/simpleType>
-                 *                                     &lt;/attribute>
-                 *                                   &lt;/restriction>
-                 *                                 &lt;/complexContent>
-                 *                               &lt;/complexType>
-                 *                             &lt;/element>
-                 *                           &lt;/sequence>
-                 *                           &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="GuestCounts" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="GuestCount" maxOccurs="unbounded">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
-                 *                           &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="TimeSpan">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="StartDateWindow" minOccurs="0">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                 *                           &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *                 &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                 *                 &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                 *                 &lt;attribute name="Duration">
-                 *                   &lt;simpleType>
-                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                       &lt;pattern value="P[0-9]+N"/>
-                 *                     &lt;/restriction>
-                 *                   &lt;/simpleType>
-                 *                 &lt;/attribute>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="Total" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" />
-                 *                 &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="RoomTypes" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="RoomType"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="RatePlans" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="RatePlan"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;sequence&gt;
+                 *                             &lt;element name="MealsIncluded" minOccurs="0"&gt;
+                 *                               &lt;complexType&gt;
+                 *                                 &lt;complexContent&gt;
+                 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                                     &lt;attribute name="MealPlanIndicator" use="required"&gt;
+                 *                                       &lt;simpleType&gt;
+                 *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                           &lt;enumeration value="1"/&gt;
+                 *                                           &lt;enumeration value="true"/&gt;
+                 *                                         &lt;/restriction&gt;
+                 *                                       &lt;/simpleType&gt;
+                 *                                     &lt;/attribute&gt;
+                 *                                     &lt;attribute name="MealPlanCodes" use="required"&gt;
+                 *                                       &lt;simpleType&gt;
+                 *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                           &lt;enumeration value="1"/&gt;
+                 *                                           &lt;enumeration value="3"/&gt;
+                 *                                           &lt;enumeration value="10"/&gt;
+                 *                                           &lt;enumeration value="12"/&gt;
+                 *                                           &lt;enumeration value="14"/&gt;
+                 *                                         &lt;/restriction&gt;
+                 *                                       &lt;/simpleType&gt;
+                 *                                     &lt;/attribute&gt;
+                 *                                   &lt;/restriction&gt;
+                 *                                 &lt;/complexContent&gt;
+                 *                               &lt;/complexType&gt;
+                 *                             &lt;/element&gt;
+                 *                           &lt;/sequence&gt;
+                 *                           &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="GuestCounts" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="GuestCount" maxOccurs="unbounded"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+                 *                           &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="TimeSpan"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="StartDateWindow" minOccurs="0"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                 *                           &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *                 &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                 *                 &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                 *                 &lt;attribute name="Duration"&gt;
+                 *                   &lt;simpleType&gt;
+                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                       &lt;pattern value="P[0-9]+N"/&gt;
+                 *                     &lt;/restriction&gt;
+                 *                   &lt;/simpleType&gt;
+                 *                 &lt;/attribute&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="Total" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" /&gt;
+                 *                 &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -5147,7 +5147,7 @@ public class OTAResRetrieveRS {
                     protected OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays.RoomStay.Total total;
 
                     /**
-                     * Gets the value of the roomTypes property.
+                     * Recupera il valore della proprietà roomTypes.
                      * 
                      * @return
                      *     possible object is
@@ -5159,7 +5159,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the roomTypes property.
+                     * Imposta il valore della proprietà roomTypes.
                      * 
                      * @param value
                      *     allowed object is
@@ -5171,7 +5171,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Gets the value of the ratePlans property.
+                     * Recupera il valore della proprietà ratePlans.
                      * 
                      * @return
                      *     possible object is
@@ -5183,7 +5183,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the ratePlans property.
+                     * Imposta il valore della proprietà ratePlans.
                      * 
                      * @param value
                      *     allowed object is
@@ -5195,7 +5195,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Gets the value of the guestCounts property.
+                     * Recupera il valore della proprietà guestCounts.
                      * 
                      * @return
                      *     possible object is
@@ -5207,7 +5207,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the guestCounts property.
+                     * Imposta il valore della proprietà guestCounts.
                      * 
                      * @param value
                      *     allowed object is
@@ -5219,7 +5219,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Gets the value of the timeSpan property.
+                     * Recupera il valore della proprietà timeSpan.
                      * 
                      * @return
                      *     possible object is
@@ -5231,7 +5231,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the timeSpan property.
+                     * Imposta il valore della proprietà timeSpan.
                      * 
                      * @param value
                      *     allowed object is
@@ -5243,7 +5243,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Gets the value of the total property.
+                     * Recupera il valore della proprietà total.
                      * 
                      * @return
                      *     possible object is
@@ -5255,7 +5255,7 @@ public class OTAResRetrieveRS {
                     }
 
                     /**
-                     * Sets the value of the total property.
+                     * Imposta il valore della proprietà total.
                      * 
                      * @param value
                      *     allowed object is
@@ -5268,29 +5268,29 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="GuestCount" maxOccurs="unbounded">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
-                     *                 &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="GuestCount" maxOccurs="unbounded"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+                     *                 &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -5335,19 +5335,19 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" />
-                         *       &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;attribute name="Count" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_int_gt0" /&gt;
+                         *       &lt;attribute name="Age" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -5362,7 +5362,7 @@ public class OTAResRetrieveRS {
                             protected BigInteger age;
 
                             /**
-                             * Gets the value of the count property.
+                             * Recupera il valore della proprietà count.
                              * 
                              * @return
                              *     possible object is
@@ -5374,7 +5374,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the count property.
+                             * Imposta il valore della proprietà count.
                              * 
                              * @param value
                              *     allowed object is
@@ -5386,7 +5386,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Gets the value of the age property.
+                             * Recupera il valore della proprietà age.
                              * 
                              * @return
                              *     possible object is
@@ -5398,7 +5398,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the age property.
+                             * Imposta il valore della proprietà age.
                              * 
                              * @param value
                              *     allowed object is
@@ -5415,57 +5415,57 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="RatePlan">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;sequence>
-                     *                   &lt;element name="MealsIncluded" minOccurs="0">
-                     *                     &lt;complexType>
-                     *                       &lt;complexContent>
-                     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                           &lt;attribute name="MealPlanIndicator" use="required">
-                     *                             &lt;simpleType>
-                     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                 &lt;enumeration value="1"/>
-                     *                                 &lt;enumeration value="true"/>
-                     *                               &lt;/restriction>
-                     *                             &lt;/simpleType>
-                     *                           &lt;/attribute>
-                     *                           &lt;attribute name="MealPlanCodes" use="required">
-                     *                             &lt;simpleType>
-                     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                                 &lt;enumeration value="1"/>
-                     *                                 &lt;enumeration value="3"/>
-                     *                                 &lt;enumeration value="10"/>
-                     *                                 &lt;enumeration value="12"/>
-                     *                                 &lt;enumeration value="14"/>
-                     *                               &lt;/restriction>
-                     *                             &lt;/simpleType>
-                     *                           &lt;/attribute>
-                     *                         &lt;/restriction>
-                     *                       &lt;/complexContent>
-                     *                     &lt;/complexType>
-                     *                   &lt;/element>
-                     *                 &lt;/sequence>
-                     *                 &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="RatePlan"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;sequence&gt;
+                     *                   &lt;element name="MealsIncluded" minOccurs="0"&gt;
+                     *                     &lt;complexType&gt;
+                     *                       &lt;complexContent&gt;
+                     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                           &lt;attribute name="MealPlanIndicator" use="required"&gt;
+                     *                             &lt;simpleType&gt;
+                     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                 &lt;enumeration value="1"/&gt;
+                     *                                 &lt;enumeration value="true"/&gt;
+                     *                               &lt;/restriction&gt;
+                     *                             &lt;/simpleType&gt;
+                     *                           &lt;/attribute&gt;
+                     *                           &lt;attribute name="MealPlanCodes" use="required"&gt;
+                     *                             &lt;simpleType&gt;
+                     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                                 &lt;enumeration value="1"/&gt;
+                     *                                 &lt;enumeration value="3"/&gt;
+                     *                                 &lt;enumeration value="10"/&gt;
+                     *                                 &lt;enumeration value="12"/&gt;
+                     *                                 &lt;enumeration value="14"/&gt;
+                     *                               &lt;/restriction&gt;
+                     *                             &lt;/simpleType&gt;
+                     *                           &lt;/attribute&gt;
+                     *                         &lt;/restriction&gt;
+                     *                       &lt;/complexContent&gt;
+                     *                     &lt;/complexType&gt;
+                     *                   &lt;/element&gt;
+                     *                 &lt;/sequence&gt;
+                     *                 &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -5480,7 +5480,7 @@ public class OTAResRetrieveRS {
                         protected OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan ratePlan;
 
                         /**
-                         * Gets the value of the ratePlan property.
+                         * Recupera il valore della proprietà ratePlan.
                          * 
                          * @return
                          *     possible object is
@@ -5492,7 +5492,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the ratePlan property.
+                         * Imposta il valore della proprietà ratePlan.
                          * 
                          * @param value
                          *     allowed object is
@@ -5505,47 +5505,47 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;sequence>
-                         *         &lt;element name="MealsIncluded" minOccurs="0">
-                         *           &lt;complexType>
-                         *             &lt;complexContent>
-                         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *                 &lt;attribute name="MealPlanIndicator" use="required">
-                         *                   &lt;simpleType>
-                         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                       &lt;enumeration value="1"/>
-                         *                       &lt;enumeration value="true"/>
-                         *                     &lt;/restriction>
-                         *                   &lt;/simpleType>
-                         *                 &lt;/attribute>
-                         *                 &lt;attribute name="MealPlanCodes" use="required">
-                         *                   &lt;simpleType>
-                         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *                       &lt;enumeration value="1"/>
-                         *                       &lt;enumeration value="3"/>
-                         *                       &lt;enumeration value="10"/>
-                         *                       &lt;enumeration value="12"/>
-                         *                       &lt;enumeration value="14"/>
-                         *                     &lt;/restriction>
-                         *                   &lt;/simpleType>
-                         *                 &lt;/attribute>
-                         *               &lt;/restriction>
-                         *             &lt;/complexContent>
-                         *           &lt;/complexType>
-                         *         &lt;/element>
-                         *       &lt;/sequence>
-                         *       &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;sequence&gt;
+                         *         &lt;element name="MealsIncluded" minOccurs="0"&gt;
+                         *           &lt;complexType&gt;
+                         *             &lt;complexContent&gt;
+                         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *                 &lt;attribute name="MealPlanIndicator" use="required"&gt;
+                         *                   &lt;simpleType&gt;
+                         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                       &lt;enumeration value="1"/&gt;
+                         *                       &lt;enumeration value="true"/&gt;
+                         *                     &lt;/restriction&gt;
+                         *                   &lt;/simpleType&gt;
+                         *                 &lt;/attribute&gt;
+                         *                 &lt;attribute name="MealPlanCodes" use="required"&gt;
+                         *                   &lt;simpleType&gt;
+                         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *                       &lt;enumeration value="1"/&gt;
+                         *                       &lt;enumeration value="3"/&gt;
+                         *                       &lt;enumeration value="10"/&gt;
+                         *                       &lt;enumeration value="12"/&gt;
+                         *                       &lt;enumeration value="14"/&gt;
+                         *                     &lt;/restriction&gt;
+                         *                   &lt;/simpleType&gt;
+                         *                 &lt;/attribute&gt;
+                         *               &lt;/restriction&gt;
+                         *             &lt;/complexContent&gt;
+                         *           &lt;/complexType&gt;
+                         *         &lt;/element&gt;
+                         *       &lt;/sequence&gt;
+                         *       &lt;attribute name="RatePlanCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -5562,7 +5562,7 @@ public class OTAResRetrieveRS {
                             protected String ratePlanCode;
 
                             /**
-                             * Gets the value of the mealsIncluded property.
+                             * Recupera il valore della proprietà mealsIncluded.
                              * 
                              * @return
                              *     possible object is
@@ -5574,7 +5574,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the mealsIncluded property.
+                             * Imposta il valore della proprietà mealsIncluded.
                              * 
                              * @param value
                              *     allowed object is
@@ -5586,7 +5586,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Gets the value of the ratePlanCode property.
+                             * Recupera il valore della proprietà ratePlanCode.
                              * 
                              * @return
                              *     possible object is
@@ -5598,7 +5598,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the ratePlanCode property.
+                             * Imposta il valore della proprietà ratePlanCode.
                              * 
                              * @param value
                              *     allowed object is
@@ -5611,36 +5611,36 @@ public class OTAResRetrieveRS {
 
 
                             /**
-                             * <p>Java class for anonymous complex type.
+                             * <p>Classe Java per anonymous complex type.
                              * 
-                             * <p>The following schema fragment specifies the expected content contained within this class.
+                             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                              * 
                              * <pre>
-                             * &lt;complexType>
-                             *   &lt;complexContent>
-                             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                             *       &lt;attribute name="MealPlanIndicator" use="required">
-                             *         &lt;simpleType>
-                             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *             &lt;enumeration value="1"/>
-                             *             &lt;enumeration value="true"/>
-                             *           &lt;/restriction>
-                             *         &lt;/simpleType>
-                             *       &lt;/attribute>
-                             *       &lt;attribute name="MealPlanCodes" use="required">
-                             *         &lt;simpleType>
-                             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                             *             &lt;enumeration value="1"/>
-                             *             &lt;enumeration value="3"/>
-                             *             &lt;enumeration value="10"/>
-                             *             &lt;enumeration value="12"/>
-                             *             &lt;enumeration value="14"/>
-                             *           &lt;/restriction>
-                             *         &lt;/simpleType>
-                             *       &lt;/attribute>
-                             *     &lt;/restriction>
-                             *   &lt;/complexContent>
-                             * &lt;/complexType>
+                             * &lt;complexType&gt;
+                             *   &lt;complexContent&gt;
+                             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                             *       &lt;attribute name="MealPlanIndicator" use="required"&gt;
+                             *         &lt;simpleType&gt;
+                             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *             &lt;enumeration value="1"/&gt;
+                             *             &lt;enumeration value="true"/&gt;
+                             *           &lt;/restriction&gt;
+                             *         &lt;/simpleType&gt;
+                             *       &lt;/attribute&gt;
+                             *       &lt;attribute name="MealPlanCodes" use="required"&gt;
+                             *         &lt;simpleType&gt;
+                             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                             *             &lt;enumeration value="1"/&gt;
+                             *             &lt;enumeration value="3"/&gt;
+                             *             &lt;enumeration value="10"/&gt;
+                             *             &lt;enumeration value="12"/&gt;
+                             *             &lt;enumeration value="14"/&gt;
+                             *           &lt;/restriction&gt;
+                             *         &lt;/simpleType&gt;
+                             *       &lt;/attribute&gt;
+                             *     &lt;/restriction&gt;
+                             *   &lt;/complexContent&gt;
+                             * &lt;/complexType&gt;
                              * </pre>
                              * 
                              * 
@@ -5655,7 +5655,7 @@ public class OTAResRetrieveRS {
                                 protected String mealPlanCodes;
 
                                 /**
-                                 * Gets the value of the mealPlanIndicator property.
+                                 * Recupera il valore della proprietà mealPlanIndicator.
                                  * 
                                  * @return
                                  *     possible object is
@@ -5667,7 +5667,7 @@ public class OTAResRetrieveRS {
                                 }
 
                                 /**
-                                 * Sets the value of the mealPlanIndicator property.
+                                 * Imposta il valore della proprietà mealPlanIndicator.
                                  * 
                                  * @param value
                                  *     allowed object is
@@ -5679,7 +5679,7 @@ public class OTAResRetrieveRS {
                                 }
 
                                 /**
-                                 * Gets the value of the mealPlanCodes property.
+                                 * Recupera il valore della proprietà mealPlanCodes.
                                  * 
                                  * @return
                                  *     possible object is
@@ -5691,7 +5691,7 @@ public class OTAResRetrieveRS {
                                 }
 
                                 /**
-                                 * Sets the value of the mealPlanCodes property.
+                                 * Imposta il valore della proprietà mealPlanCodes.
                                  * 
                                  * @param value
                                  *     allowed object is
@@ -5710,28 +5710,28 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="RoomType">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="RoomType"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -5746,7 +5746,7 @@ public class OTAResRetrieveRS {
                         protected OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays.RoomStay.RoomTypes.RoomType roomType;
 
                         /**
-                         * Gets the value of the roomType property.
+                         * Recupera il valore della proprietà roomType.
                          * 
                          * @return
                          *     possible object is
@@ -5758,7 +5758,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the roomType property.
+                         * Imposta il valore della proprietà roomType.
                          * 
                          * @param value
                          *     allowed object is
@@ -5771,18 +5771,18 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;attribute name="RoomTypeCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -5795,7 +5795,7 @@ public class OTAResRetrieveRS {
                             protected String roomTypeCode;
 
                             /**
-                             * Gets the value of the roomTypeCode property.
+                             * Recupera il valore della proprietà roomTypeCode.
                              * 
                              * @return
                              *     possible object is
@@ -5807,7 +5807,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the roomTypeCode property.
+                             * Imposta il valore della proprietà roomTypeCode.
                              * 
                              * @param value
                              *     allowed object is
@@ -5824,38 +5824,38 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="StartDateWindow" minOccurs="0">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                     *                 &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *       &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                     *       &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                     *       &lt;attribute name="Duration">
-                     *         &lt;simpleType>
-                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *             &lt;pattern value="P[0-9]+N"/>
-                     *           &lt;/restriction>
-                     *         &lt;/simpleType>
-                     *       &lt;/attribute>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="StartDateWindow" minOccurs="0"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                     *                 &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *       &lt;attribute name="Start" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                     *       &lt;attribute name="End" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                     *       &lt;attribute name="Duration"&gt;
+                     *         &lt;simpleType&gt;
+                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *             &lt;pattern value="P[0-9]+N"/&gt;
+                     *           &lt;/restriction&gt;
+                     *         &lt;/simpleType&gt;
+                     *       &lt;/attribute&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -5876,7 +5876,7 @@ public class OTAResRetrieveRS {
                         protected String duration;
 
                         /**
-                         * Gets the value of the startDateWindow property.
+                         * Recupera il valore della proprietà startDateWindow.
                          * 
                          * @return
                          *     possible object is
@@ -5888,7 +5888,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the startDateWindow property.
+                         * Imposta il valore della proprietà startDateWindow.
                          * 
                          * @param value
                          *     allowed object is
@@ -5900,7 +5900,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the start property.
+                         * Recupera il valore della proprietà start.
                          * 
                          * @return
                          *     possible object is
@@ -5912,7 +5912,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the start property.
+                         * Imposta il valore della proprietà start.
                          * 
                          * @param value
                          *     allowed object is
@@ -5924,7 +5924,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the end property.
+                         * Recupera il valore della proprietà end.
                          * 
                          * @return
                          *     possible object is
@@ -5936,7 +5936,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the end property.
+                         * Imposta il valore della proprietà end.
                          * 
                          * @param value
                          *     allowed object is
@@ -5948,7 +5948,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the duration property.
+                         * Recupera il valore della proprietà duration.
                          * 
                          * @return
                          *     possible object is
@@ -5960,7 +5960,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the duration property.
+                         * Imposta il valore della proprietà duration.
                          * 
                          * @param value
                          *     allowed object is
@@ -5973,19 +5973,19 @@ public class OTAResRetrieveRS {
 
 
                         /**
-                         * <p>Java class for anonymous complex type.
+                         * <p>Classe Java per anonymous complex type.
                          * 
-                         * <p>The following schema fragment specifies the expected content contained within this class.
+                         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                         *       &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;attribute name="EarliestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                         *       &lt;attribute name="LatestDate" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -6000,7 +6000,7 @@ public class OTAResRetrieveRS {
                             protected XMLGregorianCalendar latestDate;
 
                             /**
-                             * Gets the value of the earliestDate property.
+                             * Recupera il valore della proprietà earliestDate.
                              * 
                              * @return
                              *     possible object is
@@ -6012,7 +6012,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the earliestDate property.
+                             * Imposta il valore della proprietà earliestDate.
                              * 
                              * @param value
                              *     allowed object is
@@ -6024,7 +6024,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Gets the value of the latestDate property.
+                             * Recupera il valore della proprietà latestDate.
                              * 
                              * @return
                              *     possible object is
@@ -6036,7 +6036,7 @@ public class OTAResRetrieveRS {
                             }
 
                             /**
-                             * Sets the value of the latestDate property.
+                             * Imposta il valore della proprietà latestDate.
                              * 
                              * @param value
                              *     allowed object is
@@ -6053,19 +6053,19 @@ public class OTAResRetrieveRS {
 
 
                     /**
-                     * <p>Java class for anonymous complex type.
+                     * <p>Classe Java per anonymous complex type.
                      * 
-                     * <p>The following schema fragment specifies the expected content contained within this class.
+                     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" />
-                     *       &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;attribute name="AmountAfterTax" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_decimal_ge0" /&gt;
+                     *       &lt;attribute name="CurrencyCode" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -6080,7 +6080,7 @@ public class OTAResRetrieveRS {
                         protected String currencyCode;
 
                         /**
-                         * Gets the value of the amountAfterTax property.
+                         * Recupera il valore della proprietà amountAfterTax.
                          * 
                          * @return
                          *     possible object is
@@ -6092,7 +6092,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the amountAfterTax property.
+                         * Imposta il valore della proprietà amountAfterTax.
                          * 
                          * @param value
                          *     allowed object is
@@ -6104,7 +6104,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Gets the value of the currencyCode property.
+                         * Recupera il valore della proprietà currencyCode.
                          * 
                          * @return
                          *     possible object is
@@ -6116,7 +6116,7 @@ public class OTAResRetrieveRS {
                         }
 
                         /**
-                         * Sets the value of the currencyCode property.
+                         * Imposta il valore della proprietà currencyCode.
                          * 
                          * @param value
                          *     allowed object is
@@ -6135,26 +6135,26 @@ public class OTAResRetrieveRS {
 
 
             /**
-             * <p>Java class for anonymous complex type.
+             * <p>Classe Java per anonymous complex type.
              * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
+             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="Type" use="required">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *             &lt;enumeration value="14"/>
-             *             &lt;enumeration value="15"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="Type" use="required"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *             &lt;enumeration value="14"/&gt;
+             *             &lt;enumeration value="15"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -6169,7 +6169,7 @@ public class OTAResRetrieveRS {
                 protected String id;
 
                 /**
-                 * Gets the value of the type property.
+                 * Recupera il valore della proprietà type.
                  * 
                  * @return
                  *     possible object is
@@ -6181,7 +6181,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Sets the value of the type property.
+                 * Imposta il valore della proprietà type.
                  * 
                  * @param value
                  *     allowed object is
@@ -6193,7 +6193,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Gets the value of the id property.
+                 * Recupera il valore della proprietà id.
                  * 
                  * @return
                  *     possible object is
@@ -6205,7 +6205,7 @@ public class OTAResRetrieveRS {
                 }
 
                 /**
-                 * Sets the value of the id property.
+                 * Imposta il valore della proprietà id.
                  * 
                  * @param value
                  *     allowed object is

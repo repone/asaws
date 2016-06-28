@@ -11,22 +11,22 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Classe Java per anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Success" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Success" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -48,7 +48,7 @@ public class OTANotifReportRS {
     protected String timeStamp;
 
     /**
-     * Gets the value of the success property.
+     * Recupera il valore della proprietà success.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class OTANotifReportRS {
     }
 
     /**
-     * Sets the value of the success property.
+     * Imposta il valore della proprietà success.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class OTANotifReportRS {
     }
 
     /**
-     * Gets the value of the version property.
+     * Recupera il valore della proprietà version.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class OTANotifReportRS {
     }
 
     /**
-     * Sets the value of the version property.
+     * Imposta il valore della proprietà version.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class OTANotifReportRS {
     }
 
     /**
-     * Gets the value of the timeStamp property.
+     * Recupera il valore della proprietà timeStamp.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class OTANotifReportRS {
     }
 
     /**
-     * Sets the value of the timeStamp property.
+     * Imposta il valore della proprietà timeStamp.
      * 
      * @param value
      *     allowed object is

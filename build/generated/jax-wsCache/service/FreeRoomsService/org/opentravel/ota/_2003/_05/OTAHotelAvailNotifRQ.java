@@ -15,86 +15,86 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Classe Java per anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="UniqueID" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;attribute name="Type" use="required">
- *                   &lt;simpleType>
- *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                       &lt;enumeration value="16"/>
- *                     &lt;/restriction>
- *                   &lt;/simpleType>
- *                 &lt;/attribute>
- *                 &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                 &lt;attribute name="Instance" use="required">
- *                   &lt;simpleType>
- *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                       &lt;enumeration value="CompleteSet"/>
- *                     &lt;/restriction>
- *                   &lt;/simpleType>
- *                 &lt;/attribute>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="AvailStatusMessages">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="AvailStatusMessage" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="StatusApplicationControl" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                     &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
- *                                     &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                     &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                           &lt;attribute name="BookingLimitMessageType">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                 &lt;enumeration value="SetLimit"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="BookingLimit" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *                 &lt;attribute name="HotelCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *                 &lt;attribute name="HotelName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="UniqueID" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="Type" use="required"&gt;
+ *                   &lt;simpleType&gt;
+ *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                       &lt;enumeration value="16"/&gt;
+ *                     &lt;/restriction&gt;
+ *                   &lt;/simpleType&gt;
+ *                 &lt;/attribute&gt;
+ *                 &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                 &lt;attribute name="Instance" use="required"&gt;
+ *                   &lt;simpleType&gt;
+ *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                       &lt;enumeration value="CompleteSet"/&gt;
+ *                     &lt;/restriction&gt;
+ *                   &lt;/simpleType&gt;
+ *                 &lt;/attribute&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="AvailStatusMessages"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="AvailStatusMessage" maxOccurs="unbounded"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="StatusApplicationControl" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                     &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+ *                                     &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                     &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                           &lt;attribute name="BookingLimitMessageType"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                 &lt;enumeration value="SetLimit"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="BookingLimit" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *                 &lt;attribute name="HotelCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *                 &lt;attribute name="HotelName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -119,7 +119,7 @@ public class OTAHotelAvailNotifRQ {
     protected String timeStamp;
 
     /**
-     * Gets the value of the uniqueID property.
+     * Recupera il valore della proprietà uniqueID.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Sets the value of the uniqueID property.
+     * Imposta il valore della proprietà uniqueID.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Gets the value of the availStatusMessages property.
+     * Recupera il valore della proprietà availStatusMessages.
      * 
      * @return
      *     possible object is
@@ -155,7 +155,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Sets the value of the availStatusMessages property.
+     * Imposta il valore della proprietà availStatusMessages.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +167,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Gets the value of the version property.
+     * Recupera il valore della proprietà version.
      * 
      * @return
      *     possible object is
@@ -179,7 +179,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Sets the value of the version property.
+     * Imposta il valore della proprietà version.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +191,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Gets the value of the timeStamp property.
+     * Recupera il valore della proprietà timeStamp.
      * 
      * @return
      *     possible object is
@@ -203,7 +203,7 @@ public class OTAHotelAvailNotifRQ {
     }
 
     /**
-     * Sets the value of the timeStamp property.
+     * Imposta il valore della proprietà timeStamp.
      * 
      * @param value
      *     allowed object is
@@ -216,51 +216,51 @@ public class OTAHotelAvailNotifRQ {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java per anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="AvailStatusMessage" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="StatusApplicationControl" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                           &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-     *                           &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                           &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *                 &lt;attribute name="BookingLimitMessageType">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                       &lt;enumeration value="SetLimit"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="BookingLimit" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *       &lt;attribute name="HotelCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *       &lt;attribute name="HotelName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="AvailStatusMessage" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="StatusApplicationControl" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                           &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+     *                           &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                           &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *                 &lt;attribute name="BookingLimitMessageType"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                       &lt;enumeration value="SetLimit"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="BookingLimit" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *       &lt;attribute name="HotelCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *       &lt;attribute name="HotelName" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -308,7 +308,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Gets the value of the hotelCode property.
+         * Recupera il valore della proprietà hotelCode.
          * 
          * @return
          *     possible object is
@@ -320,7 +320,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Sets the value of the hotelCode property.
+         * Imposta il valore della proprietà hotelCode.
          * 
          * @param value
          *     allowed object is
@@ -332,7 +332,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Gets the value of the hotelName property.
+         * Recupera il valore della proprietà hotelName.
          * 
          * @return
          *     possible object is
@@ -344,7 +344,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Sets the value of the hotelName property.
+         * Imposta il valore della proprietà hotelName.
          * 
          * @param value
          *     allowed object is
@@ -357,39 +357,39 @@ public class OTAHotelAvailNotifRQ {
 
 
         /**
-         * <p>Java class for anonymous complex type.
+         * <p>Classe Java per anonymous complex type.
          * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
+         * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="StatusApplicationControl" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                 &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-         *                 &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *                 &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *       &lt;attribute name="BookingLimitMessageType">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *             &lt;enumeration value="SetLimit"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="BookingLimit" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="StatusApplicationControl" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                 &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+         *                 &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *                 &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *       &lt;attribute name="BookingLimitMessageType"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *             &lt;enumeration value="SetLimit"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="BookingLimit" type="{http://www.opentravel.org/OTA/2003/05}def_int_ge0" /&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -408,7 +408,7 @@ public class OTAHotelAvailNotifRQ {
             protected BigInteger bookingLimit;
 
             /**
-             * Gets the value of the statusApplicationControl property.
+             * Recupera il valore della proprietà statusApplicationControl.
              * 
              * @return
              *     possible object is
@@ -420,7 +420,7 @@ public class OTAHotelAvailNotifRQ {
             }
 
             /**
-             * Sets the value of the statusApplicationControl property.
+             * Imposta il valore della proprietà statusApplicationControl.
              * 
              * @param value
              *     allowed object is
@@ -432,7 +432,7 @@ public class OTAHotelAvailNotifRQ {
             }
 
             /**
-             * Gets the value of the bookingLimitMessageType property.
+             * Recupera il valore della proprietà bookingLimitMessageType.
              * 
              * @return
              *     possible object is
@@ -444,7 +444,7 @@ public class OTAHotelAvailNotifRQ {
             }
 
             /**
-             * Sets the value of the bookingLimitMessageType property.
+             * Imposta il valore della proprietà bookingLimitMessageType.
              * 
              * @param value
              *     allowed object is
@@ -456,7 +456,7 @@ public class OTAHotelAvailNotifRQ {
             }
 
             /**
-             * Gets the value of the bookingLimit property.
+             * Recupera il valore della proprietà bookingLimit.
              * 
              * @return
              *     possible object is
@@ -468,7 +468,7 @@ public class OTAHotelAvailNotifRQ {
             }
 
             /**
-             * Sets the value of the bookingLimit property.
+             * Imposta il valore della proprietà bookingLimit.
              * 
              * @param value
              *     allowed object is
@@ -481,21 +481,21 @@ public class OTAHotelAvailNotifRQ {
 
 
             /**
-             * <p>Java class for anonymous complex type.
+             * <p>Classe Java per anonymous complex type.
              * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
+             * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *       &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" />
-             *       &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *       &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="Start" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *       &lt;attribute name="End" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_date" /&gt;
+             *       &lt;attribute name="InvTypeCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *       &lt;attribute name="InvCode" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -514,7 +514,7 @@ public class OTAHotelAvailNotifRQ {
                 protected String invCode;
 
                 /**
-                 * Gets the value of the start property.
+                 * Recupera il valore della proprietà start.
                  * 
                  * @return
                  *     possible object is
@@ -526,7 +526,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Sets the value of the start property.
+                 * Imposta il valore della proprietà start.
                  * 
                  * @param value
                  *     allowed object is
@@ -538,7 +538,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Gets the value of the end property.
+                 * Recupera il valore della proprietà end.
                  * 
                  * @return
                  *     possible object is
@@ -550,7 +550,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Sets the value of the end property.
+                 * Imposta il valore della proprietà end.
                  * 
                  * @param value
                  *     allowed object is
@@ -562,7 +562,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Gets the value of the invTypeCode property.
+                 * Recupera il valore della proprietà invTypeCode.
                  * 
                  * @return
                  *     possible object is
@@ -574,7 +574,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Sets the value of the invTypeCode property.
+                 * Imposta il valore della proprietà invTypeCode.
                  * 
                  * @param value
                  *     allowed object is
@@ -586,7 +586,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Gets the value of the invCode property.
+                 * Recupera il valore della proprietà invCode.
                  * 
                  * @return
                  *     possible object is
@@ -598,7 +598,7 @@ public class OTAHotelAvailNotifRQ {
                 }
 
                 /**
-                 * Sets the value of the invCode property.
+                 * Imposta il valore della proprietà invCode.
                  * 
                  * @param value
                  *     allowed object is
@@ -617,32 +617,32 @@ public class OTAHotelAvailNotifRQ {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java per anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;attribute name="Type" use="required">
-     *         &lt;simpleType>
-     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *             &lt;enumeration value="16"/>
-     *           &lt;/restriction>
-     *         &lt;/simpleType>
-     *       &lt;/attribute>
-     *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *       &lt;attribute name="Instance" use="required">
-     *         &lt;simpleType>
-     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *             &lt;enumeration value="CompleteSet"/>
-     *           &lt;/restriction>
-     *         &lt;/simpleType>
-     *       &lt;/attribute>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="Type" use="required"&gt;
+     *         &lt;simpleType&gt;
+     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *             &lt;enumeration value="16"/&gt;
+     *           &lt;/restriction&gt;
+     *         &lt;/simpleType&gt;
+     *       &lt;/attribute&gt;
+     *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *       &lt;attribute name="Instance" use="required"&gt;
+     *         &lt;simpleType&gt;
+     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *             &lt;enumeration value="CompleteSet"/&gt;
+     *           &lt;/restriction&gt;
+     *         &lt;/simpleType&gt;
+     *       &lt;/attribute&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -659,7 +659,7 @@ public class OTAHotelAvailNotifRQ {
         protected String instance;
 
         /**
-         * Gets the value of the type property.
+         * Recupera il valore della proprietà type.
          * 
          * @return
          *     possible object is
@@ -671,7 +671,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Sets the value of the type property.
+         * Imposta il valore della proprietà type.
          * 
          * @param value
          *     allowed object is
@@ -683,7 +683,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Gets the value of the id property.
+         * Recupera il valore della proprietà id.
          * 
          * @return
          *     possible object is
@@ -695,7 +695,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Sets the value of the id property.
+         * Imposta il valore della proprietà id.
          * 
          * @param value
          *     allowed object is
@@ -707,7 +707,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Gets the value of the instance property.
+         * Recupera il valore della proprietà instance.
          * 
          * @return
          *     possible object is
@@ -719,7 +719,7 @@ public class OTAHotelAvailNotifRQ {
         }
 
         /**
-         * Sets the value of the instance property.
+         * Imposta il valore della proprietà instance.
          * 
          * @param value
          *     allowed object is

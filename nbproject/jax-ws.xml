@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="HouseKeepingService">
-      <implementation-class>com.mmone.asa.housekeeping.HouseKeepingService</implementation-class>
-    </service>
     <service name="GuestRequestsService">
       <implementation-class>com.mmone.asa.ports.GuestRequestsService</implementation-class>
-      <wsdl-url>file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.wsdl</wsdl-url>
+      <wsdl-url>file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/xsd-rinnovato/alpinebits.wsdl</wsdl-url>
       <local-wsdl-file>alpinebits.wsdl</local-wsdl-file>
       <service-name>GuestRequestsService</service-name>
       <port-name>GuestRequestsPort</port-name>
@@ -38,7 +35,7 @@
     </service>
     <service name="FreeRoomsService">
       <implementation-class>com.mmone.asa.ports.FreeRoomsService</implementation-class>
-      <wsdl-url>file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.wsdl</wsdl-url>
+      <wsdl-url>file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/xsd-rinnovato/alpinebits.wsdl</wsdl-url>
       <local-wsdl-file>alpinebits.wsdl</local-wsdl-file>
       <service-name>FreeRoomsService</service-name>
       <port-name>FreeRoomsPort</port-name>
@@ -68,12 +65,47 @@
         </wsimport-option>
       </wsimport-options>
     </service>
-    <service name="NewWebServiceFromWSDL">
+    <service name="InventoryService">
       <implementation-class>com.mmone.asa.ports.InventoryService</implementation-class>
-      <wsdl-url>file:/C:/Users/mauro.larese/Desktop/Alpinebits/AlpineBits_2014-04/AlpineBits_2014-04/files/xsd-rinnovato/alpinebits.wsdl</wsdl-url>
+      <wsdl-url>file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/xsd-rinnovato/alpinebits.wsdl</wsdl-url>
       <local-wsdl-file>alpinebits.wsdl</local-wsdl-file>
       <service-name>InventoryService</service-name>
       <port-name>InventoryPort</port-name>
+      <package-name>https.webservices_asa_one_com.asaconnectservice._1</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <use-provider>false</use-provider>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </service>
+    <service name="HouseKeepingService">
+      <implementation-class>com.mmone.asa.housekeeping.HouseKeepingService</implementation-class>
+    </service>
+    <service name="RateplanService">
+      <implementation-class>com.mmone.asa.ports.RateplanService</implementation-class>
+      <wsdl-url>file:/C:/Users/mauro.larese/Documents/NetBeansProjects/asaws/docs/wsdl-rateplan/alpinebits.wsdl</wsdl-url>
+      <local-wsdl-file>alpinebits.wsdl</local-wsdl-file>
+      <service-name>RatePlansService</service-name>
+      <port-name>RatePlansPort</port-name>
       <package-name>https.webservices_asa_one_com.asaconnectservice._1</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <use-provider>false</use-provider>

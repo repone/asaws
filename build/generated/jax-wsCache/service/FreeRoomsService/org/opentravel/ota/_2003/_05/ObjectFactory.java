@@ -24,56 +24,16 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionImage_QNAME = new QName("http://www.opentravel.org/OTA/2003/05", "Image");
-    private final static QName _OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionURL_QNAME = new QName("http://www.opentravel.org/OTA/2003/05", "URL");
     private final static QName _OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionText_QNAME = new QName("http://www.opentravel.org/OTA/2003/05", "Text");
     private final static QName _OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionListItem_QNAME = new QName("http://www.opentravel.org/OTA/2003/05", "ListItem");
+    private final static QName _OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionImage_QNAME = new QName("http://www.opentravel.org/OTA/2003/05", "Image");
+    private final static QName _OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionURL_QNAME = new QName("http://www.opentravel.org/OTA/2003/05", "URL");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.opentravel.ota._2003._05
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link OTAHotelInvNotifRQ }
-     * 
-     */
-    public OTAHotelInvNotifRQ createOTAHotelInvNotifRQ() {
-        return new OTAHotelInvNotifRQ();
-    }
-
-    /**
-     * Create an instance of {@link OTAResRetrieveRS }
-     * 
-     */
-    public OTAResRetrieveRS createOTAResRetrieveRS() {
-        return new OTAResRetrieveRS();
-    }
-
-    /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRS }
-     * 
-     */
-    public OTAHotelRatePlanNotifRS createOTAHotelRatePlanNotifRS() {
-        return new OTAHotelRatePlanNotifRS();
-    }
-
-    /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRQ }
-     * 
-     */
-    public OTAHotelRatePlanNotifRQ createOTAHotelRatePlanNotifRQ() {
-        return new OTAHotelRatePlanNotifRQ();
-    }
-
-    /**
-     * Create an instance of {@link OTANotifReportRQ }
-     * 
-     */
-    public OTANotifReportRQ createOTANotifReportRQ() {
-        return new OTANotifReportRQ();
     }
 
     /**
@@ -85,6 +45,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OTAHotelAvailNotifRS }
+     * 
+     */
+    public OTAHotelAvailNotifRS createOTAHotelAvailNotifRS() {
+        return new OTAHotelAvailNotifRS();
+    }
+
+    /**
      * Create an instance of {@link OTAReadRQ }
      * 
      */
@@ -93,67 +61,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OTAReadRQ.ReadRequests }
+     * Create an instance of {@link OTAResRetrieveRS }
      * 
      */
-    public OTAReadRQ.ReadRequests createOTAReadRQReadRequests() {
-        return new OTAReadRQ.ReadRequests();
+    public OTAResRetrieveRS createOTAResRetrieveRS() {
+        return new OTAResRetrieveRS();
     }
 
     /**
-     * Create an instance of {@link OTAReadRQ.ReadRequests.HotelReadRequest }
+     * Create an instance of {@link OTANotifReportRQ }
      * 
      */
-    public OTAReadRQ.ReadRequests.HotelReadRequest createOTAReadRQReadRequestsHotelReadRequest() {
-        return new OTAReadRQ.ReadRequests.HotelReadRequest();
+    public OTANotifReportRQ createOTANotifReportRQ() {
+        return new OTANotifReportRQ();
     }
 
     /**
-     * Create an instance of {@link OTAHotelAvailNotifRQ.AvailStatusMessages }
+     * Create an instance of {@link OTAHotelInvNotifRQ }
      * 
      */
-    public OTAHotelAvailNotifRQ.AvailStatusMessages createOTAHotelAvailNotifRQAvailStatusMessages() {
-        return new OTAHotelAvailNotifRQ.AvailStatusMessages();
+    public OTAHotelInvNotifRQ createOTAHotelInvNotifRQ() {
+        return new OTAHotelInvNotifRQ();
     }
 
     /**
-     * Create an instance of {@link OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage }
+     * Create an instance of {@link OTAHotelRatePlanNotifRQ }
      * 
      */
-    public OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage createOTAHotelAvailNotifRQAvailStatusMessagesAvailStatusMessage() {
-        return new OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage();
-    }
-
-    /**
-     * Create an instance of {@link OTANotifReportRQ.NotifDetails }
-     * 
-     */
-    public OTANotifReportRQ.NotifDetails createOTANotifReportRQNotifDetails() {
-        return new OTANotifReportRQ.NotifDetails();
-    }
-
-    /**
-     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport }
-     * 
-     */
-    public OTANotifReportRQ.NotifDetails.HotelNotifReport createOTANotifReportRQNotifDetailsHotelNotifReport() {
-        return new OTANotifReportRQ.NotifDetails.HotelNotifReport();
-    }
-
-    /**
-     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations }
-     * 
-     */
-    public OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations createOTANotifReportRQNotifDetailsHotelNotifReportHotelReservations() {
-        return new OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations();
-    }
-
-    /**
-     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation }
-     * 
-     */
-    public OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation createOTANotifReportRQNotifDetailsHotelNotifReportHotelReservationsHotelReservation() {
-        return new OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation();
+    public OTAHotelRatePlanNotifRQ createOTAHotelRatePlanNotifRQ() {
+        return new OTAHotelRatePlanNotifRQ();
     }
 
     /**
@@ -301,19 +237,75 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRS.Warnings }
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts }
      * 
      */
-    public OTAHotelRatePlanNotifRS.Warnings createOTAHotelRatePlanNotifRSWarnings() {
-        return new OTAHotelRatePlanNotifRS.Warnings();
+    public OTAHotelInvNotifRQ.SellableProducts createOTAHotelInvNotifRQSellableProducts() {
+        return new OTAHotelInvNotifRQ.SellableProducts();
     }
 
     /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRS.Errors }
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct }
      * 
      */
-    public OTAHotelRatePlanNotifRS.Errors createOTAHotelRatePlanNotifRSErrors() {
-        return new OTAHotelRatePlanNotifRS.Errors();
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct createOTAHotelInvNotifRQSellableProductsSellableProduct() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom }
+     * 
+     */
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoom() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description }
+     * 
+     */
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomDescription() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities }
+     * 
+     */
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomAmenities() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities();
+    }
+
+    /**
+     * Create an instance of {@link OTANotifReportRQ.NotifDetails }
+     * 
+     */
+    public OTANotifReportRQ.NotifDetails createOTANotifReportRQNotifDetails() {
+        return new OTANotifReportRQ.NotifDetails();
+    }
+
+    /**
+     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport }
+     * 
+     */
+    public OTANotifReportRQ.NotifDetails.HotelNotifReport createOTANotifReportRQNotifDetailsHotelNotifReport() {
+        return new OTANotifReportRQ.NotifDetails.HotelNotifReport();
+    }
+
+    /**
+     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations }
+     * 
+     */
+    public OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations createOTANotifReportRQNotifDetailsHotelNotifReportHotelReservations() {
+        return new OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations();
+    }
+
+    /**
+     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation }
+     * 
+     */
+    public OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation createOTANotifReportRQNotifDetailsHotelNotifReportHotelReservationsHotelReservation() {
+        return new OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation();
     }
 
     /**
@@ -501,59 +493,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts }
+     * Create an instance of {@link OTAReadRQ.ReadRequests }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts createOTAHotelInvNotifRQSellableProducts() {
-        return new OTAHotelInvNotifRQ.SellableProducts();
+    public OTAReadRQ.ReadRequests createOTAReadRQReadRequests() {
+        return new OTAReadRQ.ReadRequests();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct }
+     * Create an instance of {@link OTAReadRQ.ReadRequests.HotelReadRequest }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct createOTAHotelInvNotifRQSellableProductsSellableProduct() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct();
+    public OTAReadRQ.ReadRequests.HotelReadRequest createOTAReadRQReadRequestsHotelReadRequest() {
+        return new OTAReadRQ.ReadRequests.HotelReadRequest();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom }
+     * Create an instance of {@link OTAHotelAvailNotifRS.Warnings }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoom() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom();
+    public OTAHotelAvailNotifRS.Warnings createOTAHotelAvailNotifRSWarnings() {
+        return new OTAHotelAvailNotifRS.Warnings();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description }
+     * Create an instance of {@link OTAHotelAvailNotifRS.Errors }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomDescription() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description();
+    public OTAHotelAvailNotifRS.Errors createOTAHotelAvailNotifRSErrors() {
+        return new OTAHotelAvailNotifRS.Errors();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities }
+     * Create an instance of {@link OTAHotelAvailNotifRQ.AvailStatusMessages }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomAmenities() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities();
+    public OTAHotelAvailNotifRQ.AvailStatusMessages createOTAHotelAvailNotifRQAvailStatusMessages() {
+        return new OTAHotelAvailNotifRQ.AvailStatusMessages();
     }
 
     /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRQ.UniqueID }
+     * Create an instance of {@link OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage }
      * 
      */
-    public OTAHotelRatePlanNotifRQ.UniqueID createOTAHotelRatePlanNotifRQUniqueID() {
-        return new OTAHotelRatePlanNotifRQ.UniqueID();
-    }
-
-    /**
-     * Create an instance of {@link OTAHotelAvailNotifRS }
-     * 
-     */
-    public OTAHotelAvailNotifRS createOTAHotelAvailNotifRS() {
-        return new OTAHotelAvailNotifRS();
+    public OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage createOTAHotelAvailNotifRQAvailStatusMessagesAvailStatusMessage() {
+        return new OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage();
     }
 
     /**
@@ -581,35 +565,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OTAHotelRatePlanNotifRQ.UniqueID }
+     * 
+     */
+    public OTAHotelRatePlanNotifRQ.UniqueID createOTAHotelRatePlanNotifRQUniqueID() {
+        return new OTAHotelRatePlanNotifRQ.UniqueID();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelRatePlanNotifRS }
+     * 
+     */
+    public OTAHotelRatePlanNotifRS createOTAHotelRatePlanNotifRS() {
+        return new OTAHotelRatePlanNotifRS();
+    }
+
+    /**
      * Create an instance of {@link SuccessType }
      * 
      */
     public SuccessType createSuccessType() {
         return new SuccessType();
-    }
-
-    /**
-     * Create an instance of {@link OTAReadRQ.ReadRequests.HotelReadRequest.SelectionCriteria }
-     * 
-     */
-    public OTAReadRQ.ReadRequests.HotelReadRequest.SelectionCriteria createOTAReadRQReadRequestsHotelReadRequestSelectionCriteria() {
-        return new OTAReadRQ.ReadRequests.HotelReadRequest.SelectionCriteria();
-    }
-
-    /**
-     * Create an instance of {@link OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage.StatusApplicationControl }
-     * 
-     */
-    public OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage.StatusApplicationControl createOTAHotelAvailNotifRQAvailStatusMessagesAvailStatusMessageStatusApplicationControl() {
-        return new OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage.StatusApplicationControl();
-    }
-
-    /**
-     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation.UniqueID }
-     * 
-     */
-    public OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation.UniqueID createOTANotifReportRQNotifDetailsHotelNotifReportHotelReservationsHotelReservationUniqueID() {
-        return new OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation.UniqueID();
     }
 
     /**
@@ -733,19 +709,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRS.Warnings.Warning }
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Quantities }
      * 
      */
-    public OTAHotelRatePlanNotifRS.Warnings.Warning createOTAHotelRatePlanNotifRSWarningsWarning() {
-        return new OTAHotelRatePlanNotifRS.Warnings.Warning();
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Quantities createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomQuantities() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Quantities();
     }
 
     /**
-     * Create an instance of {@link OTAHotelRatePlanNotifRS.Errors.Error }
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Occupancy }
      * 
      */
-    public OTAHotelRatePlanNotifRS.Errors.Error createOTAHotelRatePlanNotifRSErrorsError() {
-        return new OTAHotelRatePlanNotifRS.Errors.Error();
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Occupancy createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomOccupancy() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Occupancy();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Room }
+     * 
+     */
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Room createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomRoom() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Room();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description.Text }
+     * 
+     */
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description.Text createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomDescriptionText() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description.Text();
+    }
+
+    /**
+     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities.Amenity }
+     * 
+     */
+    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities.Amenity createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomAmenitiesAmenity() {
+        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities.Amenity();
+    }
+
+    /**
+     * Create an instance of {@link OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation.UniqueID }
+     * 
+     */
+    public OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation.UniqueID createOTANotifReportRQNotifDetailsHotelNotifReportHotelReservationsHotelReservationUniqueID() {
+        return new OTANotifReportRQ.NotifDetails.HotelNotifReport.HotelReservations.HotelReservation.UniqueID();
     }
 
     /**
@@ -861,61 +869,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Quantities }
+     * Create an instance of {@link OTAReadRQ.ReadRequests.HotelReadRequest.SelectionCriteria }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Quantities createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomQuantities() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Quantities();
+    public OTAReadRQ.ReadRequests.HotelReadRequest.SelectionCriteria createOTAReadRQReadRequestsHotelReadRequestSelectionCriteria() {
+        return new OTAReadRQ.ReadRequests.HotelReadRequest.SelectionCriteria();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Occupancy }
+     * Create an instance of {@link OTAHotelAvailNotifRS.Warnings.Warning }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Occupancy createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomOccupancy() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Occupancy();
+    public OTAHotelAvailNotifRS.Warnings.Warning createOTAHotelAvailNotifRSWarningsWarning() {
+        return new OTAHotelAvailNotifRS.Warnings.Warning();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Room }
+     * Create an instance of {@link OTAHotelAvailNotifRS.Errors.Error }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Room createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomRoom() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Room();
+    public OTAHotelAvailNotifRS.Errors.Error createOTAHotelAvailNotifRSErrorsError() {
+        return new OTAHotelAvailNotifRS.Errors.Error();
     }
 
     /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description.Text }
+     * Create an instance of {@link OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage.StatusApplicationControl }
      * 
      */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description.Text createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomDescriptionText() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Description.Text();
-    }
-
-    /**
-     * Create an instance of {@link OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities.Amenity }
-     * 
-     */
-    public OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities.Amenity createOTAHotelInvNotifRQSellableProductsSellableProductGuestRoomAmenitiesAmenity() {
-        return new OTAHotelInvNotifRQ.SellableProducts.SellableProduct.GuestRoom.Amenities.Amenity();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.opentravel.org/OTA/2003/05", name = "Image", scope = OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class)
-    public JAXBElement<String> createOTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionImage(String value) {
-        return new JAXBElement<String>(_OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionImage_QNAME, String.class, OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.opentravel.org/OTA/2003/05", name = "URL", scope = OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class)
-    public JAXBElement<String> createOTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionURL(String value) {
-        return new JAXBElement<String>(_OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionURL_QNAME, String.class, OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class, value);
+    public OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage.StatusApplicationControl createOTAHotelAvailNotifRQAvailStatusMessagesAvailStatusMessageStatusApplicationControl() {
+        return new OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage.StatusApplicationControl();
     }
 
     /**
@@ -934,6 +916,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.opentravel.org/OTA/2003/05", name = "ListItem", scope = OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class)
     public JAXBElement<OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.ListItem> createOTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionListItem(OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.ListItem value) {
         return new JAXBElement<OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.ListItem>(_OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionListItem_QNAME, OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.ListItem.class, OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.opentravel.org/OTA/2003/05", name = "Image", scope = OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class)
+    public JAXBElement<String> createOTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionImage(String value) {
+        return new JAXBElement<String>(_OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionImage_QNAME, String.class, OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.opentravel.org/OTA/2003/05", name = "URL", scope = OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class)
+    public JAXBElement<String> createOTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionURL(String value) {
+        return new JAXBElement<String>(_OTAHotelRatePlanNotifRQRatePlansRatePlanDescriptionURL_QNAME, String.class, OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.class, value);
     }
 
 }

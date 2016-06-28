@@ -86,6 +86,8 @@ public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
 
     @Override
     public void fillWarnings() { 
+        
+        /*
         this.getResponse().setWarnings(new OTAHotelRatePlanNotifRS.Warnings());
         for (WarningType warning : this.getWarning()) {
             OTAHotelRatePlanNotifRS.Warnings.Warning wa = 
@@ -95,7 +97,7 @@ public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
             wa.setType( new BigInteger(warning.getType() ) );
             
             this.getResponse().getWarnings().getWarning().add(wa);
-        }
+        }*/
    
     }
 
