@@ -29,7 +29,7 @@ public class OTAHotelInvNotifRSBuilder extends AbstractResponseBuilder{
         super(request, webServiceContext, initialContext);
  
     }
-     
+      
     @Override
     public OTAHotelInvNotifRQ getRequest(){
         return (OTAHotelInvNotifRQ)super.getRequest();

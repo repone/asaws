@@ -18,7 +18,7 @@ public class HouseKeepingService {
 
     @WebMethod(operationName = "getVersion")
     public String getVersion() { 
-        return "OK:2014-04";
+        return "OK:2015-07b";
     }
     
     @WebMethod(operationName = "getCapabilities")
@@ -28,7 +28,7 @@ public class HouseKeepingService {
                +"action_getCapabilitie," 
                +"action_OTA_HotelAvailNotif," 
                +"action_OTA_Read," 
-               +"action_OTA_HotelInvNotif_Inventor" 
+               +"action_OTA_HotelDescriptiveContentNotif_Inventory" 
                 ;
     }
 }
