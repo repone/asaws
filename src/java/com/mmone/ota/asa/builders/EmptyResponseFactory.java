@@ -13,6 +13,9 @@ import java.math.BigInteger;
 import org.opentravel.ota._2003._05.OTAHotelAvailNotifRS;
 import org.opentravel.ota._2003._05.OTAHotelInvNotifRS;
 import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS;
+import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors;
+import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors.Error;
+import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Warnings;
 import org.opentravel.ota._2003._05.OTANotifReportRS;
 import org.opentravel.ota._2003._05.OTAResRetrieveRS;
 
@@ -28,14 +31,13 @@ public class EmptyResponseFactory{
     } 
     public static OTAHotelAvailNotifRS newAvailNotifRS(ErrorResultType er){
         OTAHotelAvailNotifRS r = newAvailNotifRS();
-        
-        
-        OTAHotelAvailNotifRS.Errors errors=new OTAHotelAvailNotifRS.Errors();
-        OTAHotelAvailNotifRS.Errors.Error error = new OTAHotelAvailNotifRS.Errors.Error();
+ 
+        Errors errors=new Errors();
+        Errors.Error error = new Errors.Error();
         error.setCode( new BigInteger(ErrConsts.ERR_SYSTEM_ERROR));
         error.setType(ErrTypeConsts.EWT_UNKNOWN);
         error.setContent(er.getMessage());
-        errors.getError().add(new OTAHotelAvailNotifRS.Errors.Error());
+        errors.getError().add(new Errors.Error());
         r.setErrors(errors);
         return r;
     }
@@ -53,8 +55,8 @@ public class EmptyResponseFactory{
     } 
     public static OTAHotelInvNotifRS newInvNotifRS(ErrorResultType er){
         OTAHotelInvNotifRS r = newInvNotifRS();
-        OTAHotelAvailNotifRS.Errors.Error error=new OTAHotelAvailNotifRS.Errors.Error();
-        OTAHotelAvailNotifRS.Errors errors = new OTAHotelAvailNotifRS.Errors();
+        Errors.Error error=new Errors.Error();
+        Errors errors = new Errors();
         
         error.setCode( new BigInteger(ErrConsts.ERR_SYSTEM_ERROR));
         error.setType(ErrTypeConsts.EWT_UNKNOWN);
@@ -75,8 +77,8 @@ public class EmptyResponseFactory{
     
     public static OTAHotelRatePlanNotifRS newRatePlanNotifRS(ErrorResultType er){
         OTAHotelRatePlanNotifRS r = newRatePlanNotifRS();
-        OTAHotelAvailNotifRS.Errors errors=new OTAHotelAvailNotifRS.Errors();
-        OTAHotelAvailNotifRS.Errors.Error error=new OTAHotelAvailNotifRS.Errors.Error();
+        Errors errors=new Errors();
+        Errors.Error error=new Errors.Error();
         error.setCode( new BigInteger(ErrConsts.ERR_SYSTEM_ERROR));
         error.setType(ErrTypeConsts.EWT_UNKNOWN);
         error.setContent(er.getMessage());

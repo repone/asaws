@@ -18,74 +18,74 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Success" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
- *         &lt;element name="NotifDetails"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;element name="HotelNotifReport"&gt;
- *                     &lt;complexType&gt;
- *                       &lt;complexContent&gt;
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                           &lt;sequence&gt;
- *                             &lt;element name="HotelReservations"&gt;
- *                               &lt;complexType&gt;
- *                                 &lt;complexContent&gt;
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                                     &lt;sequence&gt;
- *                                       &lt;element name="HotelReservation" maxOccurs="unbounded"&gt;
- *                                         &lt;complexType&gt;
- *                                           &lt;complexContent&gt;
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                                               &lt;sequence&gt;
- *                                                 &lt;element name="UniqueID"&gt;
- *                                                   &lt;complexType&gt;
- *                                                     &lt;complexContent&gt;
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                                                         &lt;attribute name="Type" use="required"&gt;
- *                                                           &lt;simpleType&gt;
- *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *                                                               &lt;enumeration value="14"/&gt;
- *                                                               &lt;enumeration value="15"/&gt;
- *                                                             &lt;/restriction&gt;
- *                                                           &lt;/simpleType&gt;
- *                                                         &lt;/attribute&gt;
- *                                                         &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
- *                                                       &lt;/restriction&gt;
- *                                                     &lt;/complexContent&gt;
- *                                                   &lt;/complexType&gt;
- *                                                 &lt;/element&gt;
- *                                               &lt;/sequence&gt;
- *                                             &lt;/restriction&gt;
- *                                           &lt;/complexContent&gt;
- *                                         &lt;/complexType&gt;
- *                                       &lt;/element&gt;
- *                                     &lt;/sequence&gt;
- *                                   &lt;/restriction&gt;
- *                                 &lt;/complexContent&gt;
- *                               &lt;/complexType&gt;
- *                             &lt;/element&gt;
- *                           &lt;/sequence&gt;
- *                         &lt;/restriction&gt;
- *                       &lt;/complexContent&gt;
- *                     &lt;/complexType&gt;
- *                   &lt;/element&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
- *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="Success" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+ *         &lt;element name="NotifDetails">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="HotelNotifReport">
+ *                     &lt;complexType>
+ *                       &lt;complexContent>
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                           &lt;sequence>
+ *                             &lt;element name="HotelReservations">
+ *                               &lt;complexType>
+ *                                 &lt;complexContent>
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                                     &lt;sequence>
+ *                                       &lt;element name="HotelReservation" maxOccurs="unbounded">
+ *                                         &lt;complexType>
+ *                                           &lt;complexContent>
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                                               &lt;sequence>
+ *                                                 &lt;element name="UniqueID">
+ *                                                   &lt;complexType>
+ *                                                     &lt;complexContent>
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                                                         &lt;attribute name="Type" use="required">
+ *                                                           &lt;simpleType>
+ *                                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *                                                               &lt;enumeration value="14"/>
+ *                                                               &lt;enumeration value="15"/>
+ *                                                             &lt;/restriction>
+ *                                                           &lt;/simpleType>
+ *                                                         &lt;/attribute>
+ *                                                         &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
+ *                                                       &lt;/restriction>
+ *                                                     &lt;/complexContent>
+ *                                                   &lt;/complexType>
+ *                                                 &lt;/element>
+ *                                               &lt;/sequence>
+ *                                             &lt;/restriction>
+ *                                           &lt;/complexContent>
+ *                                         &lt;/complexType>
+ *                                       &lt;/element>
+ *                                     &lt;/sequence>
+ *                                   &lt;/restriction>
+ *                                 &lt;/complexContent>
+ *                               &lt;/complexType>
+ *                             &lt;/element>
+ *                           &lt;/sequence>
+ *                         &lt;/restriction>
+ *                       &lt;/complexContent>
+ *                     &lt;/complexType>
+ *                   &lt;/element>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
+ *       &lt;/sequence>
+ *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
+ *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 
@@ -212,61 +212,61 @@ public class OTANotifReportRQ {
      * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
      * 
      * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;element name="HotelNotifReport"&gt;
-     *           &lt;complexType&gt;
-     *             &lt;complexContent&gt;
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *                 &lt;sequence&gt;
-     *                   &lt;element name="HotelReservations"&gt;
-     *                     &lt;complexType&gt;
-     *                       &lt;complexContent&gt;
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *                           &lt;sequence&gt;
-     *                             &lt;element name="HotelReservation" maxOccurs="unbounded"&gt;
-     *                               &lt;complexType&gt;
-     *                                 &lt;complexContent&gt;
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *                                     &lt;sequence&gt;
-     *                                       &lt;element name="UniqueID"&gt;
-     *                                         &lt;complexType&gt;
-     *                                           &lt;complexContent&gt;
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *                                               &lt;attribute name="Type" use="required"&gt;
-     *                                                 &lt;simpleType&gt;
-     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
-     *                                                     &lt;enumeration value="14"/&gt;
-     *                                                     &lt;enumeration value="15"/&gt;
-     *                                                   &lt;/restriction&gt;
-     *                                                 &lt;/simpleType&gt;
-     *                                               &lt;/attribute&gt;
-     *                                               &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
-     *                                             &lt;/restriction&gt;
-     *                                           &lt;/complexContent&gt;
-     *                                         &lt;/complexType&gt;
-     *                                       &lt;/element&gt;
-     *                                     &lt;/sequence&gt;
-     *                                   &lt;/restriction&gt;
-     *                                 &lt;/complexContent&gt;
-     *                               &lt;/complexType&gt;
-     *                             &lt;/element&gt;
-     *                           &lt;/sequence&gt;
-     *                         &lt;/restriction&gt;
-     *                       &lt;/complexContent&gt;
-     *                     &lt;/complexType&gt;
-     *                   &lt;/element&gt;
-     *                 &lt;/sequence&gt;
-     *               &lt;/restriction&gt;
-     *             &lt;/complexContent&gt;
-     *           &lt;/complexType&gt;
-     *         &lt;/element&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="HotelNotifReport">
+     *           &lt;complexType>
+     *             &lt;complexContent>
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                 &lt;sequence>
+     *                   &lt;element name="HotelReservations">
+     *                     &lt;complexType>
+     *                       &lt;complexContent>
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                           &lt;sequence>
+     *                             &lt;element name="HotelReservation" maxOccurs="unbounded">
+     *                               &lt;complexType>
+     *                                 &lt;complexContent>
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                                     &lt;sequence>
+     *                                       &lt;element name="UniqueID">
+     *                                         &lt;complexType>
+     *                                           &lt;complexContent>
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                                               &lt;attribute name="Type" use="required">
+     *                                                 &lt;simpleType>
+     *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+     *                                                     &lt;enumeration value="14"/>
+     *                                                     &lt;enumeration value="15"/>
+     *                                                   &lt;/restriction>
+     *                                                 &lt;/simpleType>
+     *                                               &lt;/attribute>
+     *                                               &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
+     *                                             &lt;/restriction>
+     *                                           &lt;/complexContent>
+     *                                         &lt;/complexType>
+     *                                       &lt;/element>
+     *                                     &lt;/sequence>
+     *                                   &lt;/restriction>
+     *                                 &lt;/complexContent>
+     *                               &lt;/complexType>
+     *                             &lt;/element>
+     *                           &lt;/sequence>
+     *                         &lt;/restriction>
+     *                       &lt;/complexContent>
+     *                     &lt;/complexType>
+     *                   &lt;/element>
+     *                 &lt;/sequence>
+     *               &lt;/restriction>
+     *             &lt;/complexContent>
+     *           &lt;/complexType>
+     *         &lt;/element>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
      * </pre>
      * 
      * 
@@ -311,51 +311,51 @@ public class OTANotifReportRQ {
          * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
          * 
          * <pre>
-         * &lt;complexType&gt;
-         *   &lt;complexContent&gt;
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-         *       &lt;sequence&gt;
-         *         &lt;element name="HotelReservations"&gt;
-         *           &lt;complexType&gt;
-         *             &lt;complexContent&gt;
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-         *                 &lt;sequence&gt;
-         *                   &lt;element name="HotelReservation" maxOccurs="unbounded"&gt;
-         *                     &lt;complexType&gt;
-         *                       &lt;complexContent&gt;
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-         *                           &lt;sequence&gt;
-         *                             &lt;element name="UniqueID"&gt;
-         *                               &lt;complexType&gt;
-         *                                 &lt;complexContent&gt;
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-         *                                     &lt;attribute name="Type" use="required"&gt;
-         *                                       &lt;simpleType&gt;
-         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
-         *                                           &lt;enumeration value="14"/&gt;
-         *                                           &lt;enumeration value="15"/&gt;
-         *                                         &lt;/restriction&gt;
-         *                                       &lt;/simpleType&gt;
-         *                                     &lt;/attribute&gt;
-         *                                     &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
-         *                                   &lt;/restriction&gt;
-         *                                 &lt;/complexContent&gt;
-         *                               &lt;/complexType&gt;
-         *                             &lt;/element&gt;
-         *                           &lt;/sequence&gt;
-         *                         &lt;/restriction&gt;
-         *                       &lt;/complexContent&gt;
-         *                     &lt;/complexType&gt;
-         *                   &lt;/element&gt;
-         *                 &lt;/sequence&gt;
-         *               &lt;/restriction&gt;
-         *             &lt;/complexContent&gt;
-         *           &lt;/complexType&gt;
-         *         &lt;/element&gt;
-         *       &lt;/sequence&gt;
-         *     &lt;/restriction&gt;
-         *   &lt;/complexContent&gt;
-         * &lt;/complexType&gt;
+         * &lt;complexType>
+         *   &lt;complexContent>
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *       &lt;sequence>
+         *         &lt;element name="HotelReservations">
+         *           &lt;complexType>
+         *             &lt;complexContent>
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *                 &lt;sequence>
+         *                   &lt;element name="HotelReservation" maxOccurs="unbounded">
+         *                     &lt;complexType>
+         *                       &lt;complexContent>
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *                           &lt;sequence>
+         *                             &lt;element name="UniqueID">
+         *                               &lt;complexType>
+         *                                 &lt;complexContent>
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *                                     &lt;attribute name="Type" use="required">
+         *                                       &lt;simpleType>
+         *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+         *                                           &lt;enumeration value="14"/>
+         *                                           &lt;enumeration value="15"/>
+         *                                         &lt;/restriction>
+         *                                       &lt;/simpleType>
+         *                                     &lt;/attribute>
+         *                                     &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
+         *                                   &lt;/restriction>
+         *                                 &lt;/complexContent>
+         *                               &lt;/complexType>
+         *                             &lt;/element>
+         *                           &lt;/sequence>
+         *                         &lt;/restriction>
+         *                       &lt;/complexContent>
+         *                     &lt;/complexType>
+         *                   &lt;/element>
+         *                 &lt;/sequence>
+         *               &lt;/restriction>
+         *             &lt;/complexContent>
+         *           &lt;/complexType>
+         *         &lt;/element>
+         *       &lt;/sequence>
+         *     &lt;/restriction>
+         *   &lt;/complexContent>
+         * &lt;/complexType>
          * </pre>
          * 
          * 
@@ -400,41 +400,41 @@ public class OTANotifReportRQ {
              * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
              * 
              * <pre>
-             * &lt;complexType&gt;
-             *   &lt;complexContent&gt;
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-             *       &lt;sequence&gt;
-             *         &lt;element name="HotelReservation" maxOccurs="unbounded"&gt;
-             *           &lt;complexType&gt;
-             *             &lt;complexContent&gt;
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-             *                 &lt;sequence&gt;
-             *                   &lt;element name="UniqueID"&gt;
-             *                     &lt;complexType&gt;
-             *                       &lt;complexContent&gt;
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-             *                           &lt;attribute name="Type" use="required"&gt;
-             *                             &lt;simpleType&gt;
-             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
-             *                                 &lt;enumeration value="14"/&gt;
-             *                                 &lt;enumeration value="15"/&gt;
-             *                               &lt;/restriction&gt;
-             *                             &lt;/simpleType&gt;
-             *                           &lt;/attribute&gt;
-             *                           &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
-             *                         &lt;/restriction&gt;
-             *                       &lt;/complexContent&gt;
-             *                     &lt;/complexType&gt;
-             *                   &lt;/element&gt;
-             *                 &lt;/sequence&gt;
-             *               &lt;/restriction&gt;
-             *             &lt;/complexContent&gt;
-             *           &lt;/complexType&gt;
-             *         &lt;/element&gt;
-             *       &lt;/sequence&gt;
-             *     &lt;/restriction&gt;
-             *   &lt;/complexContent&gt;
-             * &lt;/complexType&gt;
+             * &lt;complexType>
+             *   &lt;complexContent>
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+             *       &lt;sequence>
+             *         &lt;element name="HotelReservation" maxOccurs="unbounded">
+             *           &lt;complexType>
+             *             &lt;complexContent>
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+             *                 &lt;sequence>
+             *                   &lt;element name="UniqueID">
+             *                     &lt;complexType>
+             *                       &lt;complexContent>
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+             *                           &lt;attribute name="Type" use="required">
+             *                             &lt;simpleType>
+             *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+             *                                 &lt;enumeration value="14"/>
+             *                                 &lt;enumeration value="15"/>
+             *                               &lt;/restriction>
+             *                             &lt;/simpleType>
+             *                           &lt;/attribute>
+             *                           &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
+             *                         &lt;/restriction>
+             *                       &lt;/complexContent>
+             *                     &lt;/complexType>
+             *                   &lt;/element>
+             *                 &lt;/sequence>
+             *               &lt;/restriction>
+             *             &lt;/complexContent>
+             *           &lt;/complexType>
+             *         &lt;/element>
+             *       &lt;/sequence>
+             *     &lt;/restriction>
+             *   &lt;/complexContent>
+             * &lt;/complexType>
              * </pre>
              * 
              * 
@@ -484,31 +484,31 @@ public class OTANotifReportRQ {
                  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                  * 
                  * <pre>
-                 * &lt;complexType&gt;
-                 *   &lt;complexContent&gt;
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-                 *       &lt;sequence&gt;
-                 *         &lt;element name="UniqueID"&gt;
-                 *           &lt;complexType&gt;
-                 *             &lt;complexContent&gt;
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-                 *                 &lt;attribute name="Type" use="required"&gt;
-                 *                   &lt;simpleType&gt;
-                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
-                 *                       &lt;enumeration value="14"/&gt;
-                 *                       &lt;enumeration value="15"/&gt;
-                 *                     &lt;/restriction&gt;
-                 *                   &lt;/simpleType&gt;
-                 *                 &lt;/attribute&gt;
-                 *                 &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
-                 *               &lt;/restriction&gt;
-                 *             &lt;/complexContent&gt;
-                 *           &lt;/complexType&gt;
-                 *         &lt;/element&gt;
-                 *       &lt;/sequence&gt;
-                 *     &lt;/restriction&gt;
-                 *   &lt;/complexContent&gt;
-                 * &lt;/complexType&gt;
+                 * &lt;complexType>
+                 *   &lt;complexContent>
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 *       &lt;sequence>
+                 *         &lt;element name="UniqueID">
+                 *           &lt;complexType>
+                 *             &lt;complexContent>
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 *                 &lt;attribute name="Type" use="required">
+                 *                   &lt;simpleType>
+                 *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+                 *                       &lt;enumeration value="14"/>
+                 *                       &lt;enumeration value="15"/>
+                 *                     &lt;/restriction>
+                 *                   &lt;/simpleType>
+                 *                 &lt;/attribute>
+                 *                 &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
+                 *               &lt;/restriction>
+                 *             &lt;/complexContent>
+                 *           &lt;/complexType>
+                 *         &lt;/element>
+                 *       &lt;/sequence>
+                 *     &lt;/restriction>
+                 *   &lt;/complexContent>
+                 * &lt;/complexType>
                  * </pre>
                  * 
                  * 
@@ -553,21 +553,21 @@ public class OTANotifReportRQ {
                      * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
                      * 
                      * <pre>
-                     * &lt;complexType&gt;
-                     *   &lt;complexContent&gt;
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-                     *       &lt;attribute name="Type" use="required"&gt;
-                     *         &lt;simpleType&gt;
-                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
-                     *             &lt;enumeration value="14"/&gt;
-                     *             &lt;enumeration value="15"/&gt;
-                     *           &lt;/restriction&gt;
-                     *         &lt;/simpleType&gt;
-                     *       &lt;/attribute&gt;
-                     *       &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" /&gt;
-                     *     &lt;/restriction&gt;
-                     *   &lt;/complexContent&gt;
-                     * &lt;/complexType&gt;
+                     * &lt;complexType>
+                     *   &lt;complexContent>
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                     *       &lt;attribute name="Type" use="required">
+                     *         &lt;simpleType>
+                     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+                     *             &lt;enumeration value="14"/>
+                     *             &lt;enumeration value="15"/>
+                     *           &lt;/restriction>
+                     *         &lt;/simpleType>
+                     *       &lt;/attribute>
+                     *       &lt;attribute name="ID" use="required" type="{http://www.opentravel.org/OTA/2003/05}def_nonempty_string" />
+                     *     &lt;/restriction>
+                     *   &lt;/complexContent>
+                     * &lt;/complexType>
                      * </pre>
                      * 
                      * 

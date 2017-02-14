@@ -16,15 +16,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;group ref="{http://www.opentravel.org/OTA/2003/05}def_generic_response"/&gt;
- *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
- *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;group ref="{http://www.opentravel.org/OTA/2003/05}def_generic_response"/>
+ *       &lt;attribute name="Version" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
+ *       &lt;attribute name="TimeStamp" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 
@@ -39,11 +39,11 @@ import javax.xml.bind.annotation.XmlType;
 public class OTAHotelInvNotifRS {
 
     @XmlElement(name = "Errors")
-    protected org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Errors errors;
+    protected org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors errors;
     @XmlElement(name = "Success")
     protected Object success;
     @XmlElement(name = "Warnings")
-    protected org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Warnings warnings;
+    protected org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Warnings warnings;
     @XmlAttribute(name = "Version", required = true)
     @XmlSchemaType(name = "anySimpleType")
     protected String version;
@@ -56,10 +56,10 @@ public class OTAHotelInvNotifRS {
      * 
      * @return
      *     possible object is
-     *     {@link org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Errors }
+     *     {@link org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors }
      *     
      */
-    public org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Errors getErrors() {
+    public org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors getErrors() {
         return errors;
     }
 
@@ -68,10 +68,10 @@ public class OTAHotelInvNotifRS {
      * 
      * @param value
      *     allowed object is
-     *     {@link org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Errors }
+     *     {@link org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors }
      *     
      */
-    public void setErrors(org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Errors value) {
+    public void setErrors(org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Errors value) {
         this.errors = value;
     }
 
@@ -104,10 +104,10 @@ public class OTAHotelInvNotifRS {
      * 
      * @return
      *     possible object is
-     *     {@link org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Warnings }
+     *     {@link org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Warnings }
      *     
      */
-    public org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Warnings getWarnings() {
+    public org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Warnings getWarnings() {
         return warnings;
     }
 
@@ -116,10 +116,10 @@ public class OTAHotelInvNotifRS {
      * 
      * @param value
      *     allowed object is
-     *     {@link org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Warnings }
+     *     {@link org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Warnings }
      *     
      */
-    public void setWarnings(org.opentravel.ota._2003._05.OTAHotelAvailNotifRS.Warnings value) {
+    public void setWarnings(org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS.Warnings value) {
         this.warnings = value;
     }
 
