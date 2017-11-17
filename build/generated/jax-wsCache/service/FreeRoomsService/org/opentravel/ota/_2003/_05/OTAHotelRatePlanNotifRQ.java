@@ -3818,10 +3818,10 @@ public class OTAHotelRatePlanNotifRQ {
             public static class Description {
 
                 @XmlElementRefs({
+                    @XmlElementRef(name = "ListItem", namespace = "http://www.opentravel.org/OTA/2003/05", type = JAXBElement.class, required = false),
                     @XmlElementRef(name = "Text", namespace = "http://www.opentravel.org/OTA/2003/05", type = JAXBElement.class, required = false),
                     @XmlElementRef(name = "URL", namespace = "http://www.opentravel.org/OTA/2003/05", type = JAXBElement.class, required = false),
-                    @XmlElementRef(name = "Image", namespace = "http://www.opentravel.org/OTA/2003/05", type = JAXBElement.class, required = false),
-                    @XmlElementRef(name = "ListItem", namespace = "http://www.opentravel.org/OTA/2003/05", type = JAXBElement.class, required = false)
+                    @XmlElementRef(name = "Image", namespace = "http://www.opentravel.org/OTA/2003/05", type = JAXBElement.class, required = false)
                 })
                 protected List<JAXBElement<?>> textOrListItemOrImage;
                 @XmlAttribute(name = "Name", required = true)
@@ -3845,10 +3845,10 @@ public class OTAHotelRatePlanNotifRQ {
                  * 
                  * <p>
                  * Objects of the following type(s) are allowed in the list
+                 * {@link JAXBElement }{@code <}{@link OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.ListItem }{@code >}
                  * {@link JAXBElement }{@code <}{@link String }{@code >}
                  * {@link JAXBElement }{@code <}{@link OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.Text }{@code >}
                  * {@link JAXBElement }{@code <}{@link String }{@code >}
-                 * {@link JAXBElement }{@code <}{@link OTAHotelRatePlanNotifRQ.RatePlans.RatePlan.Description.ListItem }{@code >}
                  * 
                  * 
                  */

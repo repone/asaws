@@ -27,8 +27,7 @@ import org.opentravel.ota._2003._05.OTAHotelAvailNotifRQ;
 public class FreeRoomsService {
     @Resource
     private WebServiceContext wsc;
-    private InitialContext getContext()  {
-        
+    private InitialContext getContext()  { 
         try {    
             return new InitialContext();
         } catch (NamingException ex) {
@@ -39,9 +38,12 @@ public class FreeRoomsService {
     }
     public  OTAHotelAvailNotifRS otaHotelAvailNotif( OTAHotelAvailNotifRQ hotelAvailNotifRQMsg) { 
         try {
-            return (OTAHotelAvailNotifRS)
+            Logger.getLogger(FreeRoomsService.class.getName()).log(Level.INFO, "OTAHotelAvailNotifRS begin");
+            OTAHotelAvailNotifRS res = (OTAHotelAvailNotifRS)
                     new ResponseBuildFactory(hotelAvailNotifRQMsg,wsc,getContext())
                             .getBuilder().build();
+            Logger.getLogger(FreeRoomsService.class.getName()).log(Level.INFO, "OTAHotelAvailNotifRS end");
+            return res;
         } catch (BuildErrorException ex) {
             Logger.getLogger(FreeRoomsService.class.getName()).log(Level.SEVERE, null, ex);
             return  EmptyResponseFactory.newAvailNotifRS(  ErrorResultType.buildingError );

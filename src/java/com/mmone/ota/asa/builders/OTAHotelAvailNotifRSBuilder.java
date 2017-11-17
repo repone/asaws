@@ -17,6 +17,7 @@ import org.opentravel.ota._2003._05.OTAHotelAvailNotifRQ;
 import org.opentravel.ota._2003._05.OTAHotelAvailNotifRS; 
 import org.opentravel.ota._2003._05.OTAHotelRatePlanNotifRS;
 import com.mmone.ota.asa.builders.exceptions.RoomIdNotFoundException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.Map;
@@ -81,7 +82,6 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
             Date csStartDt= DateUtils.round(  new Date(),Calendar.HOUR );
             Date csEndDt=  DateUtils.addYears(csStartDt, 1)  ;
               
-            
             for (OTAHotelAvailNotifRQ.AvailStatusMessages.AvailStatusMessage availability : availabilities) { 
                 String roomCode = null;
                 Integer roomId = null;
@@ -107,21 +107,19 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
                         +" - dateStart="+csStartDt.toString()
                         +" - dateEnd="+csEndDt.toString()
                     );
-             
+                    /**    
                     getServiceSource().doSave( 
-                            iHotelCode,
-                            csStartDt,
-                            csEndDt,
-                            roomId,
-                            bookingLimit.intValue() 
+                        iHotelCode,
+                        csStartDt,
+                        csEndDt,
+                        roomId,
+                        bookingLimit.intValue() 
                     );
+                    **/ 
                 }
-                
-                
+             
             }
         }
-        
-        
         
         //if(true) return;
         
@@ -162,19 +160,35 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
                 continue;
             }
             
-             
-            
-            getServiceSource().doSave( 
-                    iHotelCode,
-                    startDt,
-                    endDt,
-                    roomId,
-                    bookingLimit.intValue() 
+            /**
+            Logger.getLogger( this.getClass().getName()).log(
+                Level.INFO, 
+                "[setting availability] roomCode="+roomCode 
+                +" - dateStart="+startDt.toString()
+                +" - dateEnd="+endDt.toString()
             );
-            
+            **/
+              
+            doSave( 
+                iHotelCode,
+                startDt,
+                endDt,
+                roomId ,
+                bookingLimit.intValue() 
+            );
+             
         }
     }
     
+    public void doSave(Integer hotelCode,java.util.Date startDt, java.util.Date endDt, Integer roomId ,int bookingLimit) {
+        getServiceSource().doSave( 
+            hotelCode,
+            startDt,
+            endDt,
+            roomId,
+            bookingLimit 
+        );
+    }
     
 
     @Override
@@ -213,4 +227,71 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
         this.getResponse().setSuccess("");
     }
      
+    public static void main(String[] args){
+        
+        for(int i=0; i<10; i++){
+          new Thread("" + i){
+            public void run(){
+              System.out.println("Thread: " + getName() + " running " );
+            }
+          }.start();
+        }
+      }
+    
+    class AvailabilityRecord {
+        public Integer hotelCode = null ;
+        public java.util.Date startDt = null ;
+        public java.util.Date endDt = null ; 
+        public String roomCode = null ;
+        public Integer roomId = null ;
+        public int bookingLimit = 0 ;
+
+        public AvailabilityRecord(
+            Integer hotelCode,
+            java.util.Date startDt,
+            java.util.Date endDt, 
+            Integer roomId,
+            String roomCode,
+            int bookingLimit
+        ) {
+            this.hotelCode = hotelCode;
+            this.startDt = startDt;
+            this.endDt = endDt;
+            this.roomId = roomId;
+            this.roomCode = roomCode;
+            this.bookingLimit = bookingLimit;
+        }
+        
+    }
+    
+    class AvailNotifRunnable implements Runnable{
+        private OTAHotelAvailNotifRSBuilder parent = null;
+        private Integer roomId = null;
+        private ArrayList<AvailabilityRecord>availabilities = new ArrayList<AvailabilityRecord>();
+        
+        public AvailNotifRunnable(OTAHotelAvailNotifRSBuilder parent, Integer roomId, ArrayList<AvailabilityRecord>availabilities) {
+            this.parent = parent;
+            this.roomId = roomId;
+            this.availabilities = availabilities;
+        }
+            
+        public AvailNotifRunnable(OTAHotelAvailNotifRSBuilder parent, Integer roomId, AvailabilityRecord availabilityRecord) {
+            this.parent = parent;
+            this.roomId = roomId;
+            this.availabilities.add( availabilityRecord );
+        }
+        
+        public void run() { 
+            for (AvailabilityRecord availability : this.availabilities) {
+                Logger.getLogger( this.getClass().getName()).log(
+                        Level.INFO, 
+                        "[setting availability from thread] roomCode="+availability.roomCode 
+                        +" - dateStart="+ availability.startDt.toString()
+                        +" - dateEnd="+availability.endDt.toString()
+                    );
+                this.parent.doSave(  availability.hotelCode, availability.startDt,  availability.endDt,  availability.roomId + 11111111 , availability.bookingLimit);
+            }
+        }
+        
+    }
 }

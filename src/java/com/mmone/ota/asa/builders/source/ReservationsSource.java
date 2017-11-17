@@ -33,7 +33,9 @@ import com.mmone.ota.asa.builders.ResponseBuilder;
 import com.mmone.ota.asa.builders.exceptions.PriorityInventoryException;
 import com.mmone.ota.asa.builders.exceptions.ReservationNotFoundException;
 import com.mmone.ota.asa.builders.exceptions.RoomIdNotFoundException;
+import java.net.URL;
 import java.util.Iterator;
+import org.apache.xmlrpc.AsyncCallback;
  
 public  class  ReservationsSource { 
     private QueryRunner run=null; 
@@ -772,8 +774,23 @@ public  class  ReservationsSource {
             Logger.getLogger(this.getClass().getName()).log(Level.INFO, logData);
             
         try { 
-            result = (Vector) client.execute("backend.modifyAllotment", parameters); 
             
+            AsyncCallback handler = new AsyncCallback() {
+                @Override
+                public void handleResult(Object o, URL url, String string) {
+                    Logger.getLogger(this.getClass().getName()).log(Level.INFO, "--- handleResult " + o.toString());
+                }
+
+                @Override
+                public void handleError(Exception excptn, URL url, String string) {
+                   Logger.getLogger(this.getClass().getName()).log(Level.INFO, "--- handleError");
+                }
+            };
+            
+            client.executeAsync("backend.modifyAllotment", parameters, handler); 
+            if(true) {
+                return 0;
+            }
             
             
         } catch (Exception e) {
@@ -832,14 +849,30 @@ public  class  ReservationsSource {
         Vector result = new Vector();
         int ret = XRPC_SET_ALLOTMENT_RESULT_ERROR;
         try { 
-            result = (Vector) client.execute("backend.modifyAllotment", parameters); 
-             
+            AsyncCallback handler = new AsyncCallback() {
+                @Override
+                public void handleResult(Object o, URL url, String string) {
+                    Logger.getLogger(this.getClass().getName()).log(Level.INFO, "--- handleResult");
+                }
+
+                @Override
+                public void handleError(Exception excptn, URL url, String string) {
+                   Logger.getLogger(this.getClass().getName()).log(Level.INFO, "--- handleError");
+                }
+            };
+            
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "-------------- backend.modifyAllotment executeAsync");
+            client.executeAsync("backend.modifyAllotment", parameters, handler); 
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "----------------backend.modifyAllotment executeAsync");
         } catch (Exception e) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "", e);
             // addError(ResponseBuilder.EWT_UNKNOWN, ResponseBuilder.ERR_SYSTEM_ERROR, "Error on updating  allotment (modifyAllotment)");
             return ret ;
         }
         
+        if(true){
+            return 0;
+        }
         try { 
             Map hret = (Map)result.get(0); 
             ret = new Integer(  (String)hret.get("unique_allotment_service_response") );  
