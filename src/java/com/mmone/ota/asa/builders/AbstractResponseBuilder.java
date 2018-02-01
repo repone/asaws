@@ -188,20 +188,23 @@ public abstract class AbstractResponseBuilder  extends Debuggable implements Res
         ds = (DataSource) getContext().lookup("jdbc/reservation" );       
         return ds;
     }      
+    
+    public static XmlRpcClient getRpcClient(InitialContext context) throws MalformedURLException, NamingException  {
+     
+        String rpcServerUrl = (String) context.lookup("cr/rpcreservation" + "url");
+        String rpcUsername = (String) context.lookup("cr/rpcreservation"   + "username");
+        String rpcPassword = (String) context.lookup("cr/rpcreservation"  + "password");
+
+
+        XmlRpcClient rpcClient = new XmlRpcClient(rpcServerUrl);
+        rpcClient.setBasicAuthentication(rpcUsername, rpcPassword);
+ 
+        return rpcClient; 
+    }
+    
     public XmlRpcClient getRpcClient() throws MalformedURLException, NamingException  {
             if(this.rpcClient==null){    
-                String rpcServerUrl = null;
-                String rpcUsername = null;
-                String rpcPassword = null;
-
-                rpcServerUrl = (String) getContext().lookup("cr/rpcreservation" + "url");
-                rpcUsername = (String) getContext().lookup("cr/rpcreservation"   + "username");
-                rpcPassword = (String) getContext().lookup("cr/rpcreservation"  + "password");
-
-
-                rpcClient = new XmlRpcClient(rpcServerUrl);
-                rpcClient.setBasicAuthentication(rpcUsername, rpcPassword);
- 
+                rpcClient = getRpcClient(getContext());
             }
             return this.rpcClient; 
     }     

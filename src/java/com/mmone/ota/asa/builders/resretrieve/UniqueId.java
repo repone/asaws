@@ -17,7 +17,7 @@ public class UniqueId {
     public static OTAResRetrieveRS.ReservationsList.HotelReservation.UniqueID 
         init( String resStatus,Map<String, Object> reservation){  
         String id=null;
-        try { id = reservation.get("reservation_id").toString(); } catch (Exception e) {  }
+        try { id = reservation.get("new_reservation_id").toString(); } catch (Exception e) {  }
         OTAResRetrieveRS.ReservationsList.HotelReservation.UniqueID uniqueId = new OTAResRetrieveRS.ReservationsList.HotelReservation.UniqueID();
             uniqueId.setType(RES_STATUS_TO_UNIQUEID_TYPE.get(resStatus) );
             uniqueId.setID(id);

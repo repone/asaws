@@ -189,8 +189,7 @@ public class OTAHotelAvailNotifRSBuilder extends AbstractResponseBuilder{
             bookingLimit 
         );
     }
-    
-
+   
     @Override
     public void fillErrors() {
          /*this.getResponse().setErrors( new  OTAHotelRatePlanNotifRS.Errors());

@@ -69,18 +69,18 @@ public  class  ReservationsSource {
             + "        AND (reservation.portal_id>=? OR reservation.portal_id>0)  "
             ;
     
-    public   final String SQL_INSERT_RESERVATION_DOWNLOADED_RECORD_AUTO = ""
+    public static final String SQL_INSERT_RESERVATION_DOWNLOADED_RECORD_AUTO = ""
             + " INSERT INTO ota_reservation_download"
-            + " ( context_id, confirmation_number, reservation_id, last_check_date,creation_date )"
+            + " ( context_id, confirmation_number, reservation_id, reservation_ch_id, last_check_date,creation_date )"
             + " VALUES "
-            + " ( ?, ?, ?,  (SELECT MAX(reservation_status_date) FROM reservation_status WHERE reservation_status.reservation_id=?)   ,  ?)"
+            + " ( ?, ?, ?, ?,  CURRENT_TIMESTAMP   ,  CURRENT_TIMESTAMP)"
             + "";
     
-    public   final String SQL_INSERT_RESERVATION_DOWNLOADED_RECORD = ""
+    public static final String SQL_INSERT_RESERVATION_DOWNLOADED_RECORD = ""
             + " INSERT INTO ota_reservation_download"
-            + " ( context_id, confirmation_number, reservation_id, last_check_date,creation_date )"
+            + " ( context_id, confirmation_number, reservation_id, reservation_ch_id, last_check_date,creation_date )"
             + " VALUES "
-            + " ( ?, ?, ?, ?, ?)"
+            + " ( ?, ?, ?, ?, ?, ?)"
             + "";
     
     public   final String SQL_UPDATE_RESERVATION_DOWNLOADED_RECORD = ""
@@ -89,15 +89,15 @@ public  class  ReservationsSource {
             + " last_check_date=? "
             + " WHERE "
             + " context_id=? "
-            + " AND reservation_id=? "
+            + " AND reservation_ch_id=? "
             + "";
     public   final String SQL_UPDATE_RESERVATION_DOWNLOADED_RECORD_AUTO = ""
             + " UPDATE ota_reservation_download"
             + " SET "
-            + " last_check_date=(SELECT MAX(reservation_status_date) FROM reservation_status WHERE reservation_status.reservation_id=?) "
+            + " last_check_date=CURRENT_TIMESTAMP "
             + " WHERE "
             + " context_id=? "
-            + " AND reservation_id=? "
+            + " AND reservation_ch_id=? "
             + "";
     
     public   String SELECT_RESERVATIONS_BY_NUMBER = "reservation_id from reservation where reservation_number = ? ";
@@ -114,6 +114,17 @@ public  class  ReservationsSource {
         return (List<Map<String, Object>>) ret;
     }
      
+    public static Object reservationIdWithChannelToReservationId(Object reservationId){ 
+        String sReservationId = reservationId.toString();
+        String [] aReservationId = sReservationId.split("-");
+        if(aReservationId.length==1){
+            //
+        } else {
+            reservationId = new Integer("-"+aReservationId[1]);
+        }
+        return reservationId;
+    }
+    
     public   List<Map<String, Object>> retrieveReservationDetail( Integer reservationId) throws Exception { 
         List<Map<String, Object>> reservationDetail = null;
         if (reservationId == null) {
@@ -146,28 +157,31 @@ public  class  ReservationsSource {
     public   void insertOrUpdateDownloadRecord( 
             Object contextId, 
             String confirmationNumber, 
-            Object reservationId, 
+            Object newReservationId, 
             Timestamp lastCheckDate) throws Exception {
  
         Timestamp today = new Timestamp(new java.util.Date().getTime());
-
+        Object reservationId = reservationIdWithChannelToReservationId(newReservationId);
+        
         try {
             if (lastCheckDate == null) {
-                run.update(SQL_INSERT_RESERVATION_DOWNLOADED_RECORD_AUTO, contextId, confirmationNumber, reservationId, reservationId, today);
+                run.update(SQL_INSERT_RESERVATION_DOWNLOADED_RECORD_AUTO, contextId, confirmationNumber, reservationId, newReservationId);
             } else {
-                run.update(SQL_INSERT_RESERVATION_DOWNLOADED_RECORD, contextId, confirmationNumber, reservationId, lastCheckDate, today);
+                run.update(SQL_INSERT_RESERVATION_DOWNLOADED_RECORD, contextId, confirmationNumber, reservationId, newReservationId, lastCheckDate, today);
             }
             return;
         } catch (SQLException e) { 
+            e.printStackTrace();
         } catch (Exception e) {
+            e.printStackTrace();
             throw e;
         }
 
         try {
             if (lastCheckDate == null) {
-                run.update(SQL_UPDATE_RESERVATION_DOWNLOADED_RECORD_AUTO, reservationId, contextId, reservationId);
+                run.update(SQL_UPDATE_RESERVATION_DOWNLOADED_RECORD_AUTO,  contextId,newReservationId);
             } else {
-                run.update(SQL_UPDATE_RESERVATION_DOWNLOADED_RECORD, lastCheckDate, contextId, reservationId);
+                run.update(SQL_UPDATE_RESERVATION_DOWNLOADED_RECORD, lastCheckDate, newReservationId, contextId);
             }
         } catch (Exception e) {
             throw e;

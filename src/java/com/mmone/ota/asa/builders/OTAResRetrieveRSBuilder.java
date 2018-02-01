@@ -5,6 +5,7 @@
  */
 package com.mmone.ota.asa.builders;
 
+import com.mmone.asa.helpers.ReservationDownloadServices;
 import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.Hashtable;
@@ -19,6 +20,8 @@ import org.opentravel.ota._2003._05.OTAReadRQ;
 import org.opentravel.ota._2003._05.OTAResRetrieveRS;
 import com.mmone.ota.asa.builders.exceptions.DateStartNotSetException;
 import com.mmone.ota.asa.builders.resretrieve.HotelReservation;
+import org.apache.xmlrpc.XmlRpc;
+import org.apache.xmlrpc.XmlRpcClient;
 import org.opentravel.ota._2003._05.SuccessType;
 /**
  *
@@ -145,22 +148,35 @@ public class OTAResRetrieveRSBuilder extends AbstractResponseBuilder{
         } catch (NullPointerException ex) { }   
         
         try {      
-            reservations = this.getServiceSource().retrieveReservations( getHotelCode(),CONTEXT_ID,1,dateStart);    
-            ReservationsList(reservations);
-        }catch ( SQLException ex) {
+            
+            XmlRpcClient client = AbstractResponseBuilder.getRpcClient(getInitialContext());
+            reservations=ReservationDownloadServices.retrieveReservationsOnlyBookingRPC(client, getHotelCode(), CONTEXT_ID, true);
+            //reservations = this.getServiceSource().retrieveReservations( getHotelCode(),CONTEXT_ID,1,dateStart);    
+            ReservationsList(reservations,dateStart);
+        }catch ( Exception ex) {
             Logger.getLogger(OTAResRetrieveRSBuilder.class.getName()).log(Level.SEVERE, null, ex);
             addError(EWT_UNKNOWN, ERR_SYSTEM_ERROR, "System error");
             return;
         }
     }
    
-    private void ReservationsList(List<Map<String, Object>> reservations){ 
+    private void ReservationsList(List<Map<String, Object>> reservations, java.util.Date dateStart){ 
         getRequest().setReadRequests(new OTAReadRQ.ReadRequests());
         getResponse().setReservationsList(new OTAResRetrieveRS.ReservationsList());
         List hotelReservationList = getResponse().getReservationsList().getHotelReservation();
-        for (Map<String, Object> reservation : reservations) { 
+ 
+        for (Map<String, Object> reservation : reservations) {
+            //reservation.get
+            if(dateStart!=null) {
+                java.util.Date openDate = (java.util.Date)reservation.get("reservation_opened_date");
+                if(openDate.compareTo(dateStart)<0) {
+                    continue;
+                }
+            }
+            
             hotelReservationList.add(HotelReservation.init(reservation,getServiceSource())); 
         }
+        
     }
     private java.util.Date getFilterDateStart()throws NullPointerException, DateStartNotSetException{
         java.util.Date  dateStart=null; 

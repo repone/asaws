@@ -56,10 +56,10 @@ public class OTANotifReportRSBuilder extends AbstractResponseBuilder{
         }
     }
     private void markReservationAsDownloaded(String confirmationNumber ){
-        Integer reservationId = null;
+        String reservationId = null;
             
             try {
-                reservationId = new Integer(confirmationNumber);
+                reservationId  = confirmationNumber ;
                 
             } catch (Exception ex) { 
                 Logger.getLogger(OTANotifReportRSBuilder.class.getName()).log(Level.SEVERE, null, ex);

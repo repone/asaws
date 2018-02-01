@@ -5,6 +5,7 @@
  */
 package com.mmone.ota.asa.builders.resretrieve;
 
+import com.mmone.asa.helpers.ReservationDownloadServices;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.dbutils.QueryRunner;
@@ -35,9 +36,13 @@ public class RoomStays {
             OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays roomStays=new OTAResRetrieveRS.ReservationsList.HotelReservation.RoomStays();
         Integer reservationId=0;
         List<Map<String, Object>> reservationDetails=null;
-        try { reservationId = new Integer(  reservation.get("reservation_id").toString() ); } catch (Exception e) {  }
-        try { reservationDetails = serviceSource.retrieveReservationDetail( reservationId); } catch (Exception ex) { }
         
+        reservationDetails = ReservationDownloadServices.loadReservationOtherData(reservation);
+        
+        // try { reservationId = new Integer(  reservation.get("reservation_id").toString() ); } catch (Exception e) {  }
+        // try { reservationDetails = serviceSource.retrieveReservationDetail( reservationId); } catch (Exception ex) { }
+        
+         
         for (Map<String, Object> reservationDetail : reservationDetails) { 
             roomStays.getRoomStay().add(RoomStay( reservation,reservationDetail));
         }
